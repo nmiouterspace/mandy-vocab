@@ -1,0 +1,430 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#247a74" />
+    <meta name="description" content="Mandy Vocab helps learners review vocabulary, pronunciation, grammar, speaking, games, and personal notes across multiple English curricula." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Mandy Vocab" />
+    <title>Mandy Vocab</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-dashboard" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+      </symbol>
+      <symbol id="icon-learn" viewBox="0 0 24 24">
+        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"></path>
+        <path d="M4 5.5v16"></path>
+        <path d="M8 7h8"></path>
+        <path d="M8 11h6"></path>
+      </symbol>
+      <symbol id="icon-topics" viewBox="0 0 24 24">
+        <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+        <path d="M14 3h7v7"></path>
+        <path d="M21 3 12 12"></path>
+      </symbol>
+      <symbol id="icon-grammar" viewBox="0 0 24 24">
+        <path d="M5 5h14"></path>
+        <path d="M5 10h10"></path>
+        <path d="M5 15h14"></path>
+        <path d="M5 20h8"></path>
+      </symbol>
+      <symbol id="icon-games" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="12" rx="3"></rect>
+        <path d="M8 13h4"></path>
+        <path d="M10 11v4"></path>
+        <circle cx="16.5" cy="12" r="1"></circle>
+        <circle cx="18.5" cy="15" r="1"></circle>
+      </symbol>
+      <symbol id="icon-ai" viewBox="0 0 24 24">
+        <path d="M12 3l1.7 5.1L19 10l-5.3 1.9L12 17l-1.7-5.1L5 10l5.3-1.9z"></path>
+        <path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"></path>
+      </symbol>
+      <symbol id="icon-notebook" viewBox="0 0 24 24">
+        <path d="M7 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"></path>
+        <path d="M8 3v18"></path>
+        <path d="M11 8h5"></path>
+        <path d="M11 12h5"></path>
+      </symbol>
+      <symbol id="icon-helper" viewBox="0 0 24 24">
+        <path d="M15 4l5 5"></path>
+        <path d="M14 5 4 15l5 5L19 10z"></path>
+        <path d="M5 4l.6 1.8L7.5 6.5 5.6 7.2 5 9l-.6-1.8-1.9-.7 1.9-.7z"></path>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5"></path>
+      </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+        <path d="M8 3v4"></path>
+        <path d="M16 3v4"></path>
+        <path d="M3 10h18"></path>
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 24 24">
+        <path d="M20 4c-7 0-13 4-13 11a5 5 0 0 0 5 5c7 0 8-9 8-16z"></path>
+        <path d="M4 20c4-5 8-8 14-11"></path>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <path d="M20.8 5.6a5.2 5.2 0 0 0-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 1 0-7.4 7.4L12 21l8.8-8a5.2 5.2 0 0 0 0-7.4z"></path>
+      </symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+        <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+        <path d="M3 12h18"></path>
+      </symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3"></circle>
+        <path d="M3 20a6 6 0 0 1 12 0"></path>
+        <path d="M16 11a3 3 0 0 0 0-6"></path>
+        <path d="M18 20a5 5 0 0 0-3-4.5"></path>
+      </symbol>
+      <symbol id="icon-building" viewBox="0 0 24 24">
+        <path d="M4 21V6l8-3 8 3v15"></path>
+        <path d="M9 21v-6h6v6"></path>
+        <path d="M8 8h.01"></path>
+        <path d="M12 8h.01"></path>
+        <path d="M16 8h.01"></path>
+        <path d="M8 12h.01"></path>
+        <path d="M16 12h.01"></path>
+      </symbol>
+      <symbol id="icon-plane" viewBox="0 0 24 24">
+        <path d="M21 16 3 21l5-9-5-9 18 5-8 4z"></path>
+      </symbol>
+      <symbol id="icon-scale" viewBox="0 0 24 24">
+        <path d="M12 3v18"></path>
+        <path d="M5 7h14"></path>
+        <path d="M6 7l-3 6h6z"></path>
+        <path d="M18 7l-3 6h6z"></path>
+      </symbol>
+      <symbol id="icon-flask" viewBox="0 0 24 24">
+        <path d="M9 3h6"></path>
+        <path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"></path>
+        <path d="M8 15h8"></path>
+      </symbol>
+      <symbol id="icon-tag" viewBox="0 0 24 24">
+        <path d="M20 13 13 20a2 2 0 0 1-2.8 0L4 13.8V4h9.8L20 10.2a2 2 0 0 1 0 2.8z"></path>
+        <circle cx="8" cy="8" r="1"></circle>
+      </symbol>
+      <symbol id="icon-example" viewBox="0 0 24 24">
+        <path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5z"></path>
+        <path d="M8 7h6"></path>
+        <path d="M8 11h8"></path>
+        <path d="M8 15h5"></path>
+      </symbol>
+      <symbol id="icon-link" viewBox="0 0 24 24">
+        <path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+        <path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"></path>
+      </symbol>
+      <symbol id="icon-family" viewBox="0 0 24 24">
+        <circle cx="12" cy="6" r="3"></circle>
+        <circle cx="6" cy="16" r="2.5"></circle>
+        <circle cx="18" cy="16" r="2.5"></circle>
+        <path d="M12 9v4"></path>
+        <path d="M8.2 14.5 12 13l3.8 1.5"></path>
+      </symbol>
+      <symbol id="icon-usage" viewBox="0 0 24 24">
+        <path d="M12 3v18"></path>
+        <path d="M5 8h14"></path>
+        <path d="M7 8l2 8"></path>
+        <path d="M17 8l-2 8"></path>
+        <path d="M6 16h4"></path>
+        <path d="M14 16h4"></path>
+      </symbol>
+    </svg>
+    <main class="app-shell">
+      <header class="brand-header">
+        <a class="brand-mark" href="#dashboard" aria-label="Mandy Vocab">
+          <img src="assets/icon-192.png" alt="" />
+          <span>Mandy Vocab</span>
+        </a>
+        <label class="mode-picker">
+          <span>Study mode</span>
+          <select id="studyMode">
+            <option value="ielts">IELTS Vocab</option>
+            <option value="communication">Giao tiếp</option>
+            <option value="toeic">TOEIC</option>
+            <option value="global-english">Cambridge Global English 1-9</option>
+          </select>
+        </label>
+        <label class="mode-picker stage-picker" id="stagePicker">
+          <span>Stage</span>
+          <select id="stageSelect">
+            <option value="1">Stage 1</option>
+            <option value="2">Stage 2</option>
+            <option value="3">Stage 3</option>
+            <option value="4">Stage 4</option>
+            <option value="5">Stage 5</option>
+            <option value="6">Stage 6</option>
+            <option value="7">Stage 7</option>
+            <option value="8">Stage 8</option>
+            <option value="9">Stage 9</option>
+          </select>
+        </label>
+        <span class="curriculum-chip" id="curriculumChip">IELTS</span>
+        <nav class="app-tabs" aria-label="Main views">
+          <button class="tab-button active" type="button" data-tab="dashboard"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-dashboard"></use></svg></span><span>Dashboard</span></button>
+          <button class="tab-button" type="button" data-tab="learn"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-learn"></use></svg></span><span>Learn</span></button>
+          <button class="tab-button" type="button" data-tab="topics"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-topics"></use></svg></span><span>Topics</span></button>
+          <button class="tab-button" type="button" data-tab="grammar"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-grammar"></use></svg></span><span>Grammar</span></button>
+          <button class="tab-button" type="button" data-tab="games"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-games"></use></svg></span><span>Games</span></button>
+          <button class="tab-button" type="button" data-tab="assistant"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-ai"></use></svg></span><span>AI Assistant</span></button>
+          <button class="tab-button" type="button" data-tab="notebook"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-notebook"></use></svg></span><span>Notebook</span></button>
+        </nav>
+      </header>
+
+      <section class="workspace-layout">
+        <aside class="panel band-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="section-kicker" id="levelKicker">IELTS ladder</p>
+              <h2 id="levelTitle">Band cards</h2>
+            </div>
+          </div>
+          <div class="band-list" id="bandList"></div>
+          <div class="source-note">
+            <strong>Vocabulary source note</strong>
+            <p>This sample set is inspired by GSL, Oxford 3000, AWL, Cambridge young learner progression, and common IELTS topics. It is summarized and rewritten rather than copied from one source.</p>
+          </div>
+        </aside>
+
+        <div class="workspace-main">
+          <section class="tab-panel active" data-panel="dashboard">
+            <section class="dashboard-overview">
+              <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg><use href="#icon-notebook"></use></svg></span>
+                <span class="metric-label">Saved words</span>
+                <strong id="savedMetric">0</strong>
+              </div>
+              <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg><use href="#icon-check"></use></svg></span>
+                <span class="metric-label">Mastered</span>
+                <strong id="masteredMetric">0</strong>
+              </div>
+              <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg><use href="#icon-calendar"></use></svg></span>
+                <span class="metric-label">Daily streak</span>
+                <strong id="streakMetric">0</strong>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Knowledge bank</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-notebook"></use></svg></span><span id="dashboardBandTitle">Saved vocabulary</span></h2>
+                </div>
+                <button class="toolbar-button" id="exportData" type="button">Export</button>
+              </div>
+              <div class="saved-list" id="savedList"></div>
+            </section>
+            <section class="panel recommendation-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker" id="recommendationKicker">IELTS topic trail</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-topics"></use></svg></span><span id="recommendationTitle">Explore words for this band</span></h2>
+                </div>
+              </div>
+              <div class="recommendation-list" id="recommendationList"></div>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="learn">
+            <div class="dashboard-toolbar">
+              <label class="search-field">
+                <span>Search</span>
+                <input id="searchInput" type="search" placeholder="Search word, Vietnamese meaning, or topic..." />
+              </label>
+              <label class="search-field">
+                <span>Topic</span>
+                <select id="topicFilter"></select>
+              </label>
+            </div>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker" id="bandKicker">Band 2.5</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-learn"></use></svg></span><span id="bandTitle">Survival words</span></h2>
+                  <p class="panel-subtitle" id="bandSubtitle">Start with core everyday vocabulary.</p>
+                </div>
+                <button class="toolbar-button" id="markDailyDone" type="button"><span class="button-icon" aria-hidden="true"><svg><use href="#icon-check"></use></svg></span> Mark today done</button>
+              </div>
+              <div class="word-grid" id="wordGrid"></div>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="topics">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">IELTS topic bank</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-topics"></use></svg></span>100 IELTS topics</h2>
+                  <p class="panel-subtitle">Choose a topic to open its 50 useful IELTS words and collocations.</p>
+                </div>
+              </div>
+              <div class="topic-bank-grid" id="topicBankGrid"></div>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="grammar">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Common language cards</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-grammar"></use></svg></span>Transitions, quantifiers, quantity adjectives</h2>
+                  <p class="panel-subtitle">Build cleaner IELTS sentences with linking adverbs and quantity language.</p>
+                </div>
+                <label class="game-scope">
+                  <span>Focus</span>
+                  <select id="grammarFocus"></select>
+                </label>
+              </div>
+              <div class="grammar-grid" id="grammarGrid"></div>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="games">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Wordwall-style practice</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-games"></use></svg></span>Vocabulary games</h2>
+                  <p class="panel-subtitle">Play quick matching rounds for IELTS bands, TOEIC, topics, and stages.</p>
+                </div>
+                <label class="game-scope">
+                  <span>Scope</span>
+                  <select id="gameScope"></select>
+                </label>
+              </div>
+              <div class="game-board" id="gameBoard"></div>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="assistant">
+            <section class="panel assistant-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">AI Assistant</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-ai"></use></svg></span>Ask and look up words</h2>
+                  <p class="panel-subtitle">Look up meaning, IPA, Vietnamese translation, collocations, and IELTS usage. You can ask it to answer in Vietnamese, English, or several Asian languages.</p>
+                </div>
+              </div>
+              <div class="assistant-thread" id="assistantThread"></div>
+              <form class="assistant-form" id="assistantForm">
+                <label>
+                  <span>What do you want to ask?</span>
+                  <textarea id="assistantInput" rows="4" placeholder="Example: mitigate nghia la gi? / Answer in Japanese: explain sustainable / Reply in Thai: prevalent"></textarea>
+                </label>
+                <button type="submit"><span class="button-icon" aria-hidden="true"><svg><use href="#icon-ai"></use></svg></span> Ask Assistant</button>
+              </form>
+            </section>
+          </section>
+
+          <section class="tab-panel" data-panel="notebook">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Notebook</p>
+                  <h2><span class="heading-icon" aria-hidden="true"><svg><use href="#icon-notebook"></use></svg></span>Write it in your own thinking</h2>
+                  <p class="panel-subtitle">Rewrite vocabulary, examples, mistakes, and your own learning insights.</p>
+                </div>
+                <button class="toolbar-button" id="notebookHelper" type="button"><span class="button-icon" aria-hidden="true"><svg><use href="#icon-helper"></use></svg></span> AI Helper</button>
+              </div>
+              <form class="assistant-form" id="noteForm">
+                <label>
+                  <span>Title</span>
+                  <input id="noteTitle" type="text" placeholder="Environment essay, useful verbs..." />
+                </label>
+                <label>
+                  <span>Note</span>
+                  <textarea id="noteBody" rows="7" placeholder="Rewrite what you learned in your own words..."></textarea>
+                </label>
+                <button type="submit"><span class="button-icon" aria-hidden="true"><svg><use href="#icon-notebook"></use></svg></span> Save note</button>
+              </form>
+              <div class="notes-list" id="notesList"></div>
+            </section>
+          </section>
+        </div>
+
+        <aside class="panel speaking-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="section-kicker">Speaking corner</p>
+              <h2>Part practice</h2>
+            </div>
+          </div>
+          <div class="speaking-tabs" id="speakingTabs">
+            <button class="active" type="button" data-speaking-part="1">Part 1</button>
+            <button type="button" data-speaking-part="2">Part 2</button>
+            <button type="button" data-speaking-part="3">Part 3</button>
+          </div>
+          <article class="speaking-card" id="speakingCard"></article>
+          <button class="toolbar-button speaking-next" id="nextSpeakingQuestion" type="button">New question</button>
+          <p class="forecast-note">Quarterly forecast-style rotation, refreshed by season and study mode.</p>
+        </aside>
+      </section>
+    </main>
+
+    <div class="topic-modal" id="topicModal" hidden>
+      <button class="topic-modal-backdrop" type="button" data-close-topic-modal aria-label="Close topic popup"></button>
+      <section class="topic-modal-panel" role="dialog" aria-modal="true" aria-labelledby="topicModalTitle">
+        <div class="topic-modal-head">
+          <div>
+            <p class="section-kicker">Selected topic</p>
+            <h2 id="topicModalTitle">Topic</h2>
+            <p id="topicModalSubtitle">50 words and collocations</p>
+          </div>
+          <button class="topic-modal-close" type="button" data-close-topic-modal aria-label="Close topic popup">x</button>
+        </div>
+        <div class="topic-modal-body" id="topicModalBody"></div>
+      </section>
+    </div>
+
+    <div class="helper-window" id="helperWindow" hidden>
+      <section class="helper-panel" role="dialog" aria-modal="true" aria-labelledby="helperTitle">
+        <div class="helper-head">
+          <div>
+            <p class="section-kicker">Notebook AI</p>
+            <h2 id="helperTitle">Sum up notebook</h2>
+          </div>
+          <button class="topic-modal-close" id="closeHelper" type="button" aria-label="Close helper">x</button>
+        </div>
+        <div class="helper-body" id="helperBody">
+          <article class="assistant-message assistant">
+            <strong>AI Helper</strong>
+            <p>Tell me what you want to sum up from this Study mode notebook.</p>
+          </article>
+        </div>
+        <form class="helper-form" id="helperForm">
+          <div class="helper-actions">
+            <button type="button" id="helperSummary">Summary</button>
+            <button type="button" id="helperPlan">Plan</button>
+          </div>
+          <textarea id="helperInput" rows="2" placeholder="Example: Make a 1-week plan / Plan 1 month / Plan 12 days / Sum up my mistakes"></textarea>
+          <button type="submit" aria-label="Send helper request">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator && ["http:", "https:"].includes(location.protocol)) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+
