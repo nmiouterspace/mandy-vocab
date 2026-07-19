@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Mandy Vocab" />
+    <meta name="google-signin-client_id" content="" />
     <title>Mandy Vocab</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icon-192.png" sizes="192x192" />
@@ -171,7 +172,23 @@
             <option value="9">Stage 9</option>
           </select>
         </label>
+        <label class="mode-picker stage-picker" id="unitPicker" hidden>
+          <span>Unit</span>
+          <select id="unitSelect"></select>
+        </label>
         <span class="curriculum-chip" id="curriculumChip">IELTS</span>
+        <div class="auth-panel" id="authPanel">
+          <button class="auth-button" id="gmailLogin" type="button">
+            <span class="button-icon" aria-hidden="true"><svg><use href="#icon-users"></use></svg></span>
+            Sign in with Gmail
+          </button>
+          <div class="user-chip" id="userChip" hidden>
+            <img id="userAvatar" alt="" />
+            <span id="userName">Learner</span>
+            <button id="gmailLogout" type="button" aria-label="Sign out">Sign out</button>
+          </div>
+          <div id="googleButton" hidden></div>
+        </div>
         <nav class="app-tabs" aria-label="Main views">
           <button class="tab-button active" type="button" data-tab="dashboard"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-dashboard"></use></svg></span><span>Dashboard</span></button>
           <button class="tab-button" type="button" data-tab="learn"><span class="nav-icon" aria-hidden="true"><svg><use href="#icon-learn"></use></svg></span><span>Learn</span></button>
@@ -415,6 +432,7 @@
       </section>
     </div>
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="app.js"></script>
     <script>
       if ("serviceWorker" in navigator && ["http:", "https:"].includes(location.protocol)) {

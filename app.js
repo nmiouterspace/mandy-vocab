@@ -242,6 +242,87 @@ const stageWords = [
   ["stage 9", "writing word", "thesis statement"]
 ];
 
+const stageUnitTitles = {
+  "classroom object": "Unit 1: Classroom objects",
+  "classroom person": "Unit 2: People in class",
+  "colour word": "Unit 3: Colours",
+  "number word": "Unit 4: Numbers",
+  "family word": "Unit 5: Family",
+  "animal word": "Unit 6: Animals",
+  "action word": "Unit 7: Classroom actions",
+  "school instruction": "Unit 8: Classroom instructions",
+  "daily routine": "Unit 1: Daily routines",
+  "time word": "Unit 2: Time",
+  "food word": "Unit 3: Food",
+  "place word": "Unit 4: Places",
+  "weather word": "Unit 5: Weather",
+  "feeling word": "Unit 6: Feelings",
+  "ability word": "Unit 7: Ability",
+  "question word": "Unit 8: Questions",
+  "animal habitat": "Unit 1: Animal habitats",
+  "nature word": "Unit 2: Nature",
+  "body word": "Unit 3: Body parts",
+  "movement word": "Unit 4: Movement",
+  "story word": "Unit 5: Stories",
+  "school subject": "Unit 6: School subjects",
+  "maths word": "Unit 7: Maths",
+  "grammar word": "Unit 8: Grammar",
+  "comparison word": "Unit 9: Comparing",
+  "geography word": "Unit 1: Geography",
+  "materials word": "Unit 2: Materials",
+  "process word": "Unit 3: Processes",
+  "thinking word": "Unit 4: Thinking skills",
+  "reading word": "Unit 5: Reading",
+  "community word": "Unit 6: Community",
+  "environment word": "Unit 7: Environment",
+  "community place": "Unit 1: Community places",
+  "technology word": "Unit 2: Technology",
+  "health word": "Unit 3: Health",
+  "culture word": "Unit 4: Culture",
+  "writing word": "Unit 5: Writing",
+  "linking word": "Unit 6: Linking ideas",
+  "responsibility word": "Unit 7: Responsibility",
+  "healthy habit": "Unit 1: Healthy habits",
+  "science word": "Unit 2: Science",
+  "social word": "Unit 3: Society",
+  "media word": "Unit 4: Media",
+  "history word": "Unit 5: History",
+  "global topic": "Unit 1: Global issues",
+  "citizenship word": "Unit 2: Citizenship",
+  "argument word": "Unit 3: Arguments",
+  "research word": "Unit 4: Research",
+  "analysis word": "Unit 5: Analysis",
+  "global issue": "Unit 1: Global issues",
+  "economy word": "Unit 2: Economy",
+  "society word": "Unit 3: Society",
+  "academic word": "Unit 4: Academic skills",
+  "academic skill": "Unit 1: Academic skills"
+};
+
+function stageUnitsFor(stageValue = state?.band || "stage-1") {
+  const stageLabel = stageValue.replace("-", " ");
+  const units = [];
+  const seen = new Set();
+  stageWords.filter(([stage]) => stage === stageLabel).forEach(([, category]) => {
+    if (seen.has(category)) return;
+    seen.add(category);
+    units.push({
+      value: category,
+      title: stageUnitTitles[category] || `Unit ${units.length + 1}: ${titleCase(category)}`,
+      subtitle: category
+    });
+  });
+  return units;
+}
+
+function currentStageUnit() {
+  return stageUnitsFor(state.band).find((unit) => unit.value === state.stageUnit) || stageUnitsFor(state.band)[0];
+}
+
+function titleCase(value) {
+  return String(value || "").replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+}
+
 const stageWordDetails = {
   pencil: ["/Ëˆpen.sÉ™l/", "bÃºt chÃ¬: má»™t Ä‘á»“ váº­t dÃ¹ng Ä‘á»ƒ viáº¿t hoáº·c váº½, cÃ³ thá»ƒ táº©y vÃ  sá»­a dá»… dÃ ng", "A writing object with graphite inside, useful for writing, drawing, and correcting school work."],
   book: ["/bÊŠk/", "sÃ¡ch: váº­t cÃ³ nhiá»u trang Ä‘á»ƒ Ä‘á»c, há»c hoáº·c ghi thÃ´ng tin", "A set of pages with words or pictures, useful for reading, learning, and finding information."],
@@ -947,6 +1028,8 @@ state.gameScope = state.gameScope || "band";
 state.gameRound = state.gameRound || 0;
 state.speakingPart = state.speakingPart || "1";
 state.speakingSeed = state.speakingSeed || 0;
+state.stageUnit = state.stageUnit || "";
+state.user = state.user || null;
 
 function currentCurriculum() {
   return curriculumConfigs[state.studyMode] || curriculumConfigs.ielts;
@@ -963,6 +1046,13 @@ function syncCurriculumState(previousMode = state.studyMode) {
   if (!levelValues.includes(state.band)) state.band = config.defaultLevel;
   if (!scopeValues.includes(state.gameScope)) state.gameScope = config.defaultGameScope;
   if (!config.speaking.questions[state.speakingPart]) state.speakingPart = "1";
+  if (state.studyMode === "global-english") {
+    const units = stageUnitsFor(state.band);
+    const unitValues = units.map((unit) => unit.value);
+    if (!unitValues.includes(state.stageUnit)) state.stageUnit = units[0]?.value || "";
+  } else {
+    state.stageUnit = "";
+  }
   if (state.studyMode !== "ielts") {
     state.topic = "all";
     state.ieltsTopic = "all";
@@ -975,7 +1065,16 @@ const els = {
   studyMode: document.querySelector("#studyMode"),
   stagePicker: document.querySelector("#stagePicker"),
   stageSelect: document.querySelector("#stageSelect"),
+  unitPicker: document.querySelector("#unitPicker"),
+  unitSelect: document.querySelector("#unitSelect"),
   curriculumChip: document.querySelector("#curriculumChip"),
+  authPanel: document.querySelector("#authPanel"),
+  gmailLogin: document.querySelector("#gmailLogin"),
+  gmailLogout: document.querySelector("#gmailLogout"),
+  googleButton: document.querySelector("#googleButton"),
+  userChip: document.querySelector("#userChip"),
+  userAvatar: document.querySelector("#userAvatar"),
+  userName: document.querySelector("#userName"),
   levelKicker: document.querySelector("#levelKicker"),
   levelTitle: document.querySelector("#levelTitle"),
   bandList: document.querySelector("#bandList"),
@@ -1038,7 +1137,33 @@ els.studyMode.addEventListener("change", () => {
 });
 els.stageSelect.addEventListener("change", () => {
   state.band = `stage-${els.stageSelect.value}`;
+  const units = stageUnitsFor(state.band);
+  state.stageUnit = units[0]?.value || "";
   state.gameRound += 1;
+  saveAndRender();
+});
+els.unitSelect.addEventListener("change", () => {
+  state.stageUnit = els.unitSelect.value;
+  state.topic = "all";
+  state.search = "";
+  els.searchInput.value = "";
+  saveAndRender();
+});
+els.gmailLogin.addEventListener("click", () => {
+  const clientId = googleClientId();
+  if (clientId && window.google?.accounts?.id) {
+    window.google.accounts.id.prompt();
+    return;
+  }
+  currentMessages().push({
+    role: "assistant",
+    text: "Gmail sign-in is ready in the interface, but it needs a Google OAuth Client ID for this domain. After you create the Client ID, paste it into the google-signin-client_id meta tag and the real Google button will work."
+  });
+  state.activeTab = "assistant";
+  saveAndRender();
+});
+els.gmailLogout.addEventListener("click", () => {
+  state.user = null;
   saveAndRender();
 });
 els.gameScope.addEventListener("change", () => {
@@ -1149,7 +1274,9 @@ function loadState() {
     gameRound: 0,
     speakingPart: "1",
     speakingSeed: 0,
+    stageUnit: "",
     editingNoteId: "",
+    user: null,
     practiceFeedback: {},
     search: "",
     saved: [],
@@ -1216,6 +1343,44 @@ function currentHelperHistory() {
   return state.helperHistoryByMode[state.studyMode];
 }
 
+function googleClientId() {
+  return document.querySelector('meta[name="google-signin-client_id"]')?.content.trim() || "";
+}
+
+function decodeJwtPayload(token) {
+  try {
+    const payload = token.split(".")[1];
+    const base64 = payload.replace(/-/g, "+").replace(/_/g, "/");
+    const json = decodeURIComponent(atob(base64).split("").map((char) => `%${(`00${char.charCodeAt(0).toString(16)}`).slice(-2)}`).join(""));
+    return JSON.parse(json);
+  } catch {
+    return null;
+  }
+}
+
+function handleGoogleCredential(response) {
+  const profile = decodeJwtPayload(response?.credential || "");
+  if (!profile?.email) return;
+  state.user = {
+    name: profile.name || profile.email,
+    email: profile.email,
+    picture: profile.picture || "",
+    signedInAt: new Date().toISOString()
+  };
+  saveAndRender();
+}
+
+function initGoogleSignIn() {
+  const clientId = googleClientId();
+  if (!clientId || !window.google?.accounts?.id) return;
+  window.google.accounts.id.initialize({
+    client_id: clientId,
+    callback: handleGoogleCredential,
+    auto_select: false,
+    cancel_on_tap_outside: true
+  });
+}
+
 function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
@@ -1239,7 +1404,10 @@ function render() {
   els.studyMode.value = state.studyMode || "ielts";
   els.curriculumChip.textContent = config.label;
   els.stagePicker.hidden = state.studyMode !== "global-english";
+  els.unitPicker.hidden = state.studyMode !== "global-english";
   els.stageSelect.value = state.band.startsWith("stage-") ? state.band.replace("stage-", "") : "1";
+  renderStageUnitPicker();
+  renderAuth();
   els.gameScope.innerHTML = config.gameScopes.map((scope) => `<option value="${scope.value}">${scope.label}</option>`).join("");
   els.gameScope.value = state.gameScope || "band";
   renderBands();
@@ -1254,6 +1422,24 @@ function render() {
   renderTopicBank();
 }
 
+function renderStageUnitPicker() {
+  if (state.studyMode !== "global-english") return;
+  const units = stageUnitsFor(state.band);
+  els.unitSelect.innerHTML = units.map((unit) => `<option value="${unit.value}">${unit.title}</option>`).join("");
+  if (!units.some((unit) => unit.value === state.stageUnit)) state.stageUnit = units[0]?.value || "";
+  els.unitSelect.value = state.stageUnit;
+}
+
+function renderAuth() {
+  const signedIn = Boolean(state.user?.email);
+  els.gmailLogin.hidden = signedIn;
+  els.userChip.hidden = !signedIn;
+  els.googleButton.hidden = true;
+  if (!signedIn) return;
+  els.userName.textContent = state.user.name || state.user.email;
+  els.userAvatar.src = state.user.picture || "assets/icon-192.png";
+}
+
 function renderBands() {
   const config = currentCurriculum();
   els.levelKicker.textContent = config.levelKicker;
@@ -1264,6 +1450,7 @@ function renderBands() {
   </button>`).join("");
   els.bandList.querySelectorAll("[data-band]").forEach((button) => button.addEventListener("click", () => {
     state.band = button.dataset.band;
+    if (state.studyMode === "global-english") state.stageUnit = stageUnitsFor(state.band)[0]?.value || "";
     state.topic = "all";
     state.ieltsTopic = "all";
     state.search = "";
@@ -1274,12 +1461,14 @@ function renderBands() {
 
 function activeWords() {
   if (state.studyMode === "ielts") return vocabulary.filter((item) => item.band === state.band);
+  const stageUnit = currentStageUnit();
   const pools = {
     communication: communicationWords.map(([text, definition]) => curriculumWord("communication", text, definition, "Giao tiep", "conversation")),
     toeic: toeicWords.map(([text, definition]) => curriculumWord("toeic", text, definition, "TOEIC", "business")),
     "global-english": stageWords
       .filter(([stage]) => stage === state.band.replace("-", " "))
-      .map(([stage, meaning, text]) => curriculumWord("global-english", text, meaning, currentLevel().title, "stage", stage))
+      .filter(([, meaning]) => !stageUnit || meaning === stageUnit.value)
+      .map(([stage, meaning, text]) => curriculumWord("global-english", text, meaning, `${currentLevel().title} - ${stageUnit?.title || "Unit"}`, "stage", stage))
   };
   return pools[state.studyMode] || [];
 }
@@ -3028,6 +3217,7 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
 }
 
+window.addEventListener("load", initGoogleSignIn);
 render();
 
 
