@@ -242,85 +242,24 @@ const stageWords = [
   ["stage 9", "writing word", "thesis statement"]
 ];
 
-const stageUnitTitles = {
-  "classroom object": "Unit 1: Classroom objects",
-  "classroom person": "Unit 2: People in class",
-  "colour word": "Unit 3: Colours",
-  "number word": "Unit 4: Numbers",
-  "family word": "Unit 5: Family",
-  "animal word": "Unit 6: Animals",
-  "action word": "Unit 7: Classroom actions",
-  "school instruction": "Unit 8: Classroom instructions",
-  "daily routine": "Unit 1: Daily routines",
-  "time word": "Unit 2: Time",
-  "food word": "Unit 3: Food",
-  "place word": "Unit 4: Places",
-  "weather word": "Unit 5: Weather",
-  "feeling word": "Unit 6: Feelings",
-  "ability word": "Unit 7: Ability",
-  "question word": "Unit 8: Questions",
-  "animal habitat": "Unit 1: Animal habitats",
-  "nature word": "Unit 2: Nature",
-  "body word": "Unit 3: Body parts",
-  "movement word": "Unit 4: Movement",
-  "story word": "Unit 5: Stories",
-  "school subject": "Unit 6: School subjects",
-  "maths word": "Unit 7: Maths",
-  "grammar word": "Unit 8: Grammar",
-  "comparison word": "Unit 9: Comparing",
-  "geography word": "Unit 1: Geography",
-  "materials word": "Unit 2: Materials",
-  "process word": "Unit 3: Processes",
-  "thinking word": "Unit 4: Thinking skills",
-  "reading word": "Unit 5: Reading",
-  "community word": "Unit 6: Community",
-  "environment word": "Unit 7: Environment",
-  "community place": "Unit 1: Community places",
-  "technology word": "Unit 2: Technology",
-  "health word": "Unit 3: Health",
-  "culture word": "Unit 4: Culture",
-  "writing word": "Unit 5: Writing",
-  "linking word": "Unit 6: Linking ideas",
-  "responsibility word": "Unit 7: Responsibility",
-  "healthy habit": "Unit 1: Healthy habits",
-  "science word": "Unit 2: Science",
-  "social word": "Unit 3: Society",
-  "media word": "Unit 4: Media",
-  "history word": "Unit 5: History",
-  "global topic": "Unit 1: Global issues",
-  "citizenship word": "Unit 2: Citizenship",
-  "argument word": "Unit 3: Arguments",
-  "research word": "Unit 4: Research",
-  "analysis word": "Unit 5: Analysis",
-  "global issue": "Unit 1: Global issues",
-  "economy word": "Unit 2: Economy",
-  "society word": "Unit 3: Society",
-  "academic word": "Unit 4: Academic skills",
-  "academic skill": "Unit 1: Academic skills"
+const officialStageUnits = {
+  // Do not fill this from guesses. Add units only from Mandy's exact book/PDF/link.
 };
 
 function stageUnitsFor(stageValue = state?.band || "stage-1") {
-  const stageLabel = stageValue.replace("-", " ");
-  const units = [];
-  const seen = new Set();
-  stageWords.filter(([stage]) => stage === stageLabel).forEach(([, category]) => {
-    if (seen.has(category)) return;
-    seen.add(category);
-    units.push({
-      value: category,
-      title: stageUnitTitles[category] || `Unit ${units.length + 1}: ${titleCase(category)}`,
-      subtitle: category
-    });
-  });
-  return units;
+  return officialStageUnits[stageValue] || [{
+    value: "source-needed",
+    title: "Add official book units",
+    subtitle: "Waiting for the exact Cambridge Global English unit list"
+  }];
 }
 
 function currentStageUnit() {
   return stageUnitsFor(state.band).find((unit) => unit.value === state.stageUnit) || stageUnitsFor(state.band)[0];
 }
 
-function titleCase(value) {
-  return String(value || "").replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+function hasOfficialStageUnits() {
+  return Array.isArray(officialStageUnits[state.band]) && officialStageUnits[state.band].length > 0;
 }
 
 const stageWordDetails = {
@@ -1461,14 +1400,17 @@ function renderBands() {
 
 function activeWords() {
   if (state.studyMode === "ielts") return vocabulary.filter((item) => item.band === state.band);
+  if (state.studyMode === "global-english" && !hasOfficialStageUnits()) return [];
   const stageUnit = currentStageUnit();
   const pools = {
     communication: communicationWords.map(([text, definition]) => curriculumWord("communication", text, definition, "Giao tiep", "conversation")),
     toeic: toeicWords.map(([text, definition]) => curriculumWord("toeic", text, definition, "TOEIC", "business")),
-    "global-english": stageWords
-      .filter(([stage]) => stage === state.band.replace("-", " "))
-      .filter(([, meaning]) => !stageUnit || meaning === stageUnit.value)
-      .map(([stage, meaning, text]) => curriculumWord("global-english", text, meaning, `${currentLevel().title} - ${stageUnit?.title || "Unit"}`, "stage", stage))
+    "global-english": (stageUnit?.words || [])
+      .map((entry) => {
+        const text = typeof entry === "string" ? entry : entry.text;
+        const meaning = typeof entry === "string" ? stageUnit.title : (entry.meaning || stageUnit.title);
+        return curriculumWord("global-english", text, meaning, `${currentLevel().title} - ${stageUnit?.title || "Unit"}`, "stage", state.band.replace("-", " "));
+      })
   };
   return pools[state.studyMode] || [];
 }
@@ -2002,7 +1944,7 @@ function renderWords() {
     .filter((item) => state.topic === "all" || item.topic === state.topic)
     .filter((item) => !query || `${item.text} ${displayMeaning(item)} ${item.topic} ${item.definition}`.toLowerCase().includes(query));
   words = rotateWordsForToday(words, state.band);
-  els.wordGrid.innerHTML = words.map(card).join("") || `<p class="empty-state">No matching words.</p>`;
+  els.wordGrid.innerHTML = words.map(card).join("") || emptyLearnState();
   els.wordGrid.querySelectorAll("[data-speak]").forEach((button) => button.addEventListener("click", () => speak(button.dataset.speak, button.dataset.lang)));
   els.wordGrid.querySelectorAll("[data-save]").forEach((button) => button.addEventListener("click", () => toggle("saved", button.dataset.save)));
   els.wordGrid.querySelectorAll("[data-master]").forEach((button) => button.addEventListener("click", () => toggle("mastered", button.dataset.master, true)));
@@ -2013,6 +1955,19 @@ function renderWords() {
     state.activeTab = "assistant";
     saveAndRender();
   }));
+}
+
+function emptyLearnState() {
+  if (state.studyMode === "global-english" && !hasOfficialStageUnits()) {
+    return `<section class="dashboard-waiting topic-waiting">
+      <span class="waiting-icon" aria-hidden="true"><svg><use href="#icon-learn"></use></svg></span>
+      <div>
+        <strong>Official Cambridge unit data is needed for ${currentLevel().title}.</strong>
+        <p>I removed the guessed Unit words. Send the exact book edition, PDF pages, or photos of the unit vocabulary list, and this Stage will be filled accurately.</p>
+      </div>
+    </section>`;
+  }
+  return `<p class="empty-state">No matching words.</p>`;
 }
 const topicVietnameseHints = {
   education: "giáo dục, học tập và đào tạo",
