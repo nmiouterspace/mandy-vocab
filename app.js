@@ -243,7 +243,62 @@ const stageWords = [
 ];
 
 const officialStageUnits = {
-  // Do not fill this from guesses. Add units only from Mandy's exact book/PDF/link.
+  "stage-7": [
+    {
+      value: "stage7-unit1",
+      title: "Unit 1: Making connections",
+      subtitle: "Meeting, greeting, gifts, family and school connections",
+      words: ["meeting", "greeting", "custom", "gesture", "handshake", "bow", "tradition", "gift", "present", "receive", "advice", "relative", "family member", "family history", "relationship", "generation", "school community", "classmate", "connection", "respect", "polite", "appropriate", "introduce", "welcome"]
+    },
+    {
+      value: "stage7-unit2",
+      title: "Unit 2: Time to celebrate",
+      subtitle: "Festivals, special occasions, New Year and celebrations",
+      words: ["celebration", "festival", "occasion", "New Year", "Diwali", "Chinese New Year", "fireworks", "lantern", "dragon", "spring", "parade", "costume", "ceremony", "decorate", "tradition", "symbol", "calendar", "annual", "wedding", "birthday", "anniversary", "April Fools' Day", "joke", "poem"]
+    },
+    {
+      value: "stage7-unit3",
+      title: "Unit 3: What we wear, what we waste",
+      subtitle: "Clothes, style, materials, waste and recycling",
+      words: ["style", "stylish", "fashion", "clothes", "T-shirt", "cotton", "plastic", "silver", "fabric", "material", "ancient", "Egyptian", "significance", "waste", "reuse", "reduce", "recycle", "recycling", "environment", "sustainable", "locally", "globally", "consumer", "pollution", "throw away", "repair"]
+    },
+    {
+      value: "stage7-unit4",
+      title: "Unit 4: From A to B",
+      subtitle: "Transport systems, journeys, cities and quality of life",
+      words: ["transport", "transport system", "public transport", "rail", "road", "water transport", "journey", "travel", "route", "commute", "vehicle", "traffic", "passenger", "station", "harbour", "canal", "city", "compare", "quality of life", "urban", "Venice", "danger", "environmental threat", "destination", "infrastructure"]
+    },
+    {
+      value: "stage7-unit5",
+      title: "Unit 5: The great outdoors",
+      subtitle: "School trips, nature, outdoor camps, adventure and future plans",
+      words: ["outdoors", "school trip", "camp", "outdoor camp", "nature", "well-being", "fresh air", "equipment", "backpack", "map", "compass", "route", "adventure", "explore", "landscape", "New Zealand", "Australia", "prediction", "future plan", "hiking", "shelter", "safety", "challenge", "wildlife", "journey"]
+    },
+    {
+      value: "stage7-unit6",
+      title: "Unit 6: Sports and games",
+      subtitle: "Sports equipment, achievement, Paralympics, Olympics and fair play",
+      words: ["sport", "game", "equipment", "athlete", "training", "quality", "succeed", "success", "determination", "teamwork", "Winter Paralympic Games", "football", "score", "final score", "Olympics", "ancient Olympics", "discus", "javelin", "long jump", "running", "race", "fair", "profile", "competitive", "champion"]
+    },
+    {
+      value: "stage7-unit7",
+      title: "Unit 7: Success",
+      subtitle: "Jobs, science, entrepreneurs, personality and role models",
+      words: ["success", "work", "job", "career", "electrician", "firefighter", "scientist", "inventor", "entrepreneur", "disability", "problem", "solution", "personality", "curious", "determined", "role model", "profile", "autobiography", "presentation", "quiz", "invention", "engineering", "electricity", "chemical", "evacuate", "achievement"]
+    },
+    {
+      value: "stage7-unit8",
+      title: "Unit 8: In the news",
+      subtitle: "Magazines, newspapers, reports, fake news and social media",
+      words: ["news", "school magazine", "newspaper", "article", "headline", "editor", "reporter", "issue", "print", "puzzle", "advert", "daily", "local newspaper", "national newspaper", "fake news", "true", "false", "source", "social media", "post", "share", "comment", "human interest story", "autobiography", "implied meaning"]
+    },
+    {
+      value: "stage7-unit9",
+      title: "Unit 9: The digital world",
+      subtitle: "Digital communication, robots, screen time, instructions and technology",
+      words: ["digital", "digital communication", "contact list", "downloaded", "uploaded", "Touch ID", "Wi-Fi", "voice recognition", "search", "emoji", "link", "camera", "robot", "digital tablet", "humanoid", "built-in facial recognition", "technology", "charge", "malfunction", "survey", "instruction", "logical order", "farming technology", "screen time", "online"]
+    }
+  ]
 };
 
 function stageUnitsFor(stageValue = state?.band || "stage-1") {
