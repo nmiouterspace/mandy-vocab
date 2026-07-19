@@ -1,4 +1,4 @@
-const CACHE_NAME = "ielts-vocab-studio-v42";
+const CACHE_NAME = "ielts-vocab-studio-v43";
 const APP_SHELL = [
   "./",
   "./index.html",
