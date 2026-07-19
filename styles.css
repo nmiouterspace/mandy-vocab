@@ -162,6 +162,61 @@ img {
   font-weight: 950;
 }
 
+.auth-panel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.auth-button,
+.user-chip button {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0 12px;
+  font-weight: 900;
+}
+
+.auth-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 4px 6px 4px 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.user-chip[hidden],
+.auth-button[hidden] {
+  display: none;
+}
+
+.user-chip img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-chip button {
+  min-height: 30px;
+  padding: 0 8px;
+  color: var(--accent);
+}
+
 .app-tabs {
   display: inline-grid;
   grid-template-columns: repeat(7, minmax(96px, 1fr));
