@@ -2176,7 +2176,7 @@ function checkPracticeSentence(text, term, collocations) {
   const lower = text.toLowerCase();
   const normalizedTerm = term.toLowerCase();
   const points = [];
-  const sentences = text.match(/[^.!?]+[.!?]?/g) || [text];
+  const sentences = (text.match(/[^.!?]+[.!?]?/g) || [text]).filter((sentence) => sentence.trim());
   const commonTypos = {
     becuase: "because",
     recieve: "receive",
@@ -2197,7 +2197,25 @@ function checkPracticeSentence(text, term, collocations) {
   if (/\bi\b/.test(text)) points.push("Capital letter: write the pronoun 'I' as a capital letter.");
   if (!/[.!?]$/.test(text)) points.push("Punctuation: add a final full stop, question mark, or exclamation mark.");
   if (/\s+[,.!?]/.test(text)) points.push("Punctuation: remove the space before commas, full stops, question marks, or exclamation marks.");
-  if (/[?-??]/i.test(text)) return "vi";
+  if (sentences.length > 2) points.push("Keep this practice box to 1-2 example sentences.");
+  typoHits.forEach(([wrong, right]) => points.push(`Spelling: change "${wrong}" to "${right}".`));
+  const hasAnyCollocation = collocations.some((item) => lower.includes(item.toLowerCase()));
+  if (collocations.length && !hasAnyCollocation) {
+    points.push(`Collocation: try one stronger phrase such as "${collocations[0]}".`);
+  }
+  if (!points.length) {
+    return `Good sentence. It uses "${term}" clearly. Tiny upgrade: add one precise example or reason if you want a stronger IELTS answer.`;
+  }
+  return points.join(" ");
+}
+
+function detectReplyLanguage(text) {
+  const value = text.toLowerCase();
+  const commanded = detectCommandedLanguage(value);
+  if (commanded) return commanded;
+  if (/\b(minh|ban|hay|giai thich|nghia|la gi|dich|tu nay|vi du|tieng viet|ke hoach|lap plan|ngay|tuan|thang|giup)\b/i.test(value)) return "vi";
+  if (/\b(mình|bạn|hãy|giải thích|nghĩa|là gì|dịch|từ này|ví dụ|tiếng việt|kế hoạch|ngày|tuần|tháng|giúp)\b/i.test(value)) return "vi";
+  if (/[à-ỹđ]/i.test(text)) return "vi";
   if (/[\u0E00-\u0E7F]/.test(text)) return "th";
   if (/[\u4E00-\u9FFF]/.test(text)) return "zh";
   if (/[\u3040-\u30FF]/.test(text)) return "ja";

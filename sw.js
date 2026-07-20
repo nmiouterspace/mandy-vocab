@@ -1,9 +1,9 @@
-const CACHE_NAME = "ielts-vocab-studio-v46";
+const CACHE_NAME = "ielts-vocab-studio-v47";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=46",
-  "./app.js?v=46",
+  "./styles.css?v=47",
+  "./app.js?v=47",
   "./manifest.json",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
