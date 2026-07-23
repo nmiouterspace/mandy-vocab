@@ -1096,7 +1096,7 @@ els.gmailLogin.addEventListener("click", () => {
   }
   currentMessages().push({
     role: "assistant",
-    text: "Gmail sign-in is ready in the interface, but it needs a Google OAuth Client ID for this domain. After you create the Client ID, paste it into the google-signin-client_id meta tag and the real Google button will work."
+    text: "Google sign-in is ready in the interface, but this domain still needs a Google OAuth Client ID. Add the Client ID to the google-signin-client_id meta tag, then the real Google sign-in button will work on GitHub Pages."
   });
   state.activeTab = "assistant";
   saveAndRender();
@@ -1318,6 +1318,17 @@ function initGoogleSignIn() {
     auto_select: false,
     cancel_on_tap_outside: true
   });
+  if (els.googleButton) {
+    window.google.accounts.id.renderButton(els.googleButton, {
+      theme: "outline",
+      size: "large",
+      type: "standard",
+      text: "signin_with",
+      shape: "rectangular"
+    });
+    els.googleButton.dataset.ready = "true";
+  }
+  renderAuth();
 }
 
 function save() {
@@ -1371,9 +1382,10 @@ function renderStageUnitPicker() {
 
 function renderAuth() {
   const signedIn = Boolean(state.user?.email);
-  els.gmailLogin.hidden = signedIn;
+  const googleReady = Boolean(els.googleButton?.dataset.ready === "true");
+  els.gmailLogin.hidden = signedIn || googleReady;
   els.userChip.hidden = !signedIn;
-  els.googleButton.hidden = true;
+  els.googleButton.hidden = signedIn || !googleReady;
   if (!signedIn) return;
   els.userName.textContent = state.user.name || state.user.email;
   els.userAvatar.src = state.user.picture || "assets/icon-192.png";

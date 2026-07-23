@@ -186,6 +186,40 @@ img {
   gap: 7px;
 }
 
+.google-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.google-mark svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.google-blue {
+  fill: #4285f4;
+}
+
+.google-green {
+  fill: #34a853;
+}
+
+.google-yellow {
+  fill: #fbbc05;
+}
+
+.google-red {
+  fill: #ea4335;
+}
+
+#googleButton[hidden] {
+  display: none;
+}
+
 .user-chip {
   display: inline-flex;
   align-items: center;
