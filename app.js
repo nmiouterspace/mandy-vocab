@@ -243,62 +243,7 @@ const stageWords = [
 ];
 
 const officialStageUnits = {
-  "stage-7": [
-    {
-      value: "stage7-unit1",
-      title: "Unit 1: Making connections",
-      subtitle: "Meeting, greeting, gifts, family and school connections",
-      words: ["meeting", "greeting", "custom", "gesture", "handshake", "bow", "tradition", "gift", "present", "receive", "advice", "relative", "family member", "family history", "relationship", "generation", "school community", "classmate", "connection", "respect", "polite", "appropriate", "introduce", "welcome"]
-    },
-    {
-      value: "stage7-unit2",
-      title: "Unit 2: Time to celebrate",
-      subtitle: "Festivals, special occasions, New Year and celebrations",
-      words: ["celebration", "festival", "occasion", "New Year", "Diwali", "Chinese New Year", "fireworks", "lantern", "dragon", "spring", "parade", "costume", "ceremony", "decorate", "tradition", "symbol", "calendar", "annual", "wedding", "birthday", "anniversary", "April Fools' Day", "joke", "poem"]
-    },
-    {
-      value: "stage7-unit3",
-      title: "Unit 3: What we wear, what we waste",
-      subtitle: "Clothes, style, materials, waste and recycling",
-      words: ["style", "stylish", "fashion", "clothes", "T-shirt", "cotton", "plastic", "silver", "fabric", "material", "ancient", "Egyptian", "significance", "waste", "reuse", "reduce", "recycle", "recycling", "environment", "sustainable", "locally", "globally", "consumer", "pollution", "throw away", "repair"]
-    },
-    {
-      value: "stage7-unit4",
-      title: "Unit 4: From A to B",
-      subtitle: "Transport systems, journeys, cities and quality of life",
-      words: ["transport", "transport system", "public transport", "rail", "road", "water transport", "journey", "travel", "route", "commute", "vehicle", "traffic", "passenger", "station", "harbour", "canal", "city", "compare", "quality of life", "urban", "Venice", "danger", "environmental threat", "destination", "infrastructure"]
-    },
-    {
-      value: "stage7-unit5",
-      title: "Unit 5: The great outdoors",
-      subtitle: "School trips, nature, outdoor camps, adventure and future plans",
-      words: ["outdoors", "school trip", "camp", "outdoor camp", "nature", "well-being", "fresh air", "equipment", "backpack", "map", "compass", "route", "adventure", "explore", "landscape", "New Zealand", "Australia", "prediction", "future plan", "hiking", "shelter", "safety", "challenge", "wildlife", "journey"]
-    },
-    {
-      value: "stage7-unit6",
-      title: "Unit 6: Sports and games",
-      subtitle: "Sports equipment, achievement, Paralympics, Olympics and fair play",
-      words: ["sport", "game", "equipment", "athlete", "training", "quality", "succeed", "success", "determination", "teamwork", "Winter Paralympic Games", "football", "score", "final score", "Olympics", "ancient Olympics", "discus", "javelin", "long jump", "running", "race", "fair", "profile", "competitive", "champion"]
-    },
-    {
-      value: "stage7-unit7",
-      title: "Unit 7: Success",
-      subtitle: "Jobs, science, entrepreneurs, personality and role models",
-      words: ["success", "work", "job", "career", "electrician", "firefighter", "scientist", "inventor", "entrepreneur", "disability", "problem", "solution", "personality", "curious", "determined", "role model", "profile", "autobiography", "presentation", "quiz", "invention", "engineering", "electricity", "chemical", "evacuate", "achievement"]
-    },
-    {
-      value: "stage7-unit8",
-      title: "Unit 8: In the news",
-      subtitle: "Magazines, newspapers, reports, fake news and social media",
-      words: ["news", "school magazine", "newspaper", "article", "headline", "editor", "reporter", "issue", "print", "puzzle", "advert", "daily", "local newspaper", "national newspaper", "fake news", "true", "false", "source", "social media", "post", "share", "comment", "human interest story", "autobiography", "implied meaning"]
-    },
-    {
-      value: "stage7-unit9",
-      title: "Unit 9: The digital world",
-      subtitle: "Digital communication, robots, screen time, instructions and technology",
-      words: ["digital", "digital communication", "contact list", "downloaded", "uploaded", "Touch ID", "Wi-Fi", "voice recognition", "search", "emoji", "link", "camera", "robot", "digital tablet", "humanoid", "built-in facial recognition", "technology", "charge", "malfunction", "survey", "instruction", "logical order", "farming technology", "screen time", "online"]
-    }
-  ]
+  // Do not fill this from guesses. Add units only from Mandy's exact book/PDF/link.
 };
 
 function stageUnitsFor(stageValue = state?.band || "stage-1") {
@@ -318,80 +263,154 @@ function hasOfficialStageUnits() {
 }
 
 const stageWordDetails = {
-  pencil: ["/ˈpen.səl/", "bút chì: một đồ vật dùng để viết hoặc vẽ, có thể tẩy và sửa dễ dàng", "A writing object with graphite inside, useful for writing, drawing, and correcting school work."],
-  book: ["/bʊk/", "sách: vật có nhiều trang để đọc, học hoặc ghi thông tin", "A set of pages with words or pictures, useful for reading, learning, and finding information."],
-  desk: ["/desk/", "bàn học: nơi học sinh đặt sách vở, viết bài hoặc làm việc trong lớp", "A table used for studying, writing, reading, or keeping school things during a lesson."],
-  teacher: ["/ˈtiː.tʃər/", "giáo viên: người giúp học sinh học kiến thức và luyện kỹ năng", "A person who helps students learn, practise, ask questions, and understand new ideas."],
-  student: ["/ˈstjuː.dənt/", "học sinh: người học ở trường hoặc trong một lớp học", "A person who learns a subject, practises skills, and takes part in lessons."],
-  yellow: ["/ˈjel.əʊ/", "màu vàng: màu sáng giống mặt trời hoặc quả chuối chín", "A bright colour like the sun, useful for describing objects, clothes, food, and pictures."],
-  ten: ["/ten/", "số mười: số đứng sau chín và trước mười một", "The number after nine, useful for counting people, objects, minutes, or points."],
-  mother: ["/ˈmʌð.ər/", "mẹ: người phụ nữ chăm sóc con trong gia đình", "A female parent, often used when talking about family, care, and daily life."],
-  cat: ["/kæt/", "con mèo: vật nuôi nhỏ, thường có lông mềm và kêu meo meo", "A small pet animal, useful for talking about animals, homes, and preferences."],
-  listen: ["/ˈlɪs.ən/", "lắng nghe: chú ý vào âm thanh hoặc lời người khác nói", "To pay attention to sounds or to what someone is saying."],
-  open: ["/ˈəʊ.pən/", "mở: làm cho một vật không còn đóng lại", "To move something so it is not closed, such as a book, door, or box."],
-  write: ["/raɪt/", "viết: tạo chữ, từ hoặc câu trên giấy hay màn hình", "To make letters, words, or sentences on paper or on a screen."],
-  "brush teeth": ["/brʌʃ tiːθ/", "đánh răng: làm sạch răng bằng bàn chải và kem đánh răng", "To clean your teeth with a toothbrush, usually in the morning and before bed."],
-  "wake up": ["/weɪk ʌp/", "thức dậy: ngừng ngủ và bắt đầu một ngày mới", "To stop sleeping and become ready to start the day."],
-  "have breakfast": ["/hæv ˈbrek.fəst/", "ăn sáng: ăn bữa đầu tiên trong ngày", "To eat the first meal of the day, usually in the morning."],
-  morning: ["/ˈmɔː.nɪŋ/", "buổi sáng: phần đầu của ngày", "The early part of the day, useful for talking about routines and time."],
-  evening: ["/ˈiːv.nɪŋ/", "buổi tối: thời gian cuối ngày sau buổi chiều", "The later part of the day, useful for talking about routines, family time, and plans."],
-  vegetables: ["/ˈvedʒ.tə.bəlz/", "rau củ: thực phẩm từ cây, thường tốt cho sức khỏe", "Plant foods such as carrots or spinach, useful for talking about healthy eating."],
-  sandwich: ["/ˈsæn.wɪdʒ/", "bánh sandwich: món ăn có nhân ở giữa các lát bánh mì", "Food made with bread and a filling, useful for talking about meals or packed lunches."],
-  playground: ["/ˈpleɪ.ɡraʊnd/", "sân chơi: nơi trẻ em chơi và vận động", "A place where children play, run, climb, and spend time with friends."],
-  cloudy: ["/ˈklaʊ.di/", "nhiều mây: thời tiết có nhiều mây trên bầu trời", "Weather with many clouds in the sky, useful for describing the day."],
-  happy: ["/ˈhæp.i/", "vui vẻ: cảm thấy tốt, hài lòng hoặc phấn khởi", "Feeling good or pleased, useful for talking about emotions and experiences."],
-  can: ["/kæn/", "có thể: dùng để nói về khả năng hoặc sự cho phép", "A word used to talk about ability or permission."],
-  where: ["/weər/", "ở đâu: từ để hỏi về địa điểm", "A question word used to ask about a place or position."],
-  "balanced diet": ["/ˌbæl.ənst ˈdaɪ.ət/", "chế độ ăn cân bằng", "A way of eating different healthy foods in the right amounts."],
-  "physical activity": ["/ˌfɪz.ɪ.kəl ækˈtɪv.ə.ti/", "hoạt động thể chất", "Movement such as sport, exercise, or active play that keeps the body healthy."],
-  energy: ["/ˈen.ə.dʒi/", "năng lượng", "The power that makes people, machines, or natural processes work."],
-  electricity: ["/ɪˌlekˈtrɪs.ə.ti/", "điện", "A form of energy used for lights, machines, and technology."],
-  pollution: ["/pəˈluː.ʃən/", "sự ô nhiễm", "Harmful substances or noise that damage air, water, land, or health."],
-  habitat: ["/ˈhæb.ɪ.tæt/", "môi trường sống", "The natural place where an animal or plant lives."],
-  community: ["/kəˈmjuː.nə.ti/", "cộng đồng", "A group of people who live, study, or work together."],
-  evidence: ["/ˈev.ɪ.dəns/", "bằng chứng", "Facts or information that help show whether something is true."],
-  conclusion: ["/kənˈkluː.ʒən/", "kết luận", "The final idea you reach after thinking about information."],
-  advertisement: ["/ədˈvɜː.tɪs.mənt/", "quảng cáo", "A message that tries to persuade people to buy or notice something."],
-  ancient: ["/ˈeɪn.ʃənt/", "cổ đại", "Very old, especially from a long time in history."],
-  climate: ["/ˈklaɪ.mət/", "khí hậu", "The usual weather conditions of a place over a long period."],
-  recycling: ["/ˌriːˈsaɪ.klɪŋ/", "tái chế", "The process of using old materials again to make new things."],
-  conservation: ["/ˌkɒn.səˈveɪ.ʃən/", "sự bảo tồn", "The protection of nature, resources, or important places."],
-  migration: ["/maɪˈɡreɪ.ʃən/", "sự di cư", "The movement of people or animals from one place to another."],
-  urbanisation: ["/ˌɜː.bən.aɪˈzeɪ.ʃən/", "đô thị hóa", "The growth of towns and cities as more people live there."],
-  ecosystem: ["/ˈiː.kəʊˌsɪs.təm/", "hệ sinh thái", "A community of living things and their environment."],
-  innovation: ["/ˌɪn.əˈveɪ.ʃən/", "sự đổi mới", "A new idea, method, or invention that improves something."],
-  rights: ["/raɪts/", "quyền lợi", "The basic freedoms or fair treatment people should have."],
-  responsibility: ["/rɪˌspɒn.səˈbɪl.ə.ti/", "trách nhiệm", "A duty to do something or care for something."],
-  advantage: ["/ədˈvɑːn.tɪdʒ/", "lợi thế", "A good or useful point about something."],
-  disadvantage: ["/ˌdɪs.ədˈvɑːn.tɪdʒ/", "bất lợi", "A bad or difficult point about something."],
-  source: ["/sɔːs/", "nguồn", "Where information, material, or help comes from."],
-  compare: ["/kəmˈpeə/", "so sánh", "To look at two or more things and see how they are similar or different."],
-  "climate change": ["/ˈklaɪ.mət tʃeɪndʒ/", "biến đổi khí hậu", "Long-term changes in the world's weather and temperature patterns."],
-  "food security": ["/fuːd sɪˈkjʊə.rə.ti/", "an ninh lương thực", "A situation where people can get enough safe and healthy food."],
-  inequality: ["/ˌɪn.ɪˈkwɒl.ə.ti/", "sự bất bình đẳng", "An unfair difference between groups of people."],
-  biodiversity: ["/ˌbaɪ.əʊ.daɪˈvɜː.sə.ti/", "đa dạng sinh học", "The variety of animals, plants, and living things in an area."],
-  "artificial intelligence": ["/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/", "trí tuệ nhân tạo", "Computer technology that can do tasks that usually need human intelligence."],
-  misinformation: ["/ˌmɪs.ɪn.fəˈmeɪ.ʃən/", "thông tin sai lệch", "Wrong or misleading information."],
-  trade: ["/treɪd/", "thương mại", "The activity of buying, selling, or exchanging goods and services."],
-  identity: ["/aɪˈden.tə.ti/", "bản sắc", "Who a person or group is, including their qualities, culture, or beliefs."],
-  perspective: ["/pəˈspek.tɪv/", "góc nhìn", "A way of thinking about or seeing something."],
-  impact: ["/ˈɪm.pækt/", "tác động", "A strong effect or influence on someone or something."],
-  analyse: ["/ˈæn.əl.aɪz/", "phân tích", "To study something carefully to understand it."],
-  evaluate: ["/ɪˈvæl.ju.eɪt/", "đánh giá", "To judge the value, quality, or importance of something."],
-  "critical thinking": ["/ˌkrɪt.ɪ.kəl ˈθɪŋ.kɪŋ/", "tư duy phản biện", "The skill of judging information carefully before forming an opinion."],
-  synthesis: ["/ˈsɪn.θə.sɪs/", "sự tổng hợp", "The process of combining ideas or information into a whole."],
-  interpretation: ["/ɪnˌtɜː.prəˈteɪ.ʃən/", "sự diễn giải", "An explanation of the meaning of information, text, or events."],
-  sustainability: ["/səˌsteɪ.nəˈbɪl.ə.ti/", "tính bền vững", "The ability to continue without damaging the future."],
-  "human rights": ["/ˌhjuː.mən ˈraɪts/", "nhân quyền", "Basic rights and freedoms that every person should have."],
-  "genetic engineering": ["/dʒəˌnet.ɪk ˌen.dʒɪˈnɪə.rɪŋ/", "kỹ thuật di truyền", "Changing the genes of living things for science, medicine, or farming."],
-  "digital ethics": ["/ˌdɪdʒ.ɪ.təl ˈeθ.ɪks/", "đạo đức số", "Rules and values for using technology responsibly."],
-  "social mobility": ["/ˌsəʊ.ʃəl məʊˈbɪl.ə.ti/", "dịch chuyển xã hội", "The ability to move to a different social or economic position."],
-  globalisation: ["/ˌɡləʊ.bəl.aɪˈzeɪ.ʃən/", "toàn cầu hóa", "The process by which countries, economies, and cultures become more connected."],
-  counterargument: ["/ˈkaʊn.tərˌɑːɡ.jə.mənt/", "lập luận phản biện", "An argument against another argument."],
-  reliability: ["/rɪˌlaɪ.əˈbɪl.ə.ti/", "độ đáng tin cậy", "The quality of being trusted or depended on."],
-  "thesis statement": ["/ˈθiː.sɪs ˌsteɪt.mənt/", "luận điểm chính", "A sentence that states the main idea of an essay or argument."]
+  pencil: ["/Ëˆpen.sÉ™l/", "bÃºt chÃ¬: má»™t Ä‘á»“ váº­t dÃ¹ng Ä‘á»ƒ viáº¿t hoáº·c váº½, cÃ³ thá»ƒ táº©y vÃ  sá»­a dá»… dÃ ng", "A writing object with graphite inside, useful for writing, drawing, and correcting school work."],
+  book: ["/bÊŠk/", "sÃ¡ch: váº­t cÃ³ nhiá»u trang Ä‘á»ƒ Ä‘á»c, há»c hoáº·c ghi thÃ´ng tin", "A set of pages with words or pictures, useful for reading, learning, and finding information."],
+  desk: ["/desk/", "bÃ n há»c: nÆ¡i há»c sinh Ä‘áº·t sÃ¡ch vá»Ÿ, viáº¿t bÃ i hoáº·c lÃ m viá»‡c trong lá»›p", "A table used for studying, writing, reading, or keeping school things during a lesson."],
+  teacher: ["/ËˆtiË.tÊƒÉ™r/", "giÃ¡o viÃªn: ngÆ°á»i giÃºp há»c sinh há»c kiáº¿n thá»©c vÃ  luyá»‡n ká»¹ nÄƒng", "A person who helps students learn, practise, ask questions, and understand new ideas."],
+  student: ["/ËˆstjuË.dÉ™nt/", "há»c sinh: ngÆ°á»i há»c á»Ÿ trÆ°á»ng hoáº·c trong má»™t lá»›p há»c", "A person who learns a subject, practises skills, and takes part in lessons."],
+  yellow: ["/Ëˆjel.É™ÊŠ/", "mÃ u vÃ ng: mÃ u sÃ¡ng giá»‘ng máº·t trá»i hoáº·c quáº£ chuá»‘i chÃ­n", "A bright colour like the sun, useful for describing objects, clothes, food, and pictures."],
+  ten: ["/ten/", "sá»‘ mÆ°á»i: sá»‘ Ä‘á»©ng sau chÃ­n vÃ  trÆ°á»›c mÆ°á»i má»™t", "The number after nine, useful for counting people, objects, minutes, or points."],
+  mother: ["/ËˆmÊŒÃ°.É™r/", "máº¹: ngÆ°á»i phá»¥ ná»¯ chÄƒm sÃ³c con trong gia Ä‘Ã¬nh", "A female parent, often used when talking about family, care, and daily life."],
+  cat: ["/kÃ¦t/", "con mÃ¨o: váº­t nuÃ´i nhá», thÆ°á»ng cÃ³ lÃ´ng má»m vÃ  kÃªu meo meo", "A small pet animal, useful for talking about animals, homes, and preferences."],
+  listen: ["/ËˆlÉªs.É™n/", "láº¯ng nghe: chÃº Ã½ vÃ o Ã¢m thanh hoáº·c lá»i ngÆ°á»i khÃ¡c nÃ³i", "To pay attention to sounds or to what someone is saying."],
+  open: ["/ËˆÉ™ÊŠ.pÉ™n/", "má»Ÿ: lÃ m cho má»™t váº­t khÃ´ng cÃ²n Ä‘Ã³ng láº¡i", "To move something so it is not closed, such as a book, door, or box."],
+  write: ["/raÉªt/", "viáº¿t: táº¡o chá»¯, tá»« hoáº·c cÃ¢u trÃªn giáº¥y hay mÃ n hÃ¬nh", "To make letters, words, or sentences on paper or on a screen."],
+  "brush teeth": ["/brÊŒÊƒ tiËÎ¸/", "Ä‘Ã¡nh rÄƒng: lÃ m sáº¡ch rÄƒng báº±ng bÃ n cháº£i vÃ  kem Ä‘Ã¡nh rÄƒng", "To clean your teeth with a toothbrush, usually in the morning and before bed."],
+  "wake up": ["/weÉªk ÊŒp/", "thá»©c dáº­y: ngá»«ng ngá»§ vÃ  báº¯t Ä‘áº§u má»™t ngÃ y má»›i", "To stop sleeping and become ready to start the day."],
+  "have breakfast": ["/hÃ¦v Ëˆbrek.fÉ™st/", "Äƒn sÃ¡ng: Äƒn bá»¯a Ä‘áº§u tiÃªn trong ngÃ y", "To eat the first meal of the day, usually in the morning."],
+  morning: ["/ËˆmÉ”Ë.nÉªÅ‹/", "buá»•i sÃ¡ng: pháº§n Ä‘áº§u cá»§a ngÃ y", "The early part of the day, useful for talking about routines and time."],
+  evening: ["/ËˆiËv.nÉªÅ‹/", "buá»•i tá»‘i: thá»i gian cuá»‘i ngÃ y sau buá»•i chiá»u", "The later part of the day, useful for talking about routines, family time, and plans."],
+  vegetables: ["/ËˆvedÊ’.tÉ™.bÉ™lz/", "rau cá»§: thá»±c pháº©m tá»« cÃ¢y, thÆ°á»ng tá»‘t cho sá»©c khá»e", "Plant foods such as carrots or spinach, useful for talking about healthy eating."],
+  sandwich: ["/ËˆsÃ¦n.wÉªdÊ’/", "bÃ¡nh sandwich: mÃ³n Äƒn cÃ³ nhÃ¢n á»Ÿ giá»¯a cÃ¡c lÃ¡t bÃ¡nh mÃ¬", "Food made with bread and a filling, useful for talking about meals or packed lunches."],
+  playground: ["/ËˆpleÉª.É¡raÊŠnd/", "sÃ¢n chÆ¡i: nÆ¡i tráº» em chÆ¡i vÃ  váº­n Ä‘á»™ng", "A place where children play, run, climb, and spend time with friends."],
+  cloudy: ["/ËˆklaÊŠ.di/", "nhiá»u mÃ¢y: thá»i tiáº¿t cÃ³ nhiá»u mÃ¢y trÃªn báº§u trá»i", "Weather with many clouds in the sky, useful for describing the day."],
+  happy: ["/ËˆhÃ¦p.i/", "vui váº»: cáº£m tháº¥y tá»‘t, hÃ i lÃ²ng hoáº·c pháº¥n khá»Ÿi", "Feeling good or pleased, useful for talking about emotions and experiences."],
+  can: ["/kÃ¦n/", "cÃ³ thá»ƒ: dÃ¹ng Ä‘á»ƒ nÃ³i vá» kháº£ nÄƒng hoáº·c sá»± cho phÃ©p", "A word used to talk about ability or permission."],
+  where: ["/weÉ™r/", "á»Ÿ Ä‘Ã¢u: tá»« Ä‘á»ƒ há»i vá» Ä‘á»‹a Ä‘iá»ƒm", "A question word used to ask about a place or position."],
+  "balanced diet": ["/ËŒbÃ¦l.É™nst ËˆdaÉª.É™t/", "cháº¿ Ä‘á»™ Äƒn cÃ¢n báº±ng", "A way of eating different healthy foods in the right amounts."],
+  "physical activity": ["/ËŒfÉªz.Éª.kÉ™l Ã¦kËˆtÉªv.É™.ti/", "hoáº¡t Ä‘á»™ng thá»ƒ cháº¥t", "Movement such as sport, exercise, or active play that keeps the body healthy."],
+  energy: ["/Ëˆen.É™.dÊ’i/", "nÄƒng lÆ°á»£ng", "The power that makes people, machines, or natural processes work."],
+  electricity: ["/ÉªËŒlekËˆtrÉªs.É™.ti/", "Ä‘iá»‡n", "A form of energy used for lights, machines, and technology."],
+  pollution: ["/pÉ™ËˆluË.ÊƒÉ™n/", "sá»± Ã´ nhiá»…m", "Harmful substances or noise that damage air, water, land, or health."],
+  habitat: ["/ËˆhÃ¦b.Éª.tÃ¦t/", "mÃ´i trÆ°á»ng sá»‘ng", "The natural place where an animal or plant lives."],
+  community: ["/kÉ™ËˆmjuË.nÉ™.ti/", "cá»™ng Ä‘á»“ng", "A group of people who live, study, or work together."],
+  evidence: ["/Ëˆev.Éª.dÉ™ns/", "báº±ng chá»©ng", "Facts or information that help show whether something is true."],
+  conclusion: ["/kÉ™nËˆkluË.Ê’É™n/", "káº¿t luáº­n", "The final idea you reach after thinking about information."],
+  advertisement: ["/É™dËˆvÉœË.tÉªs.mÉ™nt/", "quáº£ng cÃ¡o", "A message that tries to persuade people to buy or notice something."],
+  ancient: ["/ËˆeÉªn.ÊƒÉ™nt/", "cá»• Ä‘áº¡i", "Very old, especially from a long time in history."],
+  climate: ["/ËˆklaÉª.mÉ™t/", "khÃ­ háº­u", "The usual weather conditions of a place over a long period."],
+  recycling: ["/ËŒriËËˆsaÉª.klÉªÅ‹/", "tÃ¡i cháº¿", "The process of using old materials again to make new things."],
+  conservation: ["/ËŒkÉ’n.sÉ™ËˆveÉª.ÊƒÉ™n/", "sá»± báº£o tá»“n", "The protection of nature, resources, or important places."],
+  migration: ["/maÉªËˆÉ¡reÉª.ÊƒÉ™n/", "sá»± di cÆ°", "The movement of people or animals from one place to another."],
+  urbanisation: ["/ËŒÉœË.bÉ™n.aÉªËˆzeÉª.ÊƒÉ™n/", "Ä‘Ã´ thá»‹ hÃ³a", "The growth of towns and cities as more people live there."],
+  ecosystem: ["/ËˆiË.kÉ™ÊŠËŒsÉªs.tÉ™m/", "há»‡ sinh thÃ¡i", "A community of living things and their environment."],
+  innovation: ["/ËŒÉªn.É™ËˆveÉª.ÊƒÉ™n/", "sá»± Ä‘á»•i má»›i", "A new idea, method, or invention that improves something."],
+  rights: ["/raÉªts/", "quyá»n lá»£i", "The basic freedoms or fair treatment people should have."],
+  responsibility: ["/rÉªËŒspÉ’n.sÉ™ËˆbÉªl.É™.ti/", "trÃ¡ch nhiá»‡m", "A duty to do something or care for something."],
+  advantage: ["/É™dËˆvÉ‘Ën.tÉªdÊ’/", "lá»£i tháº¿", "A good or useful point about something."],
+  disadvantage: ["/ËŒdÉªs.É™dËˆvÉ‘Ën.tÉªdÊ’/", "báº¥t lá»£i", "A bad or difficult point about something."],
+  source: ["/sÉ”Ës/", "nguá»“n", "Where information, material, or help comes from."],
+  compare: ["/kÉ™mËˆpeÉ™/", "so sÃ¡nh", "To look at two or more things and see how they are similar or different."],
+  "climate change": ["/ËˆklaÉª.mÉ™t tÊƒeÉªndÊ’/", "biáº¿n Ä‘á»•i khÃ­ háº­u", "Long-term changes in the world's weather and temperature patterns."],
+  "food security": ["/fuËd sÉªËˆkjÊŠÉ™.rÉ™.ti/", "an ninh lÆ°Æ¡ng thá»±c", "A situation where people can get enough safe and healthy food."],
+  inequality: ["/ËŒÉªn.ÉªËˆkwÉ’l.É™.ti/", "sá»± báº¥t bÃ¬nh Ä‘áº³ng", "An unfair difference between groups of people."],
+  biodiversity: ["/ËŒbaÉª.É™ÊŠ.daÉªËˆvÉœË.sÉ™.ti/", "Ä‘a dáº¡ng sinh há»c", "The variety of animals, plants, and living things in an area."],
+  "artificial intelligence": ["/ËŒÉ‘Ë.tÉªËˆfÉªÊƒ.É™l ÉªnËˆtel.Éª.dÊ’É™ns/", "trÃ­ tuá»‡ nhÃ¢n táº¡o", "Computer technology that can do tasks that usually need human intelligence."],
+  misinformation: ["/ËŒmÉªs.Éªn.fÉ™ËˆmeÉª.ÊƒÉ™n/", "thÃ´ng tin sai lá»‡ch", "Wrong or misleading information."],
+  trade: ["/treÉªd/", "thÆ°Æ¡ng máº¡i", "The activity of buying, selling, or exchanging goods and services."],
+  identity: ["/aÉªËˆden.tÉ™.ti/", "báº£n sáº¯c", "Who a person or group is, including their qualities, culture, or beliefs."],
+  perspective: ["/pÉ™Ëˆspek.tÉªv/", "gÃ³c nhÃ¬n", "A way of thinking about or seeing something."],
+  impact: ["/ËˆÉªm.pÃ¦kt/", "tÃ¡c Ä‘á»™ng", "A strong effect or influence on someone or something."],
+  analyse: ["/ËˆÃ¦n.É™l.aÉªz/", "phÃ¢n tÃ­ch", "To study something carefully to understand it."],
+  evaluate: ["/ÉªËˆvÃ¦l.ju.eÉªt/", "Ä‘Ã¡nh giÃ¡", "To judge the value, quality, or importance of something."],
+  "critical thinking": ["/ËŒkrÉªt.Éª.kÉ™l ËˆÎ¸ÉªÅ‹.kÉªÅ‹/", "tÆ° duy pháº£n biá»‡n", "The skill of judging information carefully before forming an opinion."],
+  synthesis: ["/ËˆsÉªn.Î¸É™.sÉªs/", "sá»± tá»•ng há»£p", "The process of combining ideas or information into a whole."],
+  interpretation: ["/ÉªnËŒtÉœË.prÉ™ËˆteÉª.ÊƒÉ™n/", "sá»± diá»…n giáº£i", "An explanation of the meaning of information, text, or events."],
+  sustainability: ["/sÉ™ËŒsteÉª.nÉ™ËˆbÉªl.É™.ti/", "tÃ­nh bá»n vá»¯ng", "The ability to continue without damaging the future."],
+  "human rights": ["/ËŒhjuË.mÉ™n ËˆraÉªts/", "nhÃ¢n quyá»n", "Basic rights and freedoms that every person should have."],
+  "genetic engineering": ["/dÊ’É™ËŒnet.Éªk ËŒen.dÊ’ÉªËˆnÉªÉ™.rÉªÅ‹/", "ká»¹ thuáº­t di truyá»n", "Changing the genes of living things for science, medicine, or farming."],
+  "digital ethics": ["/ËŒdÉªdÊ’.Éª.tÉ™l ËˆeÎ¸.Éªks/", "Ä‘áº¡o Ä‘á»©c sá»‘", "Rules and values for using technology responsibly."],
+  "social mobility": ["/ËŒsÉ™ÊŠ.ÊƒÉ™l mÉ™ÊŠËˆbÉªl.É™.ti/", "dá»‹ch chuyá»ƒn xÃ£ há»™i", "The ability to move to a different social or economic position."],
+  globalisation: ["/ËŒÉ¡lÉ™ÊŠ.bÉ™l.aÉªËˆzeÉª.ÊƒÉ™n/", "toÃ n cáº§u hÃ³a", "The process by which countries, economies, and cultures become more connected."],
+  counterargument: ["/ËˆkaÊŠn.tÉ™rËŒÉ‘ËÉ¡.jÉ™.mÉ™nt/", "láº­p luáº­n pháº£n biá»‡n", "An argument against another argument."],
+  reliability: ["/rÉªËŒlaÉª.É™ËˆbÉªl.É™.ti/", "Ä‘á»™ Ä‘Ã¡ng tin cáº­y", "The quality of being trusted or depended on."],
+  "thesis statement": ["/ËˆÎ¸iË.sÉªs ËŒsteÉªt.mÉ™nt/", "luáº­n Ä‘iá»ƒm chÃ­nh", "A sentence that states the main idea of an essay or argument."]
 };
 
+Object.assign(stageWordDetails, {
+  pencil: ["/\u02c8pen.s\u0259l/", "but chi: dung de viet, ve va sua bai de dang", "A writing object with graphite inside, useful for writing, drawing, and correcting school work."],
+  book: ["/b\u028ak/", "sach: nhieu trang dung de doc, hoc hoac ghi thong tin", "A set of pages with words or pictures, useful for reading, learning, and finding information."],
+  desk: ["/desk/", "ban hoc: noi dat sach vo, viet bai va lam viec trong lop", "A table used for studying, writing, reading, or keeping school things during a lesson."],
+  teacher: ["/\u02c8ti\u02d0.t\u0283\u0259r/", "giao vien: nguoi giup hoc sinh hoc va luyen ky nang", "A person who helps students learn, practise, ask questions, and understand new ideas."],
+  student: ["/\u02c8stju\u02d0.d\u0259nt/", "hoc sinh: nguoi hoc trong truong hoac trong lop", "A person who learns a subject, practises skills, and takes part in lessons."],
+  yellow: ["/\u02c8jel.\u0259\u028a/", "mau vang: mau sang nhu mat troi hoac qua chuoi chin", "A bright colour like the sun, useful for describing objects, clothes, food, and pictures."],
+  ten: ["/ten/", "so muoi: so sau chin va truoc muoi mot", "The number after nine, useful for counting people, objects, minutes, or points."],
+  mother: ["/\u02c8m\u028c\u00f0.\u0259r/", "me: nguoi phu nu cham soc con trong gia dinh", "A female parent, often used when talking about family, care, and daily life."],
+  cat: ["/k\u00e6t/", "con meo: vat nuoi nho, thuong co long mem", "A small pet animal, useful for talking about animals, homes, and preferences."],
+  listen: ["/\u02c8l\u026as.\u0259n/", "lang nghe: chu y vao am thanh hoac loi noi", "To pay attention to sounds or to what someone is saying."],
+  open: ["/\u02c8\u0259\u028a.p\u0259n/", "mo: lam cho mot vat khong con dong", "To move something so it is not closed, such as a book, door, or box."],
+  write: ["/ra\u026at/", "viet: tao chu, tu hoac cau tren giay hay man hinh", "To make letters, words, or sentences on paper or on a screen."],
+  "brush teeth": ["/br\u028c\u0283 ti\u02d0\u03b8/", "danh rang: lam sach rang bang ban chai va kem danh rang", "To clean your teeth with a toothbrush, usually in the morning and before bed."],
+  "wake up": ["/we\u026ak \u028cp/", "thuc day: ngung ngu va bat dau ngay moi", "To stop sleeping and become ready to start the day."],
+  "have breakfast": ["/h\u00e6v \u02c8brek.f\u0259st/", "an sang: an bua dau tien trong ngay", "To eat the first meal of the day, usually in the morning."],
+  morning: ["/\u02c8m\u0254\u02d0.n\u026a\u014b/", "buoi sang: phan dau cua ngay", "The early part of the day, useful for talking about routines and time."],
+  evening: ["/\u02c8i\u02d0v.n\u026a\u014b/", "buoi toi: thoi gian cuoi ngay", "The later part of the day, useful for talking about routines, family time, and plans."],
+  vegetables: ["/\u02c8ved\u0292.t\u0259.b\u0259lz/", "rau cu: thuc pham tu cay, tot cho suc khoe", "Plant foods such as carrots or spinach, useful for talking about healthy eating."],
+  sandwich: ["/\u02c8s\u00e6n.w\u026ad\u0292/", "banh sandwich: mon an co nhan giua cac lat banh mi", "Food made with bread and a filling, useful for talking about meals or packed lunches."],
+  playground: ["/\u02c8ple\u026a.\u0261ra\u028and/", "san choi: noi tre em choi va van dong", "A place where children play, run, climb, and spend time with friends."],
+  cloudy: ["/\u02c8kla\u028a.di/", "nhieu may: thoi tiet co nhieu may tren bau troi", "Weather with many clouds in the sky, useful for describing the day."],
+  happy: ["/\u02c8h\u00e6p.i/", "vui ve: cam thay tot hoac hai long", "Feeling good or pleased, useful for talking about emotions and experiences."],
+  can: ["/k\u00e6n/", "co the: dung de noi ve kha nang hoac su cho phep", "A word used to talk about ability or permission."],
+  where: ["/we\u0259r/", "o dau: tu de hoi ve dia diem", "A question word used to ask about a place or position."],
+  "balanced diet": ["/\u02ccb\u00e6l.\u0259nst \u02c8da\u026a.\u0259t/", "che do an can bang", "A way of eating different healthy foods in the right amounts."],
+  "physical activity": ["/\u02ccf\u026az.\u026a.k\u0259l \u00e6k\u02c8t\u026av.\u0259.ti/", "hoat dong the chat", "Movement such as sport, exercise, or active play that keeps the body healthy."],
+  energy: ["/\u02c8en.\u0259.d\u0292i/", "nang luong", "The power that makes people, machines, or natural processes work."],
+  electricity: ["/\u026a\u02cclek\u02c8tr\u026as.\u0259.ti/", "dien", "A form of energy used for lights, machines, and technology."],
+  pollution: ["/p\u0259\u02c8lu\u02d0.\u0283\u0259n/", "su o nhiem", "Harmful substances or noise that damage air, water, land, or health."],
+  habitat: ["/\u02c8h\u00e6b.\u026a.t\u00e6t/", "moi truong song", "The natural place where an animal or plant lives."],
+  community: ["/k\u0259\u02c8mju\u02d0.n\u0259.ti/", "cong dong", "A group of people who live, study, or work together."],
+  evidence: ["/\u02c8ev.\u026a.d\u0259ns/", "bang chung", "Facts or information that help show whether something is true."],
+  conclusion: ["/k\u0259n\u02c8klu\u02d0.\u0292\u0259n/", "ket luan", "The final idea you reach after thinking about information."],
+  advertisement: ["/\u0259d\u02c8v\u025c\u02d0.t\u026as.m\u0259nt/", "quang cao", "A message that tries to persuade people to buy or notice something."],
+  ancient: ["/\u02c8e\u026an.\u0283\u0259nt/", "co dai", "Very old, especially from a long time in history."],
+  climate: ["/\u02c8kla\u026a.m\u0259t/", "khi hau", "The usual weather conditions of a place over a long period."],
+  recycling: ["/\u02ccri\u02d0\u02c8sa\u026a.kl\u026a\u014b/", "tai che", "The process of using old materials again to make new things."],
+  conservation: ["/\u02cck\u0252n.s\u0259\u02c8ve\u026a.\u0283\u0259n/", "su bao ton", "The protection of nature, resources, or important places."],
+  migration: ["/ma\u026a\u02c8\u0261re\u026a.\u0283\u0259n/", "su di cu", "The movement of people or animals from one place to another."],
+  urbanisation: ["/\u02cc\u025c\u02d0.b\u0259n.a\u026a\u02c8ze\u026a.\u0283\u0259n/", "do thi hoa", "The growth of towns and cities as more people live there."],
+  ecosystem: ["/\u02c8i\u02d0.k\u0259\u028a\u02ccs\u026as.t\u0259m/", "he sinh thai", "A community of living things and their environment."],
+  innovation: ["/\u02cc\u026an.\u0259\u02c8ve\u026a.\u0283\u0259n/", "su doi moi", "A new idea, method, or invention that improves something."],
+  rights: ["/ra\u026ats/", "quyen loi", "The basic freedoms or fair treatment people should have."],
+  responsibility: ["/r\u026a\u02ccsp\u0252n.s\u0259\u02c8b\u026al.\u0259.ti/", "trach nhiem", "A duty to do something or care for something."],
+  advantage: ["/\u0259d\u02c8v\u0251\u02d0n.t\u026ad\u0292/", "loi the", "A good or useful point about something."],
+  disadvantage: ["/\u02ccd\u026as.\u0259d\u02c8v\u0251\u02d0n.t\u026ad\u0292/", "bat loi", "A bad or difficult point about something."],
+  source: ["/s\u0254\u02d0rs/", "nguon", "Where information, material, or help comes from."],
+  compare: ["/k\u0259m\u02c8pe\u0259r/", "so sanh", "To look at two or more things and see how they are similar or different."],
+  "climate change": ["/\u02c8kla\u026a.m\u0259t t\u0283e\u026and\u0292/", "bien doi khi hau", "Long-term changes in the world's weather and temperature patterns."],
+  "food security": ["/fu\u02d0d s\u026a\u02c8kj\u028ar.\u0259.ti/", "an ninh luong thuc", "A situation where people can get enough safe and healthy food."],
+  inequality: ["/\u02cc\u026an.\u026a\u02c8kw\u0252l.\u0259.ti/", "su bat binh dang", "An unfair difference between groups of people."],
+  biodiversity: ["/\u02ccba\u026a.\u0259\u028a.da\u026a\u02c8v\u025c\u02d0.s\u0259.ti/", "da dang sinh hoc", "The variety of animals, plants, and living things in an area."],
+  "artificial intelligence": ["/\u02cc\u0251\u02d0.t\u026a\u02c8f\u026a\u0283.\u0259l \u026an\u02c8tel.\u026a.d\u0292\u0259ns/", "tri tue nhan tao", "Computer technology that can do tasks that usually need human intelligence."],
+  misinformation: ["/\u02ccm\u026as.\u026an.f\u0259\u02c8me\u026a.\u0283\u0259n/", "thong tin sai lech", "Wrong or misleading information."],
+  trade: ["/tre\u026ad/", "thuong mai", "The activity of buying, selling, or exchanging goods and services."],
+  identity: ["/a\u026a\u02c8den.t\u0259.ti/", "ban sac", "Who a person or group is, including their qualities, culture, or beliefs."],
+  perspective: ["/p\u0259\u02c8spek.t\u026av/", "goc nhin", "A way of thinking about or seeing something."],
+  impact: ["/\u02c8\u026am.p\u00e6kt/", "tac dong", "A strong effect or influence on someone or something."],
+  analyse: ["/\u02c8\u00e6n.\u0259l.a\u026az/", "phan tich", "To study something carefully to understand it."],
+  evaluate: ["/\u026a\u02c8v\u00e6l.ju.e\u026at/", "danh gia", "To judge the value, quality, or importance of something."],
+  "critical thinking": ["/\u02cckr\u026at.\u026a.k\u0259l \u02c8\u03b8\u026a\u014b.k\u026a\u014b/", "tu duy phan bien", "The skill of judging information carefully before forming an opinion."],
+  synthesis: ["/\u02c8s\u026an.\u03b8\u0259.s\u026as/", "su tong hop", "The process of combining ideas or information into a whole."],
+  interpretation: ["/\u026an\u02cct\u025c\u02d0.pr\u0259\u02c8te\u026a.\u0283\u0259n/", "su dien giai", "An explanation of the meaning of information, text, or events."],
+  sustainability: ["/s\u0259\u02ccste\u026a.n\u0259\u02c8b\u026al.\u0259.ti/", "tinh ben vung", "The ability to continue without damaging the future."],
+  "human rights": ["/\u02cchju\u02d0.m\u0259n ra\u026ats/", "nhan quyen", "Basic rights and freedoms that every person should have."],
+  "genetic engineering": ["/d\u0292\u0259\u02ccnet.\u026ak \u02ccen.d\u0292\u026a\u02c8n\u026ar.\u026a\u014b/", "ky thuat di truyen", "Changing the genes of living things for science, medicine, or farming."],
+  "digital ethics": ["/\u02ccd\u026ad\u0292.\u026a.t\u0259l \u02c8e\u03b8.\u026aks/", "dao duc so", "Rules and values for using technology responsibly."],
+  "social mobility": ["/\u02ccs\u0259\u028a.\u0283\u0259l m\u0259\u028a\u02c8b\u026al.\u0259.ti/", "dich chuyen xa hoi", "The ability to move to a different social or economic position."],
+  globalisation: ["/\u02cc\u0261l\u0259\u028a.b\u0259l.a\u026a\u02c8ze\u026a.\u0283\u0259n/", "toan cau hoa", "The process by which countries, economies, and cultures become more connected."],
+  counterargument: ["/\u02c8ka\u028an.t\u0259r\u02cc\u0251\u02d0r\u0261.j\u0259.m\u0259nt/", "lap luan phan bien", "An argument against another argument."],
+  reliability: ["/r\u026a\u02cc la\u026a.\u0259\u02c8b\u026al.\u0259.ti/", "do dang tin cay", "The quality of being trusted or depended on."],
+  "thesis statement": ["/\u02c8\u03b8i\u02d0.s\u026as \u02ccste\u026at.m\u0259nt/", "luan diem chinh", "A sentence that states the main idea of an essay or argument."]
+});
 const speakingForecastQuestions = {
   1: [
     "Do you prefer studying in the morning or in the evening? Why?",
@@ -732,162 +751,162 @@ const ieltsTopicBanks = [
 ];
 
 const vocabulary = [
-  word("2.5", "home", "/hoʊm/", "nhà", "place", "A place where someone lives.", "I study English at home every evening.", ["stay at home", "go home", "family home"], ["homeless", "homely"], "Use this for IELTS Speaking Part 1 accommodation questions."),
-  word("2.5", "food", "/fuːd/", "thức ăn", "health", "Things people eat.", "Healthy food can improve people's energy.", ["fresh food", "fast food", "local food"], ["feed", "foodie"], "A basic word for lifestyle, health, and culture topics."),
-  word("3.0", "travel", "/ˈtræv.əl/", "du lịch, di chuyển", "travel", "To go from one place to another.", "Travel helps people understand different cultures.", ["travel abroad", "business travel", "travel costs"], ["traveller", "travelling"], "Useful for tourism, culture, and transport topics."),
-  word("3.5", "important", "/ɪmˈpɔːr.tənt/", "quan trọng", "logic", "Having great value or effect.", "It is important to protect the environment.", ["highly important", "important role", "important factor"], ["importance"], "Upgrade later with crucial, vital, and essential."),
-  word("4.0", "improve", "/ɪmˈpruːv/", "cải thiện", "development", "To become or make something better.", "Reading every day can improve vocabulary.", ["improve skills", "improve quality", "greatly improve"], ["improvement"], "A cleaner verb than make better."),
-  word("4.5", "benefit", "/ˈben.ə.fɪt/", "lợi ích", "argument", "An advantage or helpful effect.", "One benefit of studying abroad is independence.", ["economic benefit", "long-term benefit", "bring benefits"], ["beneficial"], "Can work as both a noun and a verb."),
-  word("5.0", "environment", "/ɪnˈvaɪ.rən.mənt/", "môi trường", "environment", "The natural world or the conditions around people.", "Protecting the environment requires public action.", ["natural environment", "urban environment", "environmental damage"], ["environmental"], "A core IELTS topic word."),
-  word("5.5", "access", "/ˈæk.ses/", "quyền tiếp cận", "society", "The ability or right to use something.", "Rural students often have limited access to online courses.", ["access to education", "internet access", "equal access"], ["accessible"], "Remember the pattern access to something."),
-  word("6.0", "mitigate", "/ˈmɪt.ə.ɡeɪt/", "giảm nhẹ", "environment", "To make a problem less serious.", "Planting trees can help mitigate the effects of climate change.", ["mitigate risk", "mitigate damage", "mitigate climate change"], ["mitigation"], "Strong for solution essays."),
-  word("6.5", "sustainable", "/səˈsteɪ.nə.bəl/", "bền vững", "environment", "Able to continue without harming the future.", "Cities need sustainable transport systems.", ["sustainable development", "sustainable energy", "sustainable lifestyle"], ["sustainability"], "Important for environment and development topics."),
-  word("7.0", "prevalent", "/ˈprev.əl.ənt/", "phổ biến", "society", "Common in a particular place or time.", "Online learning has become increasingly prevalent.", ["highly prevalent", "prevalent among", "prevalent issue"], ["prevalence"], "A stronger alternative to very common."),
-  word("7.5", "trade-off", "/ˈtreɪd.ɔːf/", "sự đánh đổi", "argument", "A balance between two competing things.", "There is a trade-off between convenience and privacy.", ["clear trade-off", "policy trade-off", "trade-off between"], ["trade off"], "Useful for discuss-both-views essays."),
-  word("8.0", "exacerbate", "/ɪɡˈzæs.ɚ.beɪt/", "làm trầm trọng thêm", "society", "To make a bad situation worse.", "Poor urban planning can exacerbate traffic congestion.", ["exacerbate inequality", "exacerbate tensions", "exacerbate the problem"], ["exacerbation"], "A high-value academic verb."),
-  word("8.5", "equitable", "/ˈek.wə.t̬ə.bəl/", "công bằng", "society", "Fair and reasonable for everyone.", "An equitable tax system can support vulnerable groups.", ["equitable access", "equitable society", "more equitable"], ["equity"], "More academic and precise than fair."),
-  word("9.0", "ubiquitous", "/juːˈbɪk.wə.t̬əs/", "có mặt khắp nơi", "technology", "Existing almost everywhere.", "Smartphones have become ubiquitous in modern society.", ["ubiquitous technology", "increasingly ubiquitous", "ubiquitous presence"], ["ubiquity"], "Use instead of everywhere when appropriate."),
-  word("9.0", "ameliorate", "/əˈmiː.li.ə.reɪt/", "cải thiện, làm tốt hơn", "government", "To improve a difficult situation.", "Targeted subsidies can ameliorate poverty in rural areas.", ["ameliorate poverty", "ameliorate conditions", "ameliorate the situation"], ["amelioration"], "Very academic; use only when the collocation fits.")
+  word("2.5", "home", "/hoÊŠm/", "nhÃ ", "place", "A place where someone lives.", "I study English at home every evening.", ["stay at home", "go home", "family home"], ["homeless", "homely"], "Use this for IELTS Speaking Part 1 accommodation questions."),
+  word("2.5", "food", "/fuËd/", "thá»©c Äƒn", "health", "Things people eat.", "Healthy food can improve people's energy.", ["fresh food", "fast food", "local food"], ["feed", "foodie"], "A basic word for lifestyle, health, and culture topics."),
+  word("3.0", "travel", "/ËˆtrÃ¦v.É™l/", "du lá»‹ch, di chuyá»ƒn", "travel", "To go from one place to another.", "Travel helps people understand different cultures.", ["travel abroad", "business travel", "travel costs"], ["traveller", "travelling"], "Useful for tourism, culture, and transport topics."),
+  word("3.5", "important", "/ÉªmËˆpÉ”Ër.tÉ™nt/", "quan trá»ng", "logic", "Having great value or effect.", "It is important to protect the environment.", ["highly important", "important role", "important factor"], ["importance"], "Upgrade later with crucial, vital, and essential."),
+  word("4.0", "improve", "/ÉªmËˆpruËv/", "cáº£i thiá»‡n", "development", "To become or make something better.", "Reading every day can improve vocabulary.", ["improve skills", "improve quality", "greatly improve"], ["improvement"], "A cleaner verb than make better."),
+  word("4.5", "benefit", "/Ëˆben.É™.fÉªt/", "lá»£i Ã­ch", "argument", "An advantage or helpful effect.", "One benefit of studying abroad is independence.", ["economic benefit", "long-term benefit", "bring benefits"], ["beneficial"], "Can work as both a noun and a verb."),
+  word("5.0", "environment", "/ÉªnËˆvaÉª.rÉ™n.mÉ™nt/", "mÃ´i trÆ°á»ng", "environment", "The natural world or the conditions around people.", "Protecting the environment requires public action.", ["natural environment", "urban environment", "environmental damage"], ["environmental"], "A core IELTS topic word."),
+  word("5.5", "access", "/ËˆÃ¦k.ses/", "quyá»n tiáº¿p cáº­n", "society", "The ability or right to use something.", "Rural students often have limited access to online courses.", ["access to education", "internet access", "equal access"], ["accessible"], "Remember the pattern access to something."),
+  word("6.0", "mitigate", "/ËˆmÉªt.É™.É¡eÉªt/", "giáº£m nháº¹", "environment", "To make a problem less serious.", "Planting trees can help mitigate the effects of climate change.", ["mitigate risk", "mitigate damage", "mitigate climate change"], ["mitigation"], "Strong for solution essays."),
+  word("6.5", "sustainable", "/sÉ™ËˆsteÉª.nÉ™.bÉ™l/", "bá»n vá»¯ng", "environment", "Able to continue without harming the future.", "Cities need sustainable transport systems.", ["sustainable development", "sustainable energy", "sustainable lifestyle"], ["sustainability"], "Important for environment and development topics."),
+  word("7.0", "prevalent", "/Ëˆprev.É™l.É™nt/", "phá»• biáº¿n", "society", "Common in a particular place or time.", "Online learning has become increasingly prevalent.", ["highly prevalent", "prevalent among", "prevalent issue"], ["prevalence"], "A stronger alternative to very common."),
+  word("7.5", "trade-off", "/ËˆtreÉªd.É”Ëf/", "sá»± Ä‘Ã¡nh Ä‘á»•i", "argument", "A balance between two competing things.", "There is a trade-off between convenience and privacy.", ["clear trade-off", "policy trade-off", "trade-off between"], ["trade off"], "Useful for discuss-both-views essays."),
+  word("8.0", "exacerbate", "/ÉªÉ¡ËˆzÃ¦s.Éš.beÉªt/", "lÃ m tráº§m trá»ng thÃªm", "society", "To make a bad situation worse.", "Poor urban planning can exacerbate traffic congestion.", ["exacerbate inequality", "exacerbate tensions", "exacerbate the problem"], ["exacerbation"], "A high-value academic verb."),
+  word("8.5", "equitable", "/Ëˆek.wÉ™.tÌ¬É™.bÉ™l/", "cÃ´ng báº±ng", "society", "Fair and reasonable for everyone.", "An equitable tax system can support vulnerable groups.", ["equitable access", "equitable society", "more equitable"], ["equity"], "More academic and precise than fair."),
+  word("9.0", "ubiquitous", "/juËËˆbÉªk.wÉ™.tÌ¬É™s/", "cÃ³ máº·t kháº¯p nÆ¡i", "technology", "Existing almost everywhere.", "Smartphones have become ubiquitous in modern society.", ["ubiquitous technology", "increasingly ubiquitous", "ubiquitous presence"], ["ubiquity"], "Use instead of everywhere when appropriate."),
+  word("9.0", "ameliorate", "/É™ËˆmiË.li.É™.reÉªt/", "cáº£i thiá»‡n, lÃ m tá»‘t hÆ¡n", "government", "To improve a difficult situation.", "Targeted subsidies can ameliorate poverty in rural areas.", ["ameliorate poverty", "ameliorate conditions", "ameliorate the situation"], ["amelioration"], "Very academic; use only when the collocation fits.")
 ];
 
 vocabulary.push(
-  word("2.5", "family", "/ˈfæm.əl.i/", "gia đình", "society", "A group of related people.", "Family support can help children study better.", ["close family", "family member", "family life"], ["familial"], "Useful for Speaking Part 1 and simple personal examples."),
-  word("2.5", "friend", "/frend/", "bạn bè", "society", "A person you know and like.", "Friends can influence a young person's choices.", ["close friend", "make friends", "old friend"], ["friendship"], "Good for everyday IELTS Speaking answers."),
-  word("2.5", "city", "/ˈsɪt.i/", "thành phố", "place", "A large town.", "Many people move to the city for work.", ["big city", "city centre", "city life"], ["urban"], "Use with transport, housing, and work topics."),
-  word("2.5", "money", "/ˈmʌn.i/", "tiền", "society", "Coins, notes, or digital value used to buy things.", "Money is not the only measure of success.", ["save money", "spend money", "public money"], ["monetary"], "Simple but useful for society and work topics."),
-  word("2.5", "learn", "/lɝːn/", "học", "education", "To get knowledge or a skill.", "Children learn languages more easily when they practise daily.", ["learn a skill", "learn from mistakes", "lifelong learning"], ["learner"], "A core education verb."),
-  word("2.5", "help", "/help/", "giúp đỡ", "society", "To make it easier for someone to do something.", "Technology can help students access information.", ["help people", "help with homework", "help reduce"], ["helpful"], "Use it before upgrading to assist or support."),
-  word("2.5", "place", "/pleɪs/", "nơi chốn", "place", "A position, area, or location.", "A quiet place is useful for study.", ["public place", "safe place", "place to live"], ["placement"], "Good for accommodation and city descriptions."),
-  word("2.5", "time", "/taɪm/", "thời gian", "work", "Minutes, hours, days, and years.", "People need more free time to relax.", ["free time", "spend time", "save time"], ["timely"], "Very flexible across Speaking and Writing."),
+  word("2.5", "family", "/ËˆfÃ¦m.É™l.i/", "gia Ä‘Ã¬nh", "society", "A group of related people.", "Family support can help children study better.", ["close family", "family member", "family life"], ["familial"], "Useful for Speaking Part 1 and simple personal examples."),
+  word("2.5", "friend", "/frend/", "báº¡n bÃ¨", "society", "A person you know and like.", "Friends can influence a young person's choices.", ["close friend", "make friends", "old friend"], ["friendship"], "Good for everyday IELTS Speaking answers."),
+  word("2.5", "city", "/ËˆsÉªt.i/", "thÃ nh phá»‘", "place", "A large town.", "Many people move to the city for work.", ["big city", "city centre", "city life"], ["urban"], "Use with transport, housing, and work topics."),
+  word("2.5", "money", "/ËˆmÊŒn.i/", "tiá»n", "society", "Coins, notes, or digital value used to buy things.", "Money is not the only measure of success.", ["save money", "spend money", "public money"], ["monetary"], "Simple but useful for society and work topics."),
+  word("2.5", "learn", "/lÉËn/", "há»c", "education", "To get knowledge or a skill.", "Children learn languages more easily when they practise daily.", ["learn a skill", "learn from mistakes", "lifelong learning"], ["learner"], "A core education verb."),
+  word("2.5", "help", "/help/", "giÃºp Ä‘á»¡", "society", "To make it easier for someone to do something.", "Technology can help students access information.", ["help people", "help with homework", "help reduce"], ["helpful"], "Use it before upgrading to assist or support."),
+  word("2.5", "place", "/pleÉªs/", "nÆ¡i chá»‘n", "place", "A position, area, or location.", "A quiet place is useful for study.", ["public place", "safe place", "place to live"], ["placement"], "Good for accommodation and city descriptions."),
+  word("2.5", "time", "/taÉªm/", "thá»i gian", "work", "Minutes, hours, days, and years.", "People need more free time to relax.", ["free time", "spend time", "save time"], ["timely"], "Very flexible across Speaking and Writing."),
 
-  word("3.0", "study", "/ˈstʌd.i/", "học tập", "education", "To learn about a subject.", "Many students study English to work abroad.", ["study hard", "study abroad", "study skills"], ["student"], "Use for education and future plans."),
-  word("3.0", "job", "/dʒɑːb/", "công việc", "work", "Work that someone does to earn money.", "A good job can improve a person's quality of life.", ["full-time job", "part-time job", "job market"], ["employment"], "A foundation word for work topics."),
-  word("3.0", "online", "/ˌɑːnˈlaɪn/", "trực tuyến", "technology", "Using the internet.", "Online classes are convenient for busy people.", ["online course", "online shopping", "online learning"], ["digital"], "Common in technology and education topics."),
-  word("3.0", "traffic", "/ˈtræf.ɪk/", "giao thông", "travel", "Vehicles moving on roads.", "Traffic is a serious problem in large cities.", ["heavy traffic", "traffic jam", "traffic congestion"], ["transport"], "Good for city and transport essays."),
-  word("3.0", "safe", "/seɪf/", "an toàn", "society", "Not dangerous.", "Public spaces should be safe for children.", ["feel safe", "safe environment", "road safety"], ["safety"], "Useful for simple opinion answers."),
-  word("3.0", "cheap", "/tʃiːp/", "rẻ", "argument", "Costing little money.", "Cheap public transport can reduce car use.", ["cheap price", "cheap option", "relatively cheap"], ["affordable"], "Upgrade later to affordable."),
-  word("3.0", "clean", "/kliːn/", "sạch", "environment", "Not dirty.", "Clean water is essential for public health.", ["clean air", "clean water", "clean energy"], ["cleanliness"], "Simple but strong in environment topics."),
-  word("3.0", "change", "/tʃeɪndʒ/", "thay đổi", "development", "To become different.", "Technology has changed the way people communicate.", ["major change", "climate change", "social change"], ["changing"], "Very common in IELTS questions."),
-  word("3.0", "reason", "/ˈriː.zən/", "lý do", "logic", "Why something happens.", "One reason is that cities offer better jobs.", ["main reason", "valid reason", "reason for"], ["reasonable"], "Helps build explanations."),
+  word("3.0", "study", "/ËˆstÊŒd.i/", "há»c táº­p", "education", "To learn about a subject.", "Many students study English to work abroad.", ["study hard", "study abroad", "study skills"], ["student"], "Use for education and future plans."),
+  word("3.0", "job", "/dÊ’É‘Ëb/", "cÃ´ng viá»‡c", "work", "Work that someone does to earn money.", "A good job can improve a person's quality of life.", ["full-time job", "part-time job", "job market"], ["employment"], "A foundation word for work topics."),
+  word("3.0", "online", "/ËŒÉ‘ËnËˆlaÉªn/", "trá»±c tuyáº¿n", "technology", "Using the internet.", "Online classes are convenient for busy people.", ["online course", "online shopping", "online learning"], ["digital"], "Common in technology and education topics."),
+  word("3.0", "traffic", "/ËˆtrÃ¦f.Éªk/", "giao thÃ´ng", "travel", "Vehicles moving on roads.", "Traffic is a serious problem in large cities.", ["heavy traffic", "traffic jam", "traffic congestion"], ["transport"], "Good for city and transport essays."),
+  word("3.0", "safe", "/seÉªf/", "an toÃ n", "society", "Not dangerous.", "Public spaces should be safe for children.", ["feel safe", "safe environment", "road safety"], ["safety"], "Useful for simple opinion answers."),
+  word("3.0", "cheap", "/tÊƒiËp/", "ráº»", "argument", "Costing little money.", "Cheap public transport can reduce car use.", ["cheap price", "cheap option", "relatively cheap"], ["affordable"], "Upgrade later to affordable."),
+  word("3.0", "clean", "/kliËn/", "sáº¡ch", "environment", "Not dirty.", "Clean water is essential for public health.", ["clean air", "clean water", "clean energy"], ["cleanliness"], "Simple but strong in environment topics."),
+  word("3.0", "change", "/tÊƒeÉªndÊ’/", "thay Ä‘á»•i", "development", "To become different.", "Technology has changed the way people communicate.", ["major change", "climate change", "social change"], ["changing"], "Very common in IELTS questions."),
+  word("3.0", "reason", "/ËˆriË.zÉ™n/", "lÃ½ do", "logic", "Why something happens.", "One reason is that cities offer better jobs.", ["main reason", "valid reason", "reason for"], ["reasonable"], "Helps build explanations."),
 
-  word("3.5", "advantage", "/ədˈvæn.t̬ɪdʒ/", "lợi thế", "argument", "A good point or benefit.", "One advantage of online learning is flexibility.", ["main advantage", "clear advantage", "competitive advantage"], ["advantageous"], "Core for advantages/disadvantages essays."),
-  word("3.5", "disadvantage", "/ˌdɪs.ədˈvæn.t̬ɪdʒ/", "bất lợi", "argument", "A bad point or drawback.", "A disadvantage of living alone is loneliness.", ["major disadvantage", "clear disadvantage", "disadvantage of"], ["disadvantaged"], "Pair it with advantage."),
-  word("3.5", "example", "/ɪɡˈzæm.pəl/", "ví dụ", "logic", "Something that shows an idea.", "For example, buses can reduce the number of cars.", ["clear example", "specific example", "give an example"], ["exemplify"], "Use examples to support IELTS ideas."),
-  word("3.5", "healthy", "/ˈhel.θi/", "lành mạnh", "health", "Good for the body or mind.", "A healthy diet can prevent many diseases.", ["healthy lifestyle", "healthy diet", "healthy habit"], ["health"], "Useful for health and lifestyle topics."),
-  word("3.5", "skill", "/skɪl/", "kỹ năng", "education", "An ability to do something well.", "Schools should teach practical skills.", ["communication skills", "practical skills", "develop skills"], ["skilled"], "Strong in education and work topics."),
-  word("3.5", "parent", "/ˈper.ənt/", "cha mẹ", "society", "A mother or father.", "Parents play an important role in children's education.", ["working parents", "strict parents", "parental support"], ["parental"], "Common in family and education prompts."),
-  word("3.5", "young", "/jʌŋ/", "trẻ", "society", "Not old.", "Young people often adapt quickly to new technology.", ["young people", "young adults", "younger generation"], ["youth"], "Useful for age comparison."),
-  word("3.5", "older", "/ˈoʊl.dɚ/", "lớn tuổi hơn", "society", "Having more age.", "Older people may prefer face-to-face communication.", ["older adults", "older generation", "older workers"], ["elderly"], "Pair with younger generation."),
-  word("3.5", "popular", "/ˈpɑː.pjə.lɚ/", "phổ biến", "society", "Liked or used by many people.", "Social media is popular among teenagers.", ["popular with", "popular among", "popular choice"], ["popularity"], "Upgrade later to prevalent."),
+  word("3.5", "advantage", "/É™dËˆvÃ¦n.tÌ¬ÉªdÊ’/", "lá»£i tháº¿", "argument", "A good point or benefit.", "One advantage of online learning is flexibility.", ["main advantage", "clear advantage", "competitive advantage"], ["advantageous"], "Core for advantages/disadvantages essays."),
+  word("3.5", "disadvantage", "/ËŒdÉªs.É™dËˆvÃ¦n.tÌ¬ÉªdÊ’/", "báº¥t lá»£i", "argument", "A bad point or drawback.", "A disadvantage of living alone is loneliness.", ["major disadvantage", "clear disadvantage", "disadvantage of"], ["disadvantaged"], "Pair it with advantage."),
+  word("3.5", "example", "/ÉªÉ¡ËˆzÃ¦m.pÉ™l/", "vÃ­ dá»¥", "logic", "Something that shows an idea.", "For example, buses can reduce the number of cars.", ["clear example", "specific example", "give an example"], ["exemplify"], "Use examples to support IELTS ideas."),
+  word("3.5", "healthy", "/Ëˆhel.Î¸i/", "lÃ nh máº¡nh", "health", "Good for the body or mind.", "A healthy diet can prevent many diseases.", ["healthy lifestyle", "healthy diet", "healthy habit"], ["health"], "Useful for health and lifestyle topics."),
+  word("3.5", "skill", "/skÉªl/", "ká»¹ nÄƒng", "education", "An ability to do something well.", "Schools should teach practical skills.", ["communication skills", "practical skills", "develop skills"], ["skilled"], "Strong in education and work topics."),
+  word("3.5", "parent", "/Ëˆper.É™nt/", "cha máº¹", "society", "A mother or father.", "Parents play an important role in children's education.", ["working parents", "strict parents", "parental support"], ["parental"], "Common in family and education prompts."),
+  word("3.5", "young", "/jÊŒÅ‹/", "tráº»", "society", "Not old.", "Young people often adapt quickly to new technology.", ["young people", "young adults", "younger generation"], ["youth"], "Useful for age comparison."),
+  word("3.5", "older", "/ËˆoÊŠl.dÉš/", "lá»›n tuá»•i hÆ¡n", "society", "Having more age.", "Older people may prefer face-to-face communication.", ["older adults", "older generation", "older workers"], ["elderly"], "Pair with younger generation."),
+  word("3.5", "popular", "/ËˆpÉ‘Ë.pjÉ™.lÉš/", "phá»• biáº¿n", "society", "Liked or used by many people.", "Social media is popular among teenagers.", ["popular with", "popular among", "popular choice"], ["popularity"], "Upgrade later to prevalent."),
 
-  word("4.0", "protect", "/prəˈtekt/", "bảo vệ", "environment", "To keep someone or something safe.", "Governments should protect natural habitats.", ["protect children", "protect the environment", "legal protection"], ["protection"], "Useful for environment and society."),
-  word("4.0", "support", "/səˈpɔːrt/", "hỗ trợ", "government", "To help or approve of someone or something.", "The government should support low-income families.", ["financial support", "support a policy", "public support"], ["supportive"], "Stronger than help in essays."),
-  word("4.0", "develop", "/dɪˈvel.əp/", "phát triển", "development", "To grow or become more advanced.", "Children develop social skills at school.", ["develop skills", "develop rapidly", "economic development"], ["development"], "Core academic verb."),
-  word("4.0", "transport", "/ˈtræn.spɔːrt/", "giao thông vận tải", "travel", "Systems for moving people or goods.", "Public transport should be reliable and affordable.", ["public transport", "transport system", "transport network"], ["transportation"], "Great for city essays."),
-  word("4.0", "waste", "/weɪst/", "rác thải, lãng phí", "environment", "Material thrown away or used badly.", "Plastic waste damages marine life.", ["food waste", "plastic waste", "waste management"], ["wasteful"], "High-frequency environment word."),
-  word("4.0", "cause", "/kɑːz/", "gây ra", "logic", "To make something happen.", "Air pollution can cause health problems.", ["cause damage", "main cause", "cause concern"], ["causal"], "Use carefully with effects."),
-  word("4.0", "result", "/rɪˈzʌlt/", "kết quả", "logic", "Something that happens because of something else.", "As a result, many people prefer online services.", ["result in", "final result", "direct result"], ["resulting"], "Good for linking ideas."),
-  word("4.0", "habit", "/ˈhæb.ɪt/", "thói quen", "health", "Something someone does regularly.", "Healthy habits should be taught from childhood.", ["bad habit", "healthy habit", "daily habit"], ["habitual"], "Useful in lifestyle topics."),
-  word("4.0", "local", "/ˈloʊ.kəl/", "địa phương", "place", "Related to a particular area.", "Local communities can help protect public parks.", ["local people", "local area", "local community"], ["locally"], "Good for community examples."),
+  word("4.0", "protect", "/prÉ™Ëˆtekt/", "báº£o vá»‡", "environment", "To keep someone or something safe.", "Governments should protect natural habitats.", ["protect children", "protect the environment", "legal protection"], ["protection"], "Useful for environment and society."),
+  word("4.0", "support", "/sÉ™ËˆpÉ”Ërt/", "há»— trá»£", "government", "To help or approve of someone or something.", "The government should support low-income families.", ["financial support", "support a policy", "public support"], ["supportive"], "Stronger than help in essays."),
+  word("4.0", "develop", "/dÉªËˆvel.É™p/", "phÃ¡t triá»ƒn", "development", "To grow or become more advanced.", "Children develop social skills at school.", ["develop skills", "develop rapidly", "economic development"], ["development"], "Core academic verb."),
+  word("4.0", "transport", "/ËˆtrÃ¦n.spÉ”Ërt/", "giao thÃ´ng váº­n táº£i", "travel", "Systems for moving people or goods.", "Public transport should be reliable and affordable.", ["public transport", "transport system", "transport network"], ["transportation"], "Great for city essays."),
+  word("4.0", "waste", "/weÉªst/", "rÃ¡c tháº£i, lÃ£ng phÃ­", "environment", "Material thrown away or used badly.", "Plastic waste damages marine life.", ["food waste", "plastic waste", "waste management"], ["wasteful"], "High-frequency environment word."),
+  word("4.0", "cause", "/kÉ‘Ëz/", "gÃ¢y ra", "logic", "To make something happen.", "Air pollution can cause health problems.", ["cause damage", "main cause", "cause concern"], ["causal"], "Use carefully with effects."),
+  word("4.0", "result", "/rÉªËˆzÊŒlt/", "káº¿t quáº£", "logic", "Something that happens because of something else.", "As a result, many people prefer online services.", ["result in", "final result", "direct result"], ["resulting"], "Good for linking ideas."),
+  word("4.0", "habit", "/ËˆhÃ¦b.Éªt/", "thÃ³i quen", "health", "Something someone does regularly.", "Healthy habits should be taught from childhood.", ["bad habit", "healthy habit", "daily habit"], ["habitual"], "Useful in lifestyle topics."),
+  word("4.0", "local", "/ËˆloÊŠ.kÉ™l/", "Ä‘á»‹a phÆ°Æ¡ng", "place", "Related to a particular area.", "Local communities can help protect public parks.", ["local people", "local area", "local community"], ["locally"], "Good for community examples."),
 
-  word("4.5", "challenge", "/ˈtʃæl.ɪndʒ/", "thách thức", "argument", "A difficult task or problem.", "Climate change is a major challenge for governments.", ["major challenge", "face a challenge", "global challenge"], ["challenging"], "A strong alternative to problem."),
-  word("4.5", "opportunity", "/ˌɑː.pɚˈtuː.nə.t̬i/", "cơ hội", "development", "A chance to do something useful.", "Studying abroad offers many opportunities.", ["career opportunity", "equal opportunity", "miss an opportunity"], ["opportune"], "Useful for education and work."),
-  word("4.5", "solution", "/səˈluː.ʃən/", "giải pháp", "argument", "A way to solve a problem.", "Investment in public transport is one possible solution.", ["practical solution", "long-term solution", "solution to"], ["solve"], "Essential for problem-solution essays."),
-  word("4.5", "pollution", "/pəˈluː.ʃən/", "ô nhiễm", "environment", "Damage caused by harmful substances.", "Air pollution affects millions of people.", ["air pollution", "noise pollution", "pollution levels"], ["pollute"], "A key environment topic word."),
-  word("4.5", "responsible", "/rɪˈspɑːn.sə.bəl/", "có trách nhiệm", "government", "Having a duty to do something.", "Individuals are responsible for reducing household waste.", ["responsible for", "socially responsible", "responsible behaviour"], ["responsibility"], "Useful for responsibility essays."),
-  word("4.5", "culture", "/ˈkʌl.tʃɚ/", "văn hóa", "society", "The customs and beliefs of a group.", "Tourism can help preserve local culture.", ["local culture", "cultural identity", "cultural heritage"], ["cultural"], "Important for tourism and globalization."),
-  word("4.5", "crime", "/kraɪm/", "tội phạm", "society", "Illegal activity.", "Unemployment can contribute to crime in some areas.", ["violent crime", "crime rate", "reduce crime"], ["criminal"], "Common social issue vocabulary."),
-  word("4.5", "global", "/ˈɡloʊ.bəl/", "toàn cầu", "development", "Related to the whole world.", "Climate change is a global issue.", ["global economy", "global issue", "global market"], ["globalisation"], "Useful for big-picture arguments."),
-  word("4.5", "quality", "/ˈkwɑː.lə.t̬i/", "chất lượng", "argument", "How good something is.", "The quality of education varies between regions.", ["high quality", "quality of life", "quality education"], ["qualitative"], "Very useful in Task 2."),
+  word("4.5", "challenge", "/ËˆtÊƒÃ¦l.ÉªndÊ’/", "thÃ¡ch thá»©c", "argument", "A difficult task or problem.", "Climate change is a major challenge for governments.", ["major challenge", "face a challenge", "global challenge"], ["challenging"], "A strong alternative to problem."),
+  word("4.5", "opportunity", "/ËŒÉ‘Ë.pÉšËˆtuË.nÉ™.tÌ¬i/", "cÆ¡ há»™i", "development", "A chance to do something useful.", "Studying abroad offers many opportunities.", ["career opportunity", "equal opportunity", "miss an opportunity"], ["opportune"], "Useful for education and work."),
+  word("4.5", "solution", "/sÉ™ËˆluË.ÊƒÉ™n/", "giáº£i phÃ¡p", "argument", "A way to solve a problem.", "Investment in public transport is one possible solution.", ["practical solution", "long-term solution", "solution to"], ["solve"], "Essential for problem-solution essays."),
+  word("4.5", "pollution", "/pÉ™ËˆluË.ÊƒÉ™n/", "Ã´ nhiá»…m", "environment", "Damage caused by harmful substances.", "Air pollution affects millions of people.", ["air pollution", "noise pollution", "pollution levels"], ["pollute"], "A key environment topic word."),
+  word("4.5", "responsible", "/rÉªËˆspÉ‘Ën.sÉ™.bÉ™l/", "cÃ³ trÃ¡ch nhiá»‡m", "government", "Having a duty to do something.", "Individuals are responsible for reducing household waste.", ["responsible for", "socially responsible", "responsible behaviour"], ["responsibility"], "Useful for responsibility essays."),
+  word("4.5", "culture", "/ËˆkÊŒl.tÊƒÉš/", "vÄƒn hÃ³a", "society", "The customs and beliefs of a group.", "Tourism can help preserve local culture.", ["local culture", "cultural identity", "cultural heritage"], ["cultural"], "Important for tourism and globalization."),
+  word("4.5", "crime", "/kraÉªm/", "tá»™i pháº¡m", "society", "Illegal activity.", "Unemployment can contribute to crime in some areas.", ["violent crime", "crime rate", "reduce crime"], ["criminal"], "Common social issue vocabulary."),
+  word("4.5", "global", "/ËˆÉ¡loÊŠ.bÉ™l/", "toÃ n cáº§u", "development", "Related to the whole world.", "Climate change is a global issue.", ["global economy", "global issue", "global market"], ["globalisation"], "Useful for big-picture arguments."),
+  word("4.5", "quality", "/ËˆkwÉ‘Ë.lÉ™.tÌ¬i/", "cháº¥t lÆ°á»£ng", "argument", "How good something is.", "The quality of education varies between regions.", ["high quality", "quality of life", "quality education"], ["qualitative"], "Very useful in Task 2."),
 
-  word("5.0", "economy", "/ɪˈkɑː.nə.mi/", "nền kinh tế", "society", "The system of money, jobs, and production.", "Tourism can support the local economy.", ["local economy", "strong economy", "economic growth"], ["economic"], "Core for jobs and development."),
-  word("5.0", "government", "/ˈɡʌv.ɚn.mənt/", "chính phủ", "government", "The group that controls a country.", "The government should invest in public health.", ["central government", "government spending", "government policy"], ["govern"], "Essential for IELTS Writing Task 2."),
-  word("5.0", "society", "/səˈsaɪ.ə.t̬i/", "xã hội", "society", "People living together in a community.", "Education benefits society as a whole.", ["modern society", "fair society", "societal change"], ["social"], "A broad academic noun."),
-  word("5.0", "individual", "/ˌɪn.dəˈvɪdʒ.u.əl/", "cá nhân", "society", "One person.", "Individuals should take responsibility for their health.", ["individual choice", "individual rights", "individual responsibility"], ["individually"], "Useful for government vs individual essays."),
-  word("5.0", "influence", "/ˈɪn.flu.əns/", "ảnh hưởng", "argument", "The power to affect someone or something.", "Advertising can influence children's choices.", ["strong influence", "influence behaviour", "social influence"], ["influential"], "Good for media and society topics."),
-  word("5.0", "resource", "/ˈriː.sɔːrs/", "nguồn lực", "government", "Something useful that can be used.", "Schools need more resources to support students.", ["natural resources", "limited resources", "allocate resources"], ["resourceful"], "Links to environment and funding."),
-  word("5.0", "urban", "/ˈɝː.bən/", "thuộc đô thị", "place", "Related to cities.", "Urban areas often suffer from traffic congestion.", ["urban area", "urban life", "urban planning"], ["urbanisation"], "Great for city essays."),
-  word("5.0", "rural", "/ˈrʊr.əl/", "thuộc nông thôn", "place", "Related to the countryside.", "Rural communities may have limited access to hospitals.", ["rural area", "rural community", "rural development"], ["rurality"], "Pair with urban."),
-  word("5.0", "media", "/ˈmiː.di.ə/", "truyền thông", "technology", "Ways of communicating information.", "The media can shape public opinion.", ["social media", "mass media", "media coverage"], ["mediated"], "Common in modern IELTS topics."),
+  word("5.0", "economy", "/ÉªËˆkÉ‘Ë.nÉ™.mi/", "ná»n kinh táº¿", "society", "The system of money, jobs, and production.", "Tourism can support the local economy.", ["local economy", "strong economy", "economic growth"], ["economic"], "Core for jobs and development."),
+  word("5.0", "government", "/ËˆÉ¡ÊŒv.Éšn.mÉ™nt/", "chÃ­nh phá»§", "government", "The group that controls a country.", "The government should invest in public health.", ["central government", "government spending", "government policy"], ["govern"], "Essential for IELTS Writing Task 2."),
+  word("5.0", "society", "/sÉ™ËˆsaÉª.É™.tÌ¬i/", "xÃ£ há»™i", "society", "People living together in a community.", "Education benefits society as a whole.", ["modern society", "fair society", "societal change"], ["social"], "A broad academic noun."),
+  word("5.0", "individual", "/ËŒÉªn.dÉ™ËˆvÉªdÊ’.u.É™l/", "cÃ¡ nhÃ¢n", "society", "One person.", "Individuals should take responsibility for their health.", ["individual choice", "individual rights", "individual responsibility"], ["individually"], "Useful for government vs individual essays."),
+  word("5.0", "influence", "/ËˆÉªn.flu.É™ns/", "áº£nh hÆ°á»Ÿng", "argument", "The power to affect someone or something.", "Advertising can influence children's choices.", ["strong influence", "influence behaviour", "social influence"], ["influential"], "Good for media and society topics."),
+  word("5.0", "resource", "/ËˆriË.sÉ”Ërs/", "nguá»“n lá»±c", "government", "Something useful that can be used.", "Schools need more resources to support students.", ["natural resources", "limited resources", "allocate resources"], ["resourceful"], "Links to environment and funding."),
+  word("5.0", "urban", "/ËˆÉË.bÉ™n/", "thuá»™c Ä‘Ã´ thá»‹", "place", "Related to cities.", "Urban areas often suffer from traffic congestion.", ["urban area", "urban life", "urban planning"], ["urbanisation"], "Great for city essays."),
+  word("5.0", "rural", "/ËˆrÊŠr.É™l/", "thuá»™c nÃ´ng thÃ´n", "place", "Related to the countryside.", "Rural communities may have limited access to hospitals.", ["rural area", "rural community", "rural development"], ["rurality"], "Pair with urban."),
+  word("5.0", "media", "/ËˆmiË.di.É™/", "truyá»n thÃ´ng", "technology", "Ways of communicating information.", "The media can shape public opinion.", ["social media", "mass media", "media coverage"], ["mediated"], "Common in modern IELTS topics."),
 
-  word("5.5", "factor", "/ˈfæk.tɚ/", "yếu tố", "argument", "One of the things that affects a result.", "Income is an important factor in access to education.", ["key factor", "contributing factor", "major factor"], ["factorial"], "Good for analytical writing."),
-  word("5.5", "approach", "/əˈproʊtʃ/", "cách tiếp cận", "argument", "A way of dealing with something.", "A balanced approach is needed to reduce crime.", ["practical approach", "balanced approach", "new approach"], ["approachable"], "Academic alternative to way."),
-  word("5.5", "require", "/rɪˈkwaɪr/", "yêu cầu, cần", "logic", "To need something.", "Solving pollution requires long-term planning.", ["require effort", "require investment", "require attention"], ["requirement"], "Useful for cause-solution logic."),
-  word("5.5", "create", "/kriˈeɪt/", "tạo ra", "development", "To make something new.", "New industries can create jobs.", ["create opportunities", "create jobs", "create problems"], ["creation"], "Flexible academic verb."),
-  word("5.5", "beneficial", "/ˌben.əˈfɪʃ.əl/", "có lợi", "argument", "Having a good effect.", "Exercise is beneficial for mental health.", ["beneficial to", "highly beneficial", "mutually beneficial"], ["benefit"], "Upgrade from good."),
-  word("5.5", "harmful", "/ˈhɑːrm.fəl/", "có hại", "health", "Causing damage.", "Excessive screen time can be harmful to children.", ["harmful effect", "harmful to", "potentially harmful"], ["harm"], "Pair with beneficial."),
-  word("5.5", "pressure", "/ˈpreʃ.ɚ/", "áp lực", "society", "Stress or force caused by demands.", "Students face pressure to achieve high grades.", ["social pressure", "academic pressure", "under pressure"], ["pressurise"], "Useful for education and work."),
-  word("5.5", "income", "/ˈɪn.kʌm/", "thu nhập", "society", "Money someone earns.", "Income inequality can reduce social mobility.", ["low income", "household income", "income gap"], ["incoming"], "Good for inequality topics."),
-  word("5.5", "research", "/ˈriː.sɝːtʃ/", "nghiên cứu", "academic", "Careful study to discover facts.", "Research shows that sleep affects learning.", ["scientific research", "research findings", "conduct research"], ["researcher"], "Useful for evidence-based claims."),
+  word("5.5", "factor", "/ËˆfÃ¦k.tÉš/", "yáº¿u tá»‘", "argument", "One of the things that affects a result.", "Income is an important factor in access to education.", ["key factor", "contributing factor", "major factor"], ["factorial"], "Good for analytical writing."),
+  word("5.5", "approach", "/É™ËˆproÊŠtÊƒ/", "cÃ¡ch tiáº¿p cáº­n", "argument", "A way of dealing with something.", "A balanced approach is needed to reduce crime.", ["practical approach", "balanced approach", "new approach"], ["approachable"], "Academic alternative to way."),
+  word("5.5", "require", "/rÉªËˆkwaÉªr/", "yÃªu cáº§u, cáº§n", "logic", "To need something.", "Solving pollution requires long-term planning.", ["require effort", "require investment", "require attention"], ["requirement"], "Useful for cause-solution logic."),
+  word("5.5", "create", "/kriËˆeÉªt/", "táº¡o ra", "development", "To make something new.", "New industries can create jobs.", ["create opportunities", "create jobs", "create problems"], ["creation"], "Flexible academic verb."),
+  word("5.5", "beneficial", "/ËŒben.É™ËˆfÉªÊƒ.É™l/", "cÃ³ lá»£i", "argument", "Having a good effect.", "Exercise is beneficial for mental health.", ["beneficial to", "highly beneficial", "mutually beneficial"], ["benefit"], "Upgrade from good."),
+  word("5.5", "harmful", "/ËˆhÉ‘Ërm.fÉ™l/", "cÃ³ háº¡i", "health", "Causing damage.", "Excessive screen time can be harmful to children.", ["harmful effect", "harmful to", "potentially harmful"], ["harm"], "Pair with beneficial."),
+  word("5.5", "pressure", "/ËˆpreÊƒ.Éš/", "Ã¡p lá»±c", "society", "Stress or force caused by demands.", "Students face pressure to achieve high grades.", ["social pressure", "academic pressure", "under pressure"], ["pressurise"], "Useful for education and work."),
+  word("5.5", "income", "/ËˆÉªn.kÊŒm/", "thu nháº­p", "society", "Money someone earns.", "Income inequality can reduce social mobility.", ["low income", "household income", "income gap"], ["incoming"], "Good for inequality topics."),
+  word("5.5", "research", "/ËˆriË.sÉËtÊƒ/", "nghiÃªn cá»©u", "academic", "Careful study to discover facts.", "Research shows that sleep affects learning.", ["scientific research", "research findings", "conduct research"], ["researcher"], "Useful for evidence-based claims."),
 
-  word("6.0", "issue", "/ˈɪʃ.uː/", "vấn đề", "argument", "An important subject or problem.", "Housing is a serious issue in many cities.", ["social issue", "complex issue", "address an issue"], ["issuance"], "A more formal alternative to problem."),
-  word("6.0", "significant", "/sɪɡˈnɪf.ə.kənt/", "đáng kể", "argument", "Large or important enough to notice.", "Education has a significant impact on employment.", ["significant impact", "significant difference", "highly significant"], ["significance"], "Very useful for Task 1 and Task 2."),
-  word("6.0", "available", "/əˈveɪ.lə.bəl/", "có sẵn", "society", "Able to be used or obtained.", "Online resources are widely available.", ["available to", "readily available", "available resources"], ["availability"], "Good for access arguments."),
-  word("6.0", "consume", "/kənˈsuːm/", "tiêu thụ", "environment", "To use resources or buy goods.", "People consume more energy than in the past.", ["consume energy", "consume resources", "consumer behaviour"], ["consumption"], "Key for environment/consumerism."),
-  word("6.0", "participate", "/pɑːrˈtɪs.ə.peɪt/", "tham gia", "society", "To take part in something.", "Citizens should participate in community activities.", ["participate in", "active participation", "public participation"], ["participant"], "Formal alternative to join."),
-  word("6.0", "maintain", "/meɪnˈteɪn/", "duy trì", "development", "To keep something at the same level.", "People should maintain a healthy work-life balance.", ["maintain standards", "maintain balance", "maintain control"], ["maintenance"], "Useful for balanced arguments."),
-  word("6.0", "funding", "/ˈfʌn.dɪŋ/", "nguồn tài trợ", "government", "Money provided for a purpose.", "Public schools often need more funding.", ["government funding", "research funding", "funding gap"], ["fund"], "Important for policy essays."),
-  word("6.0", "attitude", "/ˈæt̬.ə.tuːd/", "thái độ", "society", "A way of thinking or feeling.", "Public attitudes toward recycling have changed.", ["positive attitude", "public attitude", "change attitudes"], ["attitudinal"], "Good for society and behaviour."),
-  word("6.0", "trend", "/trend/", "xu hướng", "trend", "A general direction of change.", "A recent trend is the growth of remote work.", ["upward trend", "current trend", "global trend"], ["trending"], "Core for Task 1 and modern topics."),
+  word("6.0", "issue", "/ËˆÉªÊƒ.uË/", "váº¥n Ä‘á»", "argument", "An important subject or problem.", "Housing is a serious issue in many cities.", ["social issue", "complex issue", "address an issue"], ["issuance"], "A more formal alternative to problem."),
+  word("6.0", "significant", "/sÉªÉ¡ËˆnÉªf.É™.kÉ™nt/", "Ä‘Ã¡ng ká»ƒ", "argument", "Large or important enough to notice.", "Education has a significant impact on employment.", ["significant impact", "significant difference", "highly significant"], ["significance"], "Very useful for Task 1 and Task 2."),
+  word("6.0", "available", "/É™ËˆveÉª.lÉ™.bÉ™l/", "cÃ³ sáºµn", "society", "Able to be used or obtained.", "Online resources are widely available.", ["available to", "readily available", "available resources"], ["availability"], "Good for access arguments."),
+  word("6.0", "consume", "/kÉ™nËˆsuËm/", "tiÃªu thá»¥", "environment", "To use resources or buy goods.", "People consume more energy than in the past.", ["consume energy", "consume resources", "consumer behaviour"], ["consumption"], "Key for environment/consumerism."),
+  word("6.0", "participate", "/pÉ‘ËrËˆtÉªs.É™.peÉªt/", "tham gia", "society", "To take part in something.", "Citizens should participate in community activities.", ["participate in", "active participation", "public participation"], ["participant"], "Formal alternative to join."),
+  word("6.0", "maintain", "/meÉªnËˆteÉªn/", "duy trÃ¬", "development", "To keep something at the same level.", "People should maintain a healthy work-life balance.", ["maintain standards", "maintain balance", "maintain control"], ["maintenance"], "Useful for balanced arguments."),
+  word("6.0", "funding", "/ËˆfÊŒn.dÉªÅ‹/", "nguá»“n tÃ i trá»£", "government", "Money provided for a purpose.", "Public schools often need more funding.", ["government funding", "research funding", "funding gap"], ["fund"], "Important for policy essays."),
+  word("6.0", "attitude", "/ËˆÃ¦tÌ¬.É™.tuËd/", "thÃ¡i Ä‘á»™", "society", "A way of thinking or feeling.", "Public attitudes toward recycling have changed.", ["positive attitude", "public attitude", "change attitudes"], ["attitudinal"], "Good for society and behaviour."),
+  word("6.0", "trend", "/trend/", "xu hÆ°á»›ng", "trend", "A general direction of change.", "A recent trend is the growth of remote work.", ["upward trend", "current trend", "global trend"], ["trending"], "Core for Task 1 and modern topics."),
 
-  word("6.5", "consequence", "/ˈkɑːn.sə.kwens/", "hậu quả", "argument", "A result of an action.", "One consequence of deforestation is habitat loss.", ["serious consequence", "long-term consequence", "unintended consequence"], ["consequently"], "Academic alternative to result."),
-  word("6.5", "priority", "/praɪˈɔːr.ə.t̬i/", "ưu tiên", "government", "Something more important than other things.", "Healthcare should be a priority for governments.", ["top priority", "policy priority", "give priority to"], ["prioritise"], "Useful for policy arguments."),
-  word("6.5", "awareness", "/əˈwer.nəs/", "nhận thức", "society", "Knowledge that something exists.", "Public awareness of climate change has increased.", ["raise awareness", "public awareness", "environmental awareness"], ["aware"], "Strong in solution paragraphs."),
-  word("6.5", "innovation", "/ˌɪn.əˈveɪ.ʃən/", "đổi mới", "technology", "A new idea or method.", "Technological innovation can improve healthcare.", ["technological innovation", "drive innovation", "innovation in"], ["innovative"], "Good for technology topics."),
-  word("6.5", "regulate", "/ˈreɡ.jə.leɪt/", "quản lý, điều chỉnh", "government", "To control something by rules.", "Governments should regulate online advertising.", ["strictly regulate", "regulate industry", "regulation of"], ["regulation"], "Great for government control essays."),
-  word("6.5", "decline", "/dɪˈklaɪn/", "sự suy giảm", "trend", "A decrease or fall.", "There has been a decline in traditional newspaper reading.", ["sharp decline", "decline in", "economic decline"], ["declining"], "Good for Task 1."),
-  word("6.5", "emphasis", "/ˈem.fə.sɪs/", "sự nhấn mạnh", "education", "Special importance given to something.", "Schools should place more emphasis on creativity.", ["place emphasis on", "greater emphasis", "strong emphasis"], ["emphasise"], "Useful in education essays."),
-  word("6.5", "capacity", "/kəˈpæs.ə.t̬i/", "năng lực, sức chứa", "development", "The ability to do or hold something.", "Hospitals need greater capacity during emergencies.", ["limited capacity", "capacity to", "build capacity"], ["capable"], "Precise and academic."),
-  word("6.5", "reliable", "/rɪˈlaɪ.ə.bəl/", "đáng tin cậy", "technology", "Able to be trusted or depended on.", "Reliable public transport can reduce car ownership.", ["reliable source", "reliable data", "reliable service"], ["reliability"], "Useful for evidence and infrastructure."),
+  word("6.5", "consequence", "/ËˆkÉ‘Ën.sÉ™.kwens/", "háº­u quáº£", "argument", "A result of an action.", "One consequence of deforestation is habitat loss.", ["serious consequence", "long-term consequence", "unintended consequence"], ["consequently"], "Academic alternative to result."),
+  word("6.5", "priority", "/praÉªËˆÉ”Ër.É™.tÌ¬i/", "Æ°u tiÃªn", "government", "Something more important than other things.", "Healthcare should be a priority for governments.", ["top priority", "policy priority", "give priority to"], ["prioritise"], "Useful for policy arguments."),
+  word("6.5", "awareness", "/É™Ëˆwer.nÉ™s/", "nháº­n thá»©c", "society", "Knowledge that something exists.", "Public awareness of climate change has increased.", ["raise awareness", "public awareness", "environmental awareness"], ["aware"], "Strong in solution paragraphs."),
+  word("6.5", "innovation", "/ËŒÉªn.É™ËˆveÉª.ÊƒÉ™n/", "Ä‘á»•i má»›i", "technology", "A new idea or method.", "Technological innovation can improve healthcare.", ["technological innovation", "drive innovation", "innovation in"], ["innovative"], "Good for technology topics."),
+  word("6.5", "regulate", "/ËˆreÉ¡.jÉ™.leÉªt/", "quáº£n lÃ½, Ä‘iá»u chá»‰nh", "government", "To control something by rules.", "Governments should regulate online advertising.", ["strictly regulate", "regulate industry", "regulation of"], ["regulation"], "Great for government control essays."),
+  word("6.5", "decline", "/dÉªËˆklaÉªn/", "sá»± suy giáº£m", "trend", "A decrease or fall.", "There has been a decline in traditional newspaper reading.", ["sharp decline", "decline in", "economic decline"], ["declining"], "Good for Task 1."),
+  word("6.5", "emphasis", "/Ëˆem.fÉ™.sÉªs/", "sá»± nháº¥n máº¡nh", "education", "Special importance given to something.", "Schools should place more emphasis on creativity.", ["place emphasis on", "greater emphasis", "strong emphasis"], ["emphasise"], "Useful in education essays."),
+  word("6.5", "capacity", "/kÉ™ËˆpÃ¦s.É™.tÌ¬i/", "nÄƒng lá»±c, sá»©c chá»©a", "development", "The ability to do or hold something.", "Hospitals need greater capacity during emergencies.", ["limited capacity", "capacity to", "build capacity"], ["capable"], "Precise and academic."),
+  word("6.5", "reliable", "/rÉªËˆlaÉª.É™.bÉ™l/", "Ä‘Ã¡ng tin cáº­y", "technology", "Able to be trusted or depended on.", "Reliable public transport can reduce car ownership.", ["reliable source", "reliable data", "reliable service"], ["reliability"], "Useful for evidence and infrastructure."),
 
-  word("7.0", "infrastructure", "/ˈɪn.frəˌstrʌk.tʃɚ/", "cơ sở hạ tầng", "government", "Basic systems such as roads, power, and water.", "Poor infrastructure can limit economic growth.", ["public infrastructure", "transport infrastructure", "invest in infrastructure"], ["infrastructural"], "High-value city/development word."),
-  word("7.0", "incentive", "/ɪnˈsen.t̬ɪv/", "động lực, khuyến khích", "government", "Something that encourages action.", "Tax incentives can encourage companies to reduce emissions.", ["financial incentive", "provide incentives", "strong incentive"], ["incentivise"], "Useful for policy solutions."),
-  word("7.0", "constraint", "/kənˈstreɪnt/", "sự hạn chế", "argument", "A limit or restriction.", "Budget constraints may affect public services.", ["financial constraint", "time constraint", "major constraint"], ["constrain"], "Precise alternative to limit."),
-  word("7.0", "integrate", "/ˈɪn.t̬ə.ɡreɪt/", "tích hợp", "society", "To combine or become part of a group.", "Schools should integrate technology into lessons.", ["integrate into", "social integration", "integrated system"], ["integration"], "Good for education and migration."),
-  word("7.0", "retain", "/rɪˈteɪn/", "giữ lại", "work", "To keep something.", "Companies struggle to retain skilled workers.", ["retain talent", "retain information", "staff retention"], ["retention"], "Useful in work and education."),
-  word("7.0", "prioritise", "/praɪˈɔːr.ə.taɪz/", "ưu tiên", "government", "To treat something as more important.", "Governments should prioritise preventive healthcare.", ["prioritise spending", "prioritise education", "policy priority"], ["priority"], "Strong policy verb."),
-  word("7.0", "feasible", "/ˈfiː.zə.bəl/", "khả thi", "argument", "Possible and practical.", "This solution may not be feasible in rural areas.", ["economically feasible", "feasible solution", "feasibility study"], ["feasibility"], "Useful for evaluating solutions."),
-  word("7.0", "disparity", "/dɪˈsper.ə.t̬i/", "sự chênh lệch", "society", "A difference, often unfair.", "There is a disparity between urban and rural healthcare.", ["income disparity", "regional disparity", "reduce disparities"], ["disparate"], "High-value inequality word."),
-  word("7.0", "accountable", "/əˈkaʊn.t̬ə.bəl/", "có trách nhiệm giải trình", "government", "Expected to explain decisions or actions.", "Public officials should be accountable for spending.", ["hold accountable", "accountable to", "political accountability"], ["accountability"], "Excellent for governance essays."),
+  word("7.0", "infrastructure", "/ËˆÉªn.frÉ™ËŒstrÊŒk.tÊƒÉš/", "cÆ¡ sá»Ÿ háº¡ táº§ng", "government", "Basic systems such as roads, power, and water.", "Poor infrastructure can limit economic growth.", ["public infrastructure", "transport infrastructure", "invest in infrastructure"], ["infrastructural"], "High-value city/development word."),
+  word("7.0", "incentive", "/ÉªnËˆsen.tÌ¬Éªv/", "Ä‘á»™ng lá»±c, khuyáº¿n khÃ­ch", "government", "Something that encourages action.", "Tax incentives can encourage companies to reduce emissions.", ["financial incentive", "provide incentives", "strong incentive"], ["incentivise"], "Useful for policy solutions."),
+  word("7.0", "constraint", "/kÉ™nËˆstreÉªnt/", "sá»± háº¡n cháº¿", "argument", "A limit or restriction.", "Budget constraints may affect public services.", ["financial constraint", "time constraint", "major constraint"], ["constrain"], "Precise alternative to limit."),
+  word("7.0", "integrate", "/ËˆÉªn.tÌ¬É™.É¡reÉªt/", "tÃ­ch há»£p", "society", "To combine or become part of a group.", "Schools should integrate technology into lessons.", ["integrate into", "social integration", "integrated system"], ["integration"], "Good for education and migration."),
+  word("7.0", "retain", "/rÉªËˆteÉªn/", "giá»¯ láº¡i", "work", "To keep something.", "Companies struggle to retain skilled workers.", ["retain talent", "retain information", "staff retention"], ["retention"], "Useful in work and education."),
+  word("7.0", "prioritise", "/praÉªËˆÉ”Ër.É™.taÉªz/", "Æ°u tiÃªn", "government", "To treat something as more important.", "Governments should prioritise preventive healthcare.", ["prioritise spending", "prioritise education", "policy priority"], ["priority"], "Strong policy verb."),
+  word("7.0", "feasible", "/ËˆfiË.zÉ™.bÉ™l/", "kháº£ thi", "argument", "Possible and practical.", "This solution may not be feasible in rural areas.", ["economically feasible", "feasible solution", "feasibility study"], ["feasibility"], "Useful for evaluating solutions."),
+  word("7.0", "disparity", "/dÉªËˆsper.É™.tÌ¬i/", "sá»± chÃªnh lá»‡ch", "society", "A difference, often unfair.", "There is a disparity between urban and rural healthcare.", ["income disparity", "regional disparity", "reduce disparities"], ["disparate"], "High-value inequality word."),
+  word("7.0", "accountable", "/É™ËˆkaÊŠn.tÌ¬É™.bÉ™l/", "cÃ³ trÃ¡ch nhiá»‡m giáº£i trÃ¬nh", "government", "Expected to explain decisions or actions.", "Public officials should be accountable for spending.", ["hold accountable", "accountable to", "political accountability"], ["accountability"], "Excellent for governance essays."),
 
-  word("7.5", "intrinsic", "/ɪnˈtrɪn.zɪk/", "nội tại", "argument", "Belonging naturally to something.", "Education has intrinsic value beyond employment.", ["intrinsic value", "intrinsic motivation", "intrinsic benefit"], ["intrinsically"], "Precise for deeper arguments."),
-  word("7.5", "instrumental", "/ˌɪn.strəˈmen.təl/", "có vai trò quan trọng", "argument", "Important in making something happen.", "Technology is instrumental in expanding access to education.", ["instrumental in", "instrumental role", "instrumental value"], ["instrumentally"], "Useful for academic cause-effect."),
-  word("7.5", "marginalised", "/ˈmɑːr.dʒə.nəl.aɪzd/", "bị gạt ra bên lề", "society", "Treated as unimportant or powerless.", "Policies should support marginalised communities.", ["marginalised groups", "socially marginalised", "marginalised community"], ["marginalisation"], "Good for equality topics."),
-  word("7.5", "profound", "/prəˈfaʊnd/", "sâu sắc", "argument", "Very great or intense.", "The internet has had a profound effect on communication.", ["profound impact", "profound change", "profound implications"], ["profoundly"], "Stronger than big."),
-  word("7.5", "robust", "/roʊˈbʌst/", "mạnh mẽ, vững chắc", "argument", "Strong and effective.", "A robust public transport system can reduce congestion.", ["robust evidence", "robust system", "robust policy"], ["robustness"], "Useful for evidence and policy."),
-  word("7.5", "viable", "/ˈvaɪ.ə.bəl/", "khả thi", "argument", "Able to work successfully.", "Renewable energy is becoming a viable alternative.", ["viable option", "economically viable", "viable solution"], ["viability"], "Similar to feasible, often stronger."),
-  word("7.5", "compelling", "/kəmˈpel.ɪŋ/", "thuyết phục", "argument", "Very convincing.", "There is a compelling argument for early education.", ["compelling evidence", "compelling reason", "compelling case"], ["compel"], "Strong for opinion essays."),
-  word("7.5", "disproportionate", "/ˌdɪs.prəˈpɔːr.ʃən.ət/", "không tương xứng", "society", "Too large or too small compared with something.", "Pollution has a disproportionate impact on poorer communities.", ["disproportionate impact", "disproportionate burden", "disproportionately affected"], ["disproportionately"], "Excellent for inequality analysis."),
-  word("7.5", "imperative", "/ɪmˈper.ə.t̬ɪv/", "cấp thiết", "argument", "Extremely important or necessary.", "It is imperative to reduce carbon emissions.", ["moral imperative", "urgent imperative", "it is imperative"], ["imperatively"], "Powerful but use carefully."),
+  word("7.5", "intrinsic", "/ÉªnËˆtrÉªn.zÉªk/", "ná»™i táº¡i", "argument", "Belonging naturally to something.", "Education has intrinsic value beyond employment.", ["intrinsic value", "intrinsic motivation", "intrinsic benefit"], ["intrinsically"], "Precise for deeper arguments."),
+  word("7.5", "instrumental", "/ËŒÉªn.strÉ™Ëˆmen.tÉ™l/", "cÃ³ vai trÃ² quan trá»ng", "argument", "Important in making something happen.", "Technology is instrumental in expanding access to education.", ["instrumental in", "instrumental role", "instrumental value"], ["instrumentally"], "Useful for academic cause-effect."),
+  word("7.5", "marginalised", "/ËˆmÉ‘Ër.dÊ’É™.nÉ™l.aÉªzd/", "bá»‹ gáº¡t ra bÃªn lá»", "society", "Treated as unimportant or powerless.", "Policies should support marginalised communities.", ["marginalised groups", "socially marginalised", "marginalised community"], ["marginalisation"], "Good for equality topics."),
+  word("7.5", "profound", "/prÉ™ËˆfaÊŠnd/", "sÃ¢u sáº¯c", "argument", "Very great or intense.", "The internet has had a profound effect on communication.", ["profound impact", "profound change", "profound implications"], ["profoundly"], "Stronger than big."),
+  word("7.5", "robust", "/roÊŠËˆbÊŒst/", "máº¡nh máº½, vá»¯ng cháº¯c", "argument", "Strong and effective.", "A robust public transport system can reduce congestion.", ["robust evidence", "robust system", "robust policy"], ["robustness"], "Useful for evidence and policy."),
+  word("7.5", "viable", "/ËˆvaÉª.É™.bÉ™l/", "kháº£ thi", "argument", "Able to work successfully.", "Renewable energy is becoming a viable alternative.", ["viable option", "economically viable", "viable solution"], ["viability"], "Similar to feasible, often stronger."),
+  word("7.5", "compelling", "/kÉ™mËˆpel.ÉªÅ‹/", "thuyáº¿t phá»¥c", "argument", "Very convincing.", "There is a compelling argument for early education.", ["compelling evidence", "compelling reason", "compelling case"], ["compel"], "Strong for opinion essays."),
+  word("7.5", "disproportionate", "/ËŒdÉªs.prÉ™ËˆpÉ”Ër.ÊƒÉ™n.É™t/", "khÃ´ng tÆ°Æ¡ng xá»©ng", "society", "Too large or too small compared with something.", "Pollution has a disproportionate impact on poorer communities.", ["disproportionate impact", "disproportionate burden", "disproportionately affected"], ["disproportionately"], "Excellent for inequality analysis."),
+  word("7.5", "imperative", "/ÉªmËˆper.É™.tÌ¬Éªv/", "cáº¥p thiáº¿t", "argument", "Extremely important or necessary.", "It is imperative to reduce carbon emissions.", ["moral imperative", "urgent imperative", "it is imperative"], ["imperatively"], "Powerful but use carefully."),
 
-  word("8.0", "autonomy", "/ɑːˈtɑː.nə.mi/", "quyền tự chủ", "society", "The ability to make one's own decisions.", "Remote work can increase employee autonomy.", ["personal autonomy", "professional autonomy", "autonomy over"], ["autonomous"], "Useful for work and education."),
-  word("8.0", "conducive", "/kənˈduː.sɪv/", "có lợi cho", "education", "Helping something happen.", "A quiet classroom is conducive to learning.", ["conducive to", "learning-conducive", "conducive environment"], ["conduce"], "A refined academic adjective."),
-  word("8.0", "contentious", "/kənˈten.ʃəs/", "gây tranh cãi", "argument", "Likely to cause disagreement.", "The use of surveillance technology remains contentious.", ["contentious issue", "highly contentious", "contentious debate"], ["contention"], "Great for controversial topics."),
-  word("8.0", "curtail", "/kɚˈteɪl/", "cắt giảm, hạn chế", "government", "To reduce or limit something.", "Strict laws may curtail individual freedom.", ["curtail freedom", "curtail spending", "curtail emissions"], ["curtailment"], "Precise for restriction arguments."),
-  word("8.0", "diminish", "/dɪˈmɪn.ɪʃ/", "làm giảm", "argument", "To make something less.", "Automation may diminish the need for routine labour.", ["diminish importance", "diminish opportunities", "diminishing returns"], ["diminution"], "Academic alternative to reduce."),
-  word("8.0", "foster", "/ˈfɑː.stɚ/", "thúc đẩy, nuôi dưỡng", "education", "To encourage development.", "Schools should foster creativity and critical thinking.", ["foster innovation", "foster cooperation", "foster a sense of"], ["fostering"], "Strong education/social verb."),
-  word("8.0", "scrutinise", "/ˈskruː.t̬ən.aɪz/", "xem xét kỹ lưỡng", "argument", "To examine carefully.", "Media claims should be scrutinised by the public.", ["scrutinise evidence", "public scrutiny", "scrutinise policy"], ["scrutiny"], "Great for media and evidence."),
-  word("8.0", "undermine", "/ˌʌn.dɚˈmaɪn/", "làm suy yếu", "argument", "To weaken something gradually.", "Misinformation can undermine public trust.", ["undermine confidence", "undermine authority", "undermine efforts"], ["undermining"], "High-value cause-effect verb."),
-  word("8.0", "attain", "/əˈteɪn/", "đạt được", "development", "To achieve something.", "Students need support to attain their full potential.", ["attain goals", "attain success", "educational attainment"], ["attainment"], "Formal alternative to achieve."),
+  word("8.0", "autonomy", "/É‘ËËˆtÉ‘Ë.nÉ™.mi/", "quyá»n tá»± chá»§", "society", "The ability to make one's own decisions.", "Remote work can increase employee autonomy.", ["personal autonomy", "professional autonomy", "autonomy over"], ["autonomous"], "Useful for work and education."),
+  word("8.0", "conducive", "/kÉ™nËˆduË.sÉªv/", "cÃ³ lá»£i cho", "education", "Helping something happen.", "A quiet classroom is conducive to learning.", ["conducive to", "learning-conducive", "conducive environment"], ["conduce"], "A refined academic adjective."),
+  word("8.0", "contentious", "/kÉ™nËˆten.ÊƒÉ™s/", "gÃ¢y tranh cÃ£i", "argument", "Likely to cause disagreement.", "The use of surveillance technology remains contentious.", ["contentious issue", "highly contentious", "contentious debate"], ["contention"], "Great for controversial topics."),
+  word("8.0", "curtail", "/kÉšËˆteÉªl/", "cáº¯t giáº£m, háº¡n cháº¿", "government", "To reduce or limit something.", "Strict laws may curtail individual freedom.", ["curtail freedom", "curtail spending", "curtail emissions"], ["curtailment"], "Precise for restriction arguments."),
+  word("8.0", "diminish", "/dÉªËˆmÉªn.ÉªÊƒ/", "lÃ m giáº£m", "argument", "To make something less.", "Automation may diminish the need for routine labour.", ["diminish importance", "diminish opportunities", "diminishing returns"], ["diminution"], "Academic alternative to reduce."),
+  word("8.0", "foster", "/ËˆfÉ‘Ë.stÉš/", "thÃºc Ä‘áº©y, nuÃ´i dÆ°á»¡ng", "education", "To encourage development.", "Schools should foster creativity and critical thinking.", ["foster innovation", "foster cooperation", "foster a sense of"], ["fostering"], "Strong education/social verb."),
+  word("8.0", "scrutinise", "/ËˆskruË.tÌ¬É™n.aÉªz/", "xem xÃ©t ká»¹ lÆ°á»¡ng", "argument", "To examine carefully.", "Media claims should be scrutinised by the public.", ["scrutinise evidence", "public scrutiny", "scrutinise policy"], ["scrutiny"], "Great for media and evidence."),
+  word("8.0", "undermine", "/ËŒÊŒn.dÉšËˆmaÉªn/", "lÃ m suy yáº¿u", "argument", "To weaken something gradually.", "Misinformation can undermine public trust.", ["undermine confidence", "undermine authority", "undermine efforts"], ["undermining"], "High-value cause-effect verb."),
+  word("8.0", "attain", "/É™ËˆteÉªn/", "Ä‘áº¡t Ä‘Æ°á»£c", "development", "To achieve something.", "Students need support to attain their full potential.", ["attain goals", "attain success", "educational attainment"], ["attainment"], "Formal alternative to achieve."),
 
-  word("8.5", "amelioration", "/əˌmiː.li.əˈreɪ.ʃən/", "sự cải thiện", "government", "The act of improving a bad situation.", "The amelioration of poverty requires targeted support.", ["amelioration of", "social amelioration", "policy amelioration"], ["ameliorate"], "Very formal; useful for advanced essays."),
-  word("8.5", "dichotomy", "/daɪˈkɑː.t̬ə.mi/", "sự phân đôi", "argument", "A division between two opposite things.", "The dichotomy between work and leisure is becoming blurred.", ["false dichotomy", "clear dichotomy", "dichotomy between"], ["dichotomous"], "Useful for nuanced arguments."),
-  word("8.5", "pervasive", "/pɚˈveɪ.sɪv/", "lan rộng, phổ biến khắp nơi", "technology", "Spreading through every part of something.", "Digital technology is pervasive in modern life.", ["pervasive influence", "pervasive problem", "increasingly pervasive"], ["pervasiveness"], "Close to ubiquitous but often about influence."),
-  word("8.5", "salient", "/ˈseɪ.li.ənt/", "nổi bật, đáng chú ý", "argument", "Most noticeable or important.", "The most salient issue is affordability.", ["salient feature", "salient point", "highly salient"], ["salience"], "Concise academic adjective."),
-  word("8.5", "tenable", "/ˈten.ə.bəl/", "có thể bảo vệ được", "argument", "Able to be defended as reasonable.", "This argument is no longer tenable.", ["tenable position", "hardly tenable", "tenable claim"], ["tenability"], "Advanced evaluation word."),
-  word("8.5", "paradox", "/ˈper.ə.dɑːks/", "nghịch lý", "argument", "A situation that seems contradictory.", "The paradox is that technology connects people yet may increase loneliness.", ["apparent paradox", "central paradox", "paradox of"], ["paradoxical"], "Useful for sophisticated reasoning."),
-  word("8.5", "reciprocal", "/rɪˈsɪp.rə.kəl/", "qua lại", "society", "Shared or done by both sides.", "Trust and cooperation have a reciprocal relationship.", ["reciprocal relationship", "reciprocal benefit", "reciprocal support"], ["reciprocity"], "Good for social analysis."),
-  word("8.5", "indispensable", "/ˌɪn.dɪˈspen.sə.bəl/", "không thể thiếu", "argument", "Absolutely necessary.", "Digital literacy is indispensable in the modern workplace.", ["indispensable to", "indispensable tool", "become indispensable"], ["indispensability"], "Advanced alternative to very important."),
-  word("8.5", "volatile", "/ˈvɑː.lə.t̬əl/", "dễ biến động", "economy", "Likely to change suddenly.", "A volatile economy can make long-term planning difficult.", ["volatile market", "volatile situation", "highly volatile"], ["volatility"], "Useful for economics and society."),
+  word("8.5", "amelioration", "/É™ËŒmiË.li.É™ËˆreÉª.ÊƒÉ™n/", "sá»± cáº£i thiá»‡n", "government", "The act of improving a bad situation.", "The amelioration of poverty requires targeted support.", ["amelioration of", "social amelioration", "policy amelioration"], ["ameliorate"], "Very formal; useful for advanced essays."),
+  word("8.5", "dichotomy", "/daÉªËˆkÉ‘Ë.tÌ¬É™.mi/", "sá»± phÃ¢n Ä‘Ã´i", "argument", "A division between two opposite things.", "The dichotomy between work and leisure is becoming blurred.", ["false dichotomy", "clear dichotomy", "dichotomy between"], ["dichotomous"], "Useful for nuanced arguments."),
+  word("8.5", "pervasive", "/pÉšËˆveÉª.sÉªv/", "lan rá»™ng, phá»• biáº¿n kháº¯p nÆ¡i", "technology", "Spreading through every part of something.", "Digital technology is pervasive in modern life.", ["pervasive influence", "pervasive problem", "increasingly pervasive"], ["pervasiveness"], "Close to ubiquitous but often about influence."),
+  word("8.5", "salient", "/ËˆseÉª.li.É™nt/", "ná»•i báº­t, Ä‘Ã¡ng chÃº Ã½", "argument", "Most noticeable or important.", "The most salient issue is affordability.", ["salient feature", "salient point", "highly salient"], ["salience"], "Concise academic adjective."),
+  word("8.5", "tenable", "/Ëˆten.É™.bÉ™l/", "cÃ³ thá»ƒ báº£o vá»‡ Ä‘Æ°á»£c", "argument", "Able to be defended as reasonable.", "This argument is no longer tenable.", ["tenable position", "hardly tenable", "tenable claim"], ["tenability"], "Advanced evaluation word."),
+  word("8.5", "paradox", "/Ëˆper.É™.dÉ‘Ëks/", "nghá»‹ch lÃ½", "argument", "A situation that seems contradictory.", "The paradox is that technology connects people yet may increase loneliness.", ["apparent paradox", "central paradox", "paradox of"], ["paradoxical"], "Useful for sophisticated reasoning."),
+  word("8.5", "reciprocal", "/rÉªËˆsÉªp.rÉ™.kÉ™l/", "qua láº¡i", "society", "Shared or done by both sides.", "Trust and cooperation have a reciprocal relationship.", ["reciprocal relationship", "reciprocal benefit", "reciprocal support"], ["reciprocity"], "Good for social analysis."),
+  word("8.5", "indispensable", "/ËŒÉªn.dÉªËˆspen.sÉ™.bÉ™l/", "khÃ´ng thá»ƒ thiáº¿u", "argument", "Absolutely necessary.", "Digital literacy is indispensable in the modern workplace.", ["indispensable to", "indispensable tool", "become indispensable"], ["indispensability"], "Advanced alternative to very important."),
+  word("8.5", "volatile", "/ËˆvÉ‘Ë.lÉ™.tÌ¬É™l/", "dá»… biáº¿n Ä‘á»™ng", "economy", "Likely to change suddenly.", "A volatile economy can make long-term planning difficult.", ["volatile market", "volatile situation", "highly volatile"], ["volatility"], "Useful for economics and society."),
 
-  word("9.0", "conflate", "/kənˈfleɪt/", "gộp lẫn", "argument", "To combine two different ideas incorrectly.", "It is misleading to conflate correlation with causation.", ["conflate with", "conflate issues", "avoid conflating"], ["conflation"], "Excellent for precise critique."),
-  word("9.0", "ephemeral", "/əˈfem.ɚ.əl/", "phù du, ngắn ngủi", "society", "Lasting for a very short time.", "Some online trends are ephemeral and quickly forgotten.", ["ephemeral trend", "ephemeral pleasure", "ephemeral nature"], ["ephemerality"], "Useful for culture/media analysis."),
-  word("9.0", "galvanise", "/ˈɡæl.və.naɪz/", "thúc đẩy mạnh mẽ", "society", "To shock or excite people into taking action.", "A crisis can galvanise public support for reform.", ["galvanise support", "galvanise action", "galvanise communities"], ["galvanisation"], "Dynamic verb for social change."),
-  word("9.0", "intractable", "/ɪnˈtræk.tə.bəl/", "khó giải quyết", "argument", "Very difficult to solve.", "Urban poverty remains an intractable problem.", ["intractable issue", "intractable conflict", "seemingly intractable"], ["intractability"], "Advanced problem word."),
-  word("9.0", "juxtapose", "/ˌdʒʌk.stəˈpoʊz/", "đặt cạnh để so sánh", "argument", "To place ideas together to compare them.", "The essay juxtaposes economic growth with environmental protection.", ["juxtapose with", "sharp juxtaposition", "juxtapose ideas"], ["juxtaposition"], "Useful for sophisticated comparisons."),
-  word("9.0", "lacuna", "/ləˈkuː.nə/", "khoảng trống, thiếu sót", "academic", "A gap or missing part.", "There is a lacuna in current research on rural education.", ["research lacuna", "legal lacuna", "significant lacuna"], ["lacunae"], "Very formal; use sparingly."),
-  word("9.0", "nuance", "/ˈnuː.ɑːns/", "sắc thái", "argument", "A small but important difference.", "A nuanced policy should consider both freedom and safety.", ["subtle nuance", "nuanced argument", "lack nuance"], ["nuanced"], "Core for band 9 control."),
-  word("9.0", "proliferate", "/prəˈlɪf.ə.reɪt/", "tăng nhanh, lan rộng", "technology", "To increase quickly.", "Online platforms have proliferated in recent years.", ["proliferate rapidly", "proliferation of", "weapons proliferation"], ["proliferation"], "Good for trends and technology.")
+  word("9.0", "conflate", "/kÉ™nËˆfleÉªt/", "gá»™p láº«n", "argument", "To combine two different ideas incorrectly.", "It is misleading to conflate correlation with causation.", ["conflate with", "conflate issues", "avoid conflating"], ["conflation"], "Excellent for precise critique."),
+  word("9.0", "ephemeral", "/É™Ëˆfem.Éš.É™l/", "phÃ¹ du, ngáº¯n ngá»§i", "society", "Lasting for a very short time.", "Some online trends are ephemeral and quickly forgotten.", ["ephemeral trend", "ephemeral pleasure", "ephemeral nature"], ["ephemerality"], "Useful for culture/media analysis."),
+  word("9.0", "galvanise", "/ËˆÉ¡Ã¦l.vÉ™.naÉªz/", "thÃºc Ä‘áº©y máº¡nh máº½", "society", "To shock or excite people into taking action.", "A crisis can galvanise public support for reform.", ["galvanise support", "galvanise action", "galvanise communities"], ["galvanisation"], "Dynamic verb for social change."),
+  word("9.0", "intractable", "/ÉªnËˆtrÃ¦k.tÉ™.bÉ™l/", "khÃ³ giáº£i quyáº¿t", "argument", "Very difficult to solve.", "Urban poverty remains an intractable problem.", ["intractable issue", "intractable conflict", "seemingly intractable"], ["intractability"], "Advanced problem word."),
+  word("9.0", "juxtapose", "/ËŒdÊ’ÊŒk.stÉ™ËˆpoÊŠz/", "Ä‘áº·t cáº¡nh Ä‘á»ƒ so sÃ¡nh", "argument", "To place ideas together to compare them.", "The essay juxtaposes economic growth with environmental protection.", ["juxtapose with", "sharp juxtaposition", "juxtapose ideas"], ["juxtaposition"], "Useful for sophisticated comparisons."),
+  word("9.0", "lacuna", "/lÉ™ËˆkuË.nÉ™/", "khoáº£ng trá»‘ng, thiáº¿u sÃ³t", "academic", "A gap or missing part.", "There is a lacuna in current research on rural education.", ["research lacuna", "legal lacuna", "significant lacuna"], ["lacunae"], "Very formal; use sparingly."),
+  word("9.0", "nuance", "/ËˆnuË.É‘Ëns/", "sáº¯c thÃ¡i", "argument", "A small but important difference.", "A nuanced policy should consider both freedom and safety.", ["subtle nuance", "nuanced argument", "lack nuance"], ["nuanced"], "Core for band 9 control."),
+  word("9.0", "proliferate", "/prÉ™ËˆlÉªf.É™.reÉªt/", "tÄƒng nhanh, lan rá»™ng", "technology", "To increase quickly.", "Online platforms have proliferated in recent years.", ["proliferate rapidly", "proliferation of", "weapons proliferation"], ["proliferation"], "Good for trends and technology.")
 );
 
 function word(band, text, ipa, vi, topic, definition, example, collocations, family, note) {
@@ -1178,7 +1197,7 @@ els.helperForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const prompt = els.helperInput.value.trim();
   if (!prompt) return;
-  runNotebookHelper(prompt, prompt.toLowerCase().includes("plan") || prompt.toLowerCase().includes("kế hoạch") ? "plan" : "summary");
+  runNotebookHelper(prompt, prompt.toLowerCase().includes("plan") || prompt.toLowerCase().includes("káº¿ hoáº¡ch") ? "plan" : "summary");
   els.helperInput.value = "";
 });
 els.exportData.addEventListener("click", exportData);
@@ -1420,7 +1439,7 @@ function curriculumWord(prefix, text, definition, levelLabel, topic, stageLabel 
 }
 
 function hasBrokenEncoding(value) {
-  return /[\u00c2\u00c3\u00ca\u00c9\u00cb\u00ce\u00e1\u00ba\u00bb\u20ac\u2122\u0153]/.test(String(value || ""));
+  return /[ÃÂâÊÉËÎ][\s\S]*|á.|º|»|€|™|œ/.test(String(value || ""));
 }
 
 const vietnameseAccentMap = {
@@ -2176,7 +2195,7 @@ function checkPracticeSentence(text, term, collocations) {
   const lower = text.toLowerCase();
   const normalizedTerm = term.toLowerCase();
   const points = [];
-  const sentences = (text.match(/[^.!?]+[.!?]?/g) || [text]).filter((sentence) => sentence.trim());
+  const sentences = text.match(/[^.!?]+[.!?]?/g) || [text];
   const commonTypos = {
     becuase: "because",
     recieve: "receive",
@@ -2197,16 +2216,876 @@ function checkPracticeSentence(text, term, collocations) {
   if (/\bi\b/.test(text)) points.push("Capital letter: write the pronoun 'I' as a capital letter.");
   if (!/[.!?]$/.test(text)) points.push("Punctuation: add a final full stop, question mark, or exclamation mark.");
   if (/\s+[,.!?]/.test(text)) points.push("Punctuation: remove the space before commas, full stops, question marks, or exclamation marks.");
-  if (sentences.length > 2) points.push("Keep this practice box to 1-2 example sentences.");
-  typoHits.forEach(([wrong, right]) => points.push(`Spelling: change "${wrong}" to "${right}".`));
-  const hasAnyCollocation = collocations.some((item) => lower.includes(item.toLowerCase()));
-  if (collocations.length && !hasAnyCollocation) {
-    points.push(`Collocation: try one stronger phrase such as "${collocations[0]}".`);
+  if (/[,.!?][A-Za-z]/.test(text)) points.push("Punctuation: add one space after punctuation when a new word follows.");
+  if (/\b(what|why|how|where|when|who|do|does|did|can|could|would|should|is|are)\b/i.test(text) && !text.includes("?") && /^(what|why|how|where|when|who|do|does|did|can|could|would|should|is|are)\b/i.test(text.trim())) points.push("Question punctuation: if this is a question, end it with a question mark.");
+  if (sentences.some((sentence) => /[.!?]\s+[a-z]/.test(sentence))) points.push("Capital letter: start each new sentence with a capital letter.");
+  if (typoHits.length) points.push(`Spelling: check ${typoHits.map(([wrong, right]) => `"${wrong}" -> "${right}"`).join(", ")}.`);
+  const spellingHints = practiceSpellingHints(text, term, collocations);
+  if (spellingHints.length) points.push(`Spelling: ${spellingHints.join("; ")}.`);
+  if (/\b(a|an)\s+[aeiou]/i.test(text)) points.push("Check article use: before vowel sounds, 'an' is often needed instead of 'a'.");
+  if (/\b(people|students|children)\s+is\b/i.test(text)) points.push("Subject-verb agreement: plural subjects usually need 'are', not 'is'.");
+  if (/\b(he|she|it)\s+(go|have|do|make|take)\b/i.test(text)) points.push("Grammar: with he/she/it in the present simple, check the verb form, such as goes/has/does/makes/takes.");
+  if (/\bI am agree\b/i.test(text)) points.push("Grammar: say 'I agree', not 'I am agree'.");
+  if (/\bmore better\b/i.test(text)) points.push("Grammar: say 'better', not 'more better'.");
+  if (/[!]{2,}|[?]{2,}/.test(text)) points.push("Punctuation: one question mark or exclamation mark is enough for academic practice.");
+  const usedCollocation = collocations.some((item) => lower.includes(item.toLowerCase()));
+  if (!usedCollocation && collocations.length) points.push(`For stronger collocation, try one of: ${collocations.slice(0, 3).join(" / ")}.`);
+  if (!points.length) return "Nice work. Spelling, grammar, capital letters, punctuation, and word use look clear for practice.";
+  return `Good start. ${points.join(" ")}`;
+}
+
+function practiceSpellingHints(text, term, collocations = []) {
+  const dictionary = practiceDictionary(term, collocations);
+  const words = unique((text.toLowerCase().match(/[a-z][a-z'-]{2,}/g) || []).map((word) => word.replace(/^'+|'+$/g, "")));
+  const ignored = new Set(["the", "and", "but", "for", "with", "from", "that", "this", "these", "those", "because", "people", "students", "children", "school", "work", "life", "world", "very", "more", "most", "many", "much", "some", "also", "can", "could", "would", "should", "have", "has", "had", "will", "their", "there", "about", "into", "when", "where", "what", "why", "how"]);
+  return words
+    .filter((word) => !ignored.has(word))
+    .map((word) => {
+      const suggestion = closestKnownWord(word, dictionary);
+      return suggestion && suggestion !== word ? `"${word}" -> "${suggestion}"` : "";
+    })
+    .filter(Boolean)
+    .slice(0, 4);
+}
+
+function practiceDictionary(term, collocations = []) {
+  const banks = [
+    term,
+    ...collocations.flatMap((item) => item.split(/\s+/)),
+    ...vocabulary.flatMap((item) => [item.text, item.topic, ...item.collocations, ...item.family]).flatMap((item) => String(item).split(/\s+/)),
+    ...stageWords.map(([, , word]) => word).flatMap((item) => item.split(/\s+/)),
+    ...communicationWords.map(([word]) => word).flatMap((item) => item.split(/\s+/)),
+    ...toeicWords.map(([word]) => word).flatMap((item) => item.split(/\s+/)),
+    ...currentCurriculum().grammar.flatMap((group) => group.items.map(([word]) => word)).flatMap((item) => item.split(/\s+/)),
+    ...ieltsTopicBanks.flatMap((topic) => topic.terms).flatMap((item) => item.split(/\s+/))
+  ];
+  return unique(banks.map((word) => normalizeLookup(word)).filter((word) => /^[a-z][a-z-]{2,}$/.test(word)));
+}
+
+function closestKnownWord(word, dictionary) {
+  if (dictionary.includes(word)) return "";
+  let best = "";
+  let bestDistance = Infinity;
+  dictionary.forEach((candidate) => {
+    if (Math.abs(candidate.length - word.length) > 2) return;
+    const distance = levenshteinDistance(word, candidate);
+    if (distance < bestDistance) {
+      bestDistance = distance;
+      best = candidate;
+    }
+  });
+  const limit = word.length <= 5 ? 1 : 2;
+  return bestDistance <= limit ? best : "";
+}
+
+function levenshteinDistance(a, b) {
+  const dp = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i += 1) dp[i][0] = i;
+  for (let j = 0; j <= b.length; j += 1) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i += 1) {
+    for (let j = 1; j <= b.length; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+    }
   }
-  if (!points.length) {
-    return `Good sentence. It uses "${term}" clearly. Tiny upgrade: add one precise example or reason if you want a stronger IELTS answer.`;
+  return dp[a.length][b.length];
+}
+
+function card(item) {
+  const saved = state.saved.includes(item.id);
+  const mastered = state.mastered.includes(item.id);
+  return `<article class="word-card">
+    <div class="word-top">
+      <span class="topic-pill"><span class="topic-pill-icon" aria-hidden="true">${topicIconSvg(item.topic)}</span>${item.topic}</span>
+      <div class="audio-buttons" aria-label="Pronunciation choices">
+        <button type="button" data-speak="${item.text}" data-lang="en-US" title="American English">US</button>
+        <button type="button" data-speak="${item.text}" data-lang="en-GB" title="British English">UK</button>
+      </div>
+    </div>
+    <h3>${item.text}</h3>
+    <p class="ipa">${displayIpa(item)}</p>
+    <p class="meaning">Vietnamese meaning: ${displayMeaning(item)}</p>
+    <p>${item.definition}</p>
+    <div class="detail-block"><strong><span class="detail-icon" aria-hidden="true"><svg><use href="#icon-example"></use></svg></span> IELTS example</strong><span>${item.example}</span></div>
+    <div class="detail-block"><strong><span class="detail-icon" aria-hidden="true"><svg><use href="#icon-link"></use></svg></span> Collocations</strong><span>${item.collocations.join(" / ")}</span></div>
+    <div class="detail-block"><strong><span class="detail-icon" aria-hidden="true"><svg><use href="#icon-family"></use></svg></span> Word family</strong><span>${displayFamily(item)}</span></div>
+    <p class="note">${item.note}</p>
+    ${practiceBox(item.id, item.text, item.collocations)}
+    <div class="card-actions">
+      <button class="${saved ? "primary" : ""}" type="button" data-save="${item.id}">${saved ? "Saved" : "Save"}</button>
+      <button class="${mastered ? "primary" : ""}" type="button" data-master="${item.id}">${mastered ? "Mastered" : "Mark mastered"}</button>
+      <button type="button" data-ask="${item.id}">Ask AI</button>
+    </div>
+  </article>`;
+}
+
+function renderAssistant() {
+  els.assistantThread.innerHTML = currentMessages().map((message) => `<article class="assistant-message ${message.role}">
+    <strong>${message.role === "assistant" ? "AI Assistant" : "You"}</strong>
+    <p>${escapeHtml(sanitizeAssistantText(message.text)).replace(/\n/g, "<br>")}</p>
+  </article>`).join("");
+}
+
+function sanitizeAssistantText(text) {
+  return String(text || "")
+    .replace(/Absolutely â€” hereâ€™s/g, "Absolutely - here's")
+    .replace(/Sure â€” Iâ€™ll/g, "Sure - I will")
+    .replace(/â€™/g, "'")
+    .replace(/â€œ|â€�/g, "\"")
+    .replace(/â€“|â€”/g, "-")
+    .replace(/Vietnamese meaning: A word or phrase that needs a precise dictionary check, but can still be prepared for IELTS by learning its meaning, collocations, word family, and example use\./g, "Nghĩa tiếng Việt: nghĩa dự đoán theo ngữ cảnh; cần kiểm tra thêm khi có mạng.")
+    .replace(/Nghĩa tiếng Việt: từ vựng cần hiểu theo ngữ cảnh sử dụng: "([^"]+)"/g, "Nghĩa tiếng Việt: ý cần hiểu qua ngữ cảnh và ví dụ sử dụng liên quan đến \"$1\"")
+    .replace(/Nghĩa tiếng Việt: một ý cần hiểu qua ngữ cảnh và ví dụ sử dụng liên quan đến "process"/g, "Nghĩa tiếng Việt: quá trình; tiến trình")
+    .replace(/Definition: A word or phrase that can be learned through its context, collocations, word family, and example use\./g, "Definition: A word or phrase understood through context, examples, and natural collocations.")
+    .replace(/Vietnamese meaning:/g, "Nghĩa tiếng Việt:");
+}
+
+function renderGrammar() {
+  if (!els.grammarGrid) return;
+  els.grammarGrid.innerHTML = currentCurriculum().grammar.map((group) => `<article class="grammar-card">
+    <div class="grammar-card-head"><span aria-hidden="true">${group.icon}</span><strong>${group.title}</strong></div>
+    <div class="grammar-items">${group.items.map(([term, use, example]) => `<section>
+      <h3>${term}</h3>
+      <p class="ipa">${displayIpa({ text: term, ipa: offlineIpa(term), family: [term] })}</p>
+      <p><b>Use:</b> ${use}</p>
+      <p><b>Example:</b> ${example}</p>
+    </section>`).join("")}</div>
+  </article>`).join("");
+}
+
+function renderSpeaking() {
+  if (!els.speakingCard) return;
+  const speaking = currentCurriculum().speaking;
+  const part = state.speakingPart || "1";
+  els.speakingTabs.querySelectorAll("[data-speaking-part]").forEach((button) => button.classList.toggle("active", button.dataset.speakingPart === part));
+  els.speakingTabs.querySelectorAll("[data-speaking-part]").forEach((button) => {
+    button.textContent = speaking.labels[button.dataset.speakingPart] || `Part ${button.dataset.speakingPart}`;
+  });
+  const questions = speaking.questions[part];
+  const quarter = Math.floor(new Date().getMonth() / 3) + 1;
+  const index = (Number(state.speakingSeed || 0) + quarter + (state.studyMode || "ielts").length) % questions.length;
+  els.speakingCard.innerHTML = `<span class="topic-pill">${speaking.labels[part] || `Part ${part}`}</span>
+    <h3>${questions[index]}</h3>
+    <p>Answer naturally first, then improve with one precise vocabulary item and one clear example.</p>
+    <small>${speaking.note} Q${quarter} rotation.</small>`;
+}
+
+function renderGame() {
+  if (!els.gameBoard) return;
+  const pool = gamePool();
+  if (pool.length < 4) {
+    els.gameBoard.innerHTML = `<p class="empty-state">Not enough words for this game yet.</p>`;
+    return;
   }
-  return points.join(" ");
+  const start = (Number(state.gameRound || 0) + new Date().getDate()) % pool.length;
+  const answer = pool[start];
+  const distractors = rotateWordsForToday(pool.filter((item) => item[0] !== answer[0]), `${state.studyMode}-${state.gameScope}-${state.gameRound}-${answer[0]}`).slice(0, 3);
+  const options = [...distractors];
+  const answerIndex = seededOptionIndex(`${state.studyMode}-${state.gameScope}-${state.gameRound}-${answer[0]}`);
+  options.splice(answerIndex, 0, answer);
+  els.gameBoard.innerHTML = `<article class="game-card">
+    <span class="topic-pill">${studyModes[state.studyMode] || "IELTS Vocab"} - ${state.gameScope}</span>
+    <h3>Match the meaning</h3>
+    <p class="game-clue">${answer[1]}</p>
+    <div class="game-options">${options.map((item) => `<button type="button" data-game-choice="${escapeHtml(item[0])}" data-game-answer="${escapeHtml(answer[0])}"><span>${item[0]}</span><small>${displayIpa({ text: item[0], ipa: offlineIpa(item[0]), family: [item[0]] })}</small></button>`).join("")}</div>
+    <p class="game-feedback" id="gameFeedback">Choose the best word.</p>
+  </article>`;
+  els.gameBoard.querySelectorAll("[data-game-choice]").forEach((button) => button.addEventListener("click", () => {
+    const correct = button.dataset.gameChoice === button.dataset.gameAnswer;
+    els.gameBoard.querySelector("#gameFeedback").textContent = correct ? "Correct. Nice match." : `Not yet. The answer is "${button.dataset.gameAnswer}".`;
+    if (correct) {
+      state.gameRound += 1;
+      save();
+      setTimeout(renderGame, 650);
+    }
+  }));
+}
+
+function seededOptionIndex(seed) {
+  const today = new Date();
+  const dateSeed = Number(`${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`);
+  const textSeed = [...seed].reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+  return (dateSeed + textSeed) % 4;
+}
+
+function gamePool() {
+  if (state.gameScope === "communication") return communicationWords;
+  if (state.gameScope === "toeic") return toeicWords;
+  if (state.gameScope === "stages") return stageWords
+    .filter(([stage]) => stage === state.band.replace("-", " "))
+    .map(([stage, meaning, word]) => {
+      const item = curriculumWord("global-english", word, meaning, currentLevel().title, "stage", stage);
+      return [item.text, item.definition];
+    });
+  if (state.gameScope === "topics") {
+    return ieltsTopicBanks.flatMap((topic) => topic.terms.slice(0, 2).map((term) => [term, `IELTS topic phrase for ${topic.title}`])).slice(0, 80);
+  }
+  return activeWords().map((item) => [item.text, item.definition]);
+}
+
+function renderDashboard() {
+  const visibleWords = activeWords();
+  const savedWords = state.saved.map((id) => vocabulary.find((item) => item.id === id) || visibleWords.find((item) => item.id === id)).filter(Boolean);
+  const bandSavedWords = savedWords.filter((item) => item.band === state.band);
+  const bandMasteredCount = state.mastered
+    .map((id) => vocabulary.find((item) => item.id === id) || visibleWords.find((item) => item.id === id))
+    .filter((item) => item?.band === state.band).length;
+
+  els.savedMetric.textContent = bandSavedWords.length;
+  els.masteredMetric.textContent = bandMasteredCount;
+  els.streakMetric.textContent = calculateStreak();
+  els.dashboardBandTitle.textContent = `${currentLevel().title} saved vocabulary`;
+
+  els.savedList.innerHTML = bandSavedWords.map((item) => `<article class="saved-item">
+    <div><strong><span aria-hidden="true">${currentLevel().icon}</span> ${item.text}</strong><span>${displayIpa(item)} - Vietnamese meaning: ${displayMeaning(item)}</span><small>${currentLevel().title} - ${item.topic}</small></div>
+    <div class="audio-buttons">
+      <button type="button" data-speak="${item.text}" data-lang="en-US">US</button>
+      <button type="button" data-speak="${item.text}" data-lang="en-GB">UK</button>
+    </div>
+  </article>`).join("") || dashboardWaitingState();
+  els.savedList.querySelectorAll("[data-speak]").forEach((button) => button.addEventListener("click", () => speak(button.dataset.speak, button.dataset.lang)));
+  renderRecommendations();
+}
+
+function renderRecommendations() {
+  els.recommendationKicker.textContent = `${currentCurriculum().label} trail`;
+  els.recommendationTitle.textContent = `Explore words for ${currentLevel().title}`;
+  const bandWords = rotateWordsForToday(activeWords(), `${state.studyMode}-${state.band}-recommend`);
+  const picks = bandWords.slice(0, 4);
+  els.recommendationList.innerHTML = picks.map((item) => {
+    const oxfordUrl = oxfordDictionaryUrl(item.text);
+    return `<article class="recommendation-card">
+      <span class="topic-pill"><span class="topic-pill-icon" aria-hidden="true">${topicIconSvg(item.topic)}</span>${item.topic}</span>
+      <strong>Explore "${item.text}" for ${currentLevel().title}</strong>
+      <p>${recommendationCopy(item, oxfordUrl)}</p>
+    </article>`;
+  }).join("");
+}
+
+function renderNotes() {
+  els.notesList.innerHTML = currentNotes().map((note) => renderNoteCard(note)).join("") || `<p class="empty-state">Your ${currentCurriculum().label} notebook is empty.</p>`;
+}
+
+function renderNoteCard(note) {
+  const isEditing = state.editingNoteId === note.id;
+  const created = new Date(note.createdAt).toLocaleString("en-US");
+  const updated = note.updatedAt ? `Updated ${new Date(note.updatedAt).toLocaleString("en-US")}` : "";
+  if (isEditing) {
+    return `<article class="note-card note-card-editing">
+      <form class="note-edit-form" data-note-edit-form data-note-id="${escapeHtml(note.id)}">
+        <label>
+          <span>Title</span>
+          <input data-note-title type="text" value="${escapeHtml(note.title)}" />
+        </label>
+        <label>
+          <span>Note</span>
+          <textarea data-note-body rows="8">${escapeHtml(note.body)}</textarea>
+        </label>
+        <div class="note-actions">
+          <button class="toolbar-button" type="submit">Save</button>
+          <button class="toolbar-button ghost" type="button" data-note-action="cancel" data-note-id="${escapeHtml(note.id)}">Cancel</button>
+        </div>
+      </form>
+    </article>`;
+  }
+  return `<article class="note-card">
+    <div class="note-card-head">
+      <div>
+        <strong>${escapeHtml(note.title)}</strong>
+        <small>${created}${updated ? ` · ${updated}` : ""}</small>
+      </div>
+      <div class="note-actions">
+        <button class="toolbar-button" type="button" data-note-action="edit" data-note-id="${escapeHtml(note.id)}">Edit</button>
+        <button class="toolbar-button danger" type="button" data-note-action="delete" data-note-id="${escapeHtml(note.id)}">Delete</button>
+      </div>
+    </div>
+    <p>${escapeHtml(note.body).replace(/\n/g, "<br>")}</p>
+  </article>`;
+}
+
+function openNotebookHelper() {
+  els.helperWindow.hidden = false;
+  renderHelperIntro();
+  setTimeout(() => els.helperInput.focus(), 0);
+}
+
+function closeNotebookHelper() {
+  if (!els.helperWindow || els.helperWindow.hidden) return;
+  els.helperWindow.hidden = true;
+}
+
+function renderHelperIntro(extra = "") {
+  const notes = currentNotes();
+  const history = currentHelperHistory().map((message) => `<article class="assistant-message ${message.role}">
+    <strong>${message.role === "assistant" ? "AI Helper" : "You"}</strong>
+    <p>${escapeHtml(message.text).replace(/\n/g, "<br>")}</p>
+    ${message.createdAt ? `<small>${new Date(message.createdAt).toLocaleString("en-US")}</small>` : ""}
+  </article>`).join("");
+  els.helperBody.innerHTML = `<article class="assistant-message assistant">
+    <strong>AI Helper</strong>
+    <p>${notes.length ? `I can sum up ${notes.length} notes from your ${currentCurriculum().label} notebook.` : `Your ${currentCurriculum().label} notebook is empty. Add a note first, then I can sum it up.`}</p>
+  </article>${history}${extra}`;
+  els.helperBody.scrollTop = els.helperBody.scrollHeight;
+}
+
+function runNotebookHelper(prompt, mode = "summary") {
+  const lang = detectReplyLanguage(prompt);
+  const summary = mode === "plan" ? planNotebook(prompt, lang) : summarizeNotebook(prompt, lang);
+  const createdAt = new Date().toISOString();
+  currentHelperHistory().push({ role: "user", text: prompt, mode, createdAt });
+  currentHelperHistory().push({ role: "assistant", text: summary, mode, createdAt });
+  if (currentNotes().length || mode === "plan") {
+    currentNotes().unshift({
+      id: crypto.randomUUID(),
+      title: `${mode === "plan" ? "AI Plan" : "AI Summary"} - ${new Date().toLocaleDateString("en-US")}`,
+      body: summary,
+      createdAt: new Date().toISOString()
+    });
+  }
+  saveAndRender();
+  els.helperWindow.hidden = false;
+  renderHelperIntro();
+}
+
+function notebookInsights() {
+  const notes = currentNotes();
+  const combined = notes.map((note) => `${note.title}. ${note.body}`).join(" ");
+  const words = combined.toLowerCase().match(/[a-z][a-z-]{2,}/g) || [];
+  const stop = new Set(["the", "and", "that", "this", "with", "from", "your", "have", "into", "what", "when", "where", "because", "about", "example", "note", "learned", "using", "summary", "plan"]);
+  const counts = words.reduce((map, word) => {
+    if (!stop.has(word)) map[word] = (map[word] || 0) + 1;
+    return map;
+  }, {});
+  const keywords = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([word]) => word);
+  const recent = notes.slice(0, 3).map((note) => `- ${note.title}: ${note.body.split(/\s+/).slice(0, 22).join(" ")}${note.body.split(/\s+/).length > 22 ? "..." : ""}`).join("\n");
+  return { notes, keywords, recent };
+}
+
+function summarizeNotebook(prompt, lang = "en") {
+  const { notes, keywords, recent } = notebookInsights();
+  if (!notes.length) return lang === "vi" ? "Mình cần ít nhất một note trong Study mode này thì mới tóm tắt được." : "I need at least one note in this Study mode before I can sum it up.";
+  const request = prompt.toLowerCase();
+  const focus = request.includes("mistake") || request.includes("lá»—i")
+    ? "Focus: review repeated mistakes, weak collocations, spelling, grammar, and punctuation."
+    : request.includes("plan") || request.includes("káº¿ hoáº¡ch")
+      ? "Focus: turn these notes into a short review plan."
+      : "Focus: collect the main ideas and strongest vocabulary.";
+  if (lang === "vi") {
+    const viFocus = request.includes("mistake") || request.includes("loi") || request.includes("lỗi")
+      ? "Trọng tâm: xem lại lỗi lặp lại, collocation yếu, chính tả, grammar và dấu câu."
+      : "Trọng tâm: gom ý chính và những từ/cụm từ quan trọng nhất.";
+    return `Tóm tắt notebook ${currentCurriculum().label}
+${viFocus}
+
+Ý chính:
+${recent || "- Chưa có đủ nội dung chi tiết để rút ý."}
+
+Từ cần ôn: ${keywords.join(", ") || "hãy thêm nhiều note hơn để mình rút từ khóa tốt hơn"}.
+
+Bước học tiếp theo:
+Viết 2 câu mới với các từ quan trọng nhất, rồi dùng Practice để kiểm tra chính tả, grammar, viết hoa và dấu câu.`;
+  }
+  return `${currentCurriculum().label} notebook summary
+${focus}
+
+Main ideas:
+${recent}
+
+Important words to review: ${keywords.join(", ") || "add more notes to create a stronger keyword list"}.
+
+Next study move:
+Write 2 fresh sentences using the most important words, then use the Practice box to check spelling, grammar, capitals, and punctuation.`;
+}
+
+function planNotebook(prompt, lang = "en") {
+  const { notes, keywords, recent } = notebookInsights();
+  const duration = parsePlanDuration(prompt);
+  const planSteps = buildStudyPlanSteps(duration.days, Boolean(notes.length), lang);
+  const planLabel = lang === "vi" ? `Kế hoạch ${duration.days} ngày` : duration.label;
+  if (!notes.length) {
+    if (lang === "vi") {
+      return `Kế hoạch học ${currentCurriculum().label}
+Mục tiêu: chuẩn bị các buổi học tiếp theo dù Notebook chưa có note.
+
+${planLabel}:
+${planSteps}
+
+Bước note đầu tiên:
+Sau buổi học hôm nay, tạo một note tên là "Hôm nay mình học gì" và ghi 5 từ bạn muốn nhớ nhất.`;
+    }
+    return `${currentCurriculum().label} study plan
+Goal: prepare your next study sessions before you have notebook notes.
+
+${planLabel}:
+${planSteps}
+
+First notebook move:
+After today, create one note called "What I learned" and write the 5 words you want to remember most.`;
+  }
+  if (lang === "vi") {
+    return `Kế hoạch học ${currentCurriculum().label}
+Mục tiêu: biến notebook thành luyện nhớ chủ động, luyện câu và ôn lại.
+
+Phần cần ưu tiên:
+${recent}
+
+Từ nên dùng lại: ${keywords.join(", ") || "hãy thêm nhiều note hơn để mình rút từ khóa tốt hơn"}.
+
+${planLabel}:
+${planSteps}
+
+Luật nhỏ: đừng chỉ đọc lại. Mỗi lần ôn phải viết hoặc nói một câu mới.`;
+  }
+  return `${currentCurriculum().label} study plan
+Goal: turn your notebook into active recall, sentence practice, and review.
+
+Priority review:
+${recent}
+
+Words to recycle: ${keywords.join(", ") || "add more notes to create a stronger keyword list"}.
+
+${planLabel}:
+${planSteps}
+
+Tiny rule: do not only reread. Always write or speak something new.`;
+}
+
+function parsePlanDuration(prompt) {
+  const value = prompt.toLowerCase();
+  const numberMatch = value.match(/\b(\d{1,3})\s*(day|days|ng|week|weeks|tu[aầ]n|month|months|th[aá]ng)?/i);
+  const number = numberMatch ? Math.max(1, Math.min(90, Number(numberMatch[1]))) : null;
+  const unit = numberMatch?.[2] || "";
+  let days = 7;
+  if (number && /week|tu/.test(unit)) days = number * 7;
+  else if (number && /month|th/.test(unit)) days = number * 30;
+  else if (number) days = number;
+  else if (/one week|1 week|m[oộ]t tu[aầ]n/.test(value)) days = 7;
+  else if (/one month|1 month|m[oộ]t th[aá]ng/.test(value)) days = 30;
+  const label = days <= 1 ? "1-day plan" : `${days}-day plan`;
+  return { days, label };
+}
+
+function buildStudyPlanSteps(days, hasNotes, lang = "en") {
+  if (days <= 7) {
+    return Array.from({ length: days }, (_, index) => dailyPlanLine(index + 1, days, hasNotes, lang)).join("\n");
+  }
+  const weeks = Math.ceil(days / 7);
+  return Array.from({ length: weeks }, (_, index) => {
+    const start = index * 7 + 1;
+    const end = Math.min(days, start + 6);
+    return lang === "vi" ? `Ngày ${start}-${end}: ${weeklyPlanFocus(index + 1, hasNotes, lang)}` : `Days ${start}-${end}: ${weeklyPlanFocus(index + 1, hasNotes, lang)}`;
+  }).join("\n");
+}
+
+function dailyPlanLine(day, totalDays, hasNotes, lang = "en") {
+  if (lang === "vi") {
+    const viCycle = [
+      hasNotes ? "xem lại notebook và chọn các từ quan trọng" : "học 8-10 từ từ level hoặc topic hiện tại",
+      "nghe phát âm US/UK và ghi lại IPA khó",
+      "viết 2 câu mới với collocation mạnh",
+      "nộp câu vào Practice để sửa chính tả, grammar, viết hoa và dấu câu",
+      "hỏi AI Assistant về từ yếu hoặc collocation khó hiểu",
+      "nói 60 giây bằng 5 từ đã học hôm nay",
+      "tạo một note sạch trong Notebook và đánh dấu từ đã thuộc"
+    ];
+    if (day === totalDays) return `Ngày ${day}: ôn tổng kết, tự kiểm tra không nhìn tài liệu, rồi lưu ví dụ tốt nhất.`;
+    return `Ngày ${day}: ${viCycle[(day - 1) % viCycle.length]}.`;
+  }
+  const cycle = [
+    hasNotes ? "review notebook notes and choose key words" : "learn 8-10 words from the current level or topic",
+    "listen to US/UK pronunciation and copy tricky IPA",
+    "write 2 original sentences using strong collocations",
+    "submit sentences in Practice and fix spelling, grammar, capitals, and punctuation",
+    "ask AI Assistant about weak words or confusing collocations",
+    "speak for 60 seconds using 5 words from today",
+    "make one clean Notebook note and mark mastered words"
+  ];
+  if (day === totalDays) return `Day ${day}: final review, self-test without looking, and save the best examples.`;
+  return `Day ${day}: ${cycle[(day - 1) % cycle.length]}.`;
+}
+
+function weeklyPlanFocus(week, hasNotes, lang = "en") {
+  if (lang === "vi") {
+    const viFocuses = [
+      hasNotes ? "sắp xếp notebook, chọn từ ưu tiên và viết lại ví dụ yếu" : "xây word bank đầu tiên và lưu ví dụ hữu ích vào Notebook",
+      "luyện chính tả, phát âm, IPA và độ chính xác của câu",
+      "tập trung vào collocation, word family và ví dụ tự nhiên",
+      "luyện speaking và hỏi AI Assistant về từ còn yếu",
+      "ôn lại toàn bộ, tự quiz và đánh dấu từ đã thuộc"
+    ];
+    return viFocuses[(week - 1) % viFocuses.length];
+  }
+  const focuses = [
+    hasNotes ? "organise notebook notes, pick priority words, and rewrite weak examples" : "build the first word bank and save useful examples into Notebook",
+    "practise spelling, pronunciation, IPA, and sentence accuracy",
+    "focus on collocations, word family, and natural examples",
+    "do speaking practice and ask AI Assistant to explain weak words",
+    "review everything, quiz yourself, and mark mastered words"
+  ];
+  return focuses[(week - 1) % focuses.length];
+}
+
+function dashboardWaitingState() {
+  const level = currentLevel();
+  return `<section class="dashboard-waiting">
+      <span class="waiting-icon" aria-hidden="true"><svg><use href="#icon-topics"></use></svg></span>
+    <div>
+      <strong>${level.title} is waiting for your saved words.</strong>
+      <p>${level.subtitle}</p>
+      <p>Open Learn, save a word from this level, and it will appear here automatically.</p>
+    </div>
+  </section>`;
+}
+
+function recommendationCopy(item, oxfordUrl) {
+  if (state.studyMode === "ielts") return `This word connects to IELTS vocabulary practice. Learn more about <b>${item.text}</b> in <a href="${oxfordUrl}" target="_blank" rel="noopener">Oxford Learner's Dictionaries</a>.`;
+  if (state.studyMode === "toeic") return `This word is useful for TOEIC workplace situations such as emails, notices, meetings, and schedules.`;
+  if (state.studyMode === "communication") return `This word is useful for everyday conversations, polite requests, small talk, and real-life speaking.`;
+  return `This word belongs to ${currentLevel().title} practice and can be used in school speaking, reading, writing, or project work.`;
+}
+
+function toggle(key, id, saveWord = false) {
+  state[key] = state[key].includes(id) ? state[key].filter((item) => item !== id) : [id, ...state[key]];
+  if (saveWord && !state.saved.includes(id)) state.saved.unshift(id);
+  saveAndRender();
+}
+
+function answer(text) {
+  const lang = detectReplyLanguage(text);
+  const item = findAssistantEntry(text);
+  if (item) return explain(item, lang);
+  return explain(createExternalWordEntry(extractLookupTerm(text)), lang);
+}
+
+function normalizeLookup(value) {
+  return (value || "").toLowerCase().replace(/[^a-z0-9\s-]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function extractLookupTerm(text) {
+  const cleaned = normalizeLookup(text)
+    .replace(/\b(what|is|are|a|an|the|does|do|mean|means|meaning|define|explain|translate|word|please|pls|la|gi|nghia|dich|tu|nay|ielts|vocab|vocabulary)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return cleaned || normalizeLookup(text).split(" ").slice(-1)[0] || "this word";
+}
+
+function findAssistantEntry(text) {
+  const lookup = normalizeLookup(extractLookupTerm(text));
+  const fullText = normalizeLookup(text);
+  const exact = vocabulary.find((entry) => normalizeLookup(entry.text) === lookup);
+  if (exact) return exact;
+  const topicExact = findTopicTermEntry(lookup);
+  if (topicExact) return topicExact;
+  const topicContained = findContainedTopicTerm(fullText);
+  if (topicContained) return topicContained;
+  const phrase = vocabulary
+    .filter((entry) => fullText.split(" ").includes(normalizeLookup(entry.text)))
+    .sort((a, b) => b.text.length - a.text.length)[0];
+  if (phrase) return phrase;
+  return findTopicTermEntry(lookup) || null;
+}
+
+function findContainedTopicTerm(fullText) {
+  const matches = [];
+  ieltsTopicBanks.forEach((topic) => {
+    topic.terms.forEach((term) => {
+      const normalizedTerm = normalizeLookup(term);
+      if (normalizedTerm && fullText.includes(normalizedTerm)) {
+        matches.push({ topic, term });
+      }
+    });
+  });
+  const best = matches.sort((a, b) => b.term.length - a.term.length)[0];
+  return best ? createTopicWordEntry(best.topic, best.term) : null;
+}
+
+function findTopicTermEntry(lookup) {
+  for (const topic of ieltsTopicBanks) {
+    const term = topic.terms.find((item) => normalizeLookup(item) === lookup);
+    if (term) return createTopicWordEntry(topic, term);
+  }
+  return null;
+}
+
+function createTopicWordEntry(topic, term) {
+  const details = topicTermDetails(topic, term);
+  return {
+    id: `topic-${topic.id}-${normalizeLookup(term)}`,
+    band: "Topic",
+    text: term,
+    ipa: offlineIpa(term),
+    vi: details.vi.replace(`${term}: `, ""),
+    topic: topic.category,
+    definition: `A topic-specific IELTS word or phrase connected to ${topic.title.toLowerCase()}.`,
+    example: details.example,
+    collocations: details.collocations,
+    family: details.family,
+    note: details.usage
+  };
+}
+
+function createExternalWordEntry(term) {
+  const cleanTerm = term || "this word";
+  const head = headWord(cleanTerm).toLowerCase();
+  const family = topicFamilyMap[head] || topicFamilyMap[normalizeLookup(cleanTerm)] || [cleanTerm, `${head}-related`];
+  const offline = offlineDictionaryEntry(cleanTerm);
+  return {
+    id: `external-${normalizeLookup(cleanTerm)}`,
+    band: "External",
+    text: cleanTerm,
+    ipa: offline.ipa,
+    vi: offline.vi,
+    topic: "external",
+    definition: offline.definition,
+    example: offline.example,
+    collocations: offline.collocations || [`key ${cleanTerm}`, `${cleanTerm} issue`, `${cleanTerm} in society`, `improve ${cleanTerm}`, `${cleanTerm} development`],
+    family: cleanWordFamily(cleanTerm, offline.family || family),
+    note: offline.note
+  };
+}
+
+function offlineDictionaryEntry(term) {
+  const value = normalizeLookup(term);
+  const entries = {
+    domain: {
+      ipa: "/d\u0259\u02c8me\u026an/",
+      vi: "lĩnh vực; miền; phạm vi kiến thức hoặc hoạt động",
+      definition: "An area of knowledge, activity, control, or online address.",
+      example: "Digital privacy is an important domain of modern technology policy.",
+      collocations: ["academic domain", "professional domain", "online domain", "policy domain"],
+      family: ["domain", "domain-specific", "cross-domain"],
+      note: "Use domain when talking about an area of work, knowledge, technology, or responsibility."
+    },
+    capacity: {
+      ipa: "/k\u0259\u02c8p\u00e6s.\u0259.ti/",
+      vi: "năng lực; sức chứa; khả năng tiếp nhận hoặc xử lý",
+      definition: "The ability to do, contain, produce, or deal with something.",
+      example: "Schools need greater capacity to support students with different learning needs.",
+      collocations: ["limited capacity", "capacity to learn", "build capacity", "storage capacity"],
+      family: ["capacity", "capable", "capability"],
+      note: "Use capacity for ability, space, systems, hospitals, schools, technology, and organisations."
+    },
+    perspective: {
+      ipa: "/p\u0259\u02c8spek.t\u026av/",
+      vi: "góc nhìn; quan điểm; cách nhìn nhận một vấn đề",
+      definition: "A way of thinking about or seeing a situation.",
+      example: "From a student's perspective, online learning can be flexible but distracting.",
+      collocations: ["different perspective", "global perspective", "from my perspective"],
+      family: ["perspective", "prospective", "perspectival"],
+      note: "Useful for giving opinions and comparing viewpoints."
+    }
+  };
+  if (entries[value]) return entries[value];
+  const inferred = inferOfflineEntry(term);
+  return {
+    ipa: offlineIpa(term),
+    vi: inferred.vi,
+    definition: inferred.definition,
+    example: inferred.example,
+    collocations: inferred.collocations,
+    family: inferred.family,
+    note: inferred.note
+  };
+}
+
+function guessDefinition(term) {
+  const value = normalizeLookup(term);
+  if (value.endsWith("tion") || value.endsWith("sion")) return `A noun often describing a process, action, result, or state related to "${term}".`;
+  if (value.endsWith("ity")) return `A noun often describing a quality, condition, or state related to "${term}".`;
+  if (value.endsWith("ment")) return `A noun often describing an action, process, result, or system related to "${term}".`;
+  if (value.endsWith("able") || value.endsWith("ible")) return `An adjective often meaning that something can be done, used, or experienced in relation to "${term}".`;
+  if (value.endsWith("ive")) return `An adjective often describing a quality, tendency, or effect related to "${term}".`;
+  if (value.endsWith("ly")) return `An adverb often describing how an action is done in relation to "${term}".`;
+  return `A word or phrase that can be learned through its context, collocations, word family, and example use.`;
+}
+
+function inferOfflineEntry(term) {
+  const cleanTerm = term || "this word";
+  const value = normalizeLookup(cleanTerm);
+  const head = headWord(cleanTerm);
+  const kind = inferWordKind(value);
+  const vi = offlineVietnameseMeanings[value] || offlineVietnameseMeanings[normalizeLookup(head)] || inferVietnameseMeaning(cleanTerm, kind);
+  const definition = offlineDefinitionMap[value] || offlineDefinitionMap[normalizeLookup(head)] || guessDefinition(cleanTerm);
+  const family = topicFamilyMap[value] || topicFamilyMap[normalizeLookup(head)] || inferWordFamily(cleanTerm, kind);
+  return {
+    vi,
+    definition,
+    example: buildOfflineExample(cleanTerm, kind),
+    collocations: inferCollocations(cleanTerm, kind),
+    family,
+    note: buildOfflineUsageNote(cleanTerm, kind)
+  };
+}
+
+function buildOfflineExample(term, kind) {
+  if (kind === "verb") return `Students can ${term} their ideas more clearly by giving examples and evidence.`;
+  if (kind === "adjective") return `A ${term} approach can make an IELTS answer more precise and convincing.`;
+  if (kind === "adverb") return `Candidates should explain their ideas ${term} when answering longer questions.`;
+  if (kind === "phrase") return `The phrase "${term}" can be useful when discussing a familiar IELTS topic.`;
+  return `Understanding the ${term} helps students explain ideas with clearer examples and details.`;
+}
+
+function buildOfflineUsageNote(term, kind) {
+  if (kind === "verb") return `Use "${term}" when you want to describe an action or change clearly.`;
+  if (kind === "adjective") return `Use "${term}" before a noun to make your description more specific.`;
+  if (kind === "adverb") return `Use "${term}" to show how an action happens, but avoid overusing it in formal writing.`;
+  if (kind === "phrase") return `Use "${term}" as a chunk; practise it in one complete sentence so it sounds natural.`;
+  return `Use "${term}" with a clear topic, then add one example so the meaning is easy to understand.`;
+}
+
+function inferWordKind(value) {
+  if (value.includes(" ")) return "phrase";
+  if (/(tion|sion|ment|ity|ness|ance|ence|cy|ism|ship|hood)$/.test(value)) return "noun";
+  if (/(able|ible|ive|al|ous|ful|less|ic|ical|ent|ant)$/.test(value)) return "adjective";
+  if (/ly$/.test(value)) return "adverb";
+  if (/(ate|ise|ize|fy|en)$/.test(value)) return "verb";
+  return "word";
+}
+
+function inferVietnameseMeaning(term, kind) {
+  const clean = normalizeLookup(term);
+  if (offlineVietnameseMeanings[clean]) return offlineVietnameseMeanings[clean];
+  const labels = {
+    phrase: "cụm từ dùng để diễn đạt một ý trong ngữ cảnh",
+    noun: "một khái niệm, quá trình, trạng thái hoặc sự vật",
+    adjective: "đặc điểm, tính chất hoặc mức độ của một sự vật/sự việc",
+    adverb: "cách một hành động xảy ra hoặc cách một ý được diễn đạt",
+    verb: "hành động, quá trình hoặc sự thay đổi",
+    word: "một ý cần hiểu qua ngữ cảnh và ví dụ sử dụng"
+  };
+  return `${labels[kind] || labels.word} liên quan đến "${term}"`;
+}
+
+function inferCollocations(term, kind) {
+  const cleanTerm = normalizeLookup(term);
+  if (offlineCollocationMap[cleanTerm]) return offlineCollocationMap[cleanTerm];
+  if (kind === "verb") return [`${term} effectively`, `${term} gradually`, `${term} a problem`, `${term} an idea`];
+  if (kind === "adjective") return [`highly ${term}`, `a ${term} issue`, `${term} approach`, `${term} effect`];
+  if (kind === "adverb") return [`change ${term}`, `develop ${term}`, `respond ${term}`, `communicate ${term}`];
+  if (kind === "phrase") return [`use ${term}`, `${term} in context`, `${term} example`, `understand ${term}`];
+  return [`${term} issue`, `${term} example`, `${term} in context`, `key ${cleanTerm}`];
+}
+
+function inferWordFamily(term, kind) {
+  const clean = normalizeLookup(term);
+  const stem = clean.replace(/(tion|sion|ment|ity|ness|ance|ence|able|ible|ive|ly|al|ous|ful|less|ic|ical|ate|ise|ize)$/g, "");
+  if (!stem || stem.length < 3) return [term, `${term}-related`];
+  if (kind === "noun") return unique([term, stem, `${stem}-related`]).slice(0, 3);
+  if (kind === "adjective") return unique([term, `${stem}ness`, `${stem}ly`]).slice(0, 3);
+  if (kind === "verb") return unique([term, `${stem}tion`, `${stem}ing`]).slice(0, 3);
+  if (kind === "adverb") return unique([term, stem]).slice(0, 2);
+  return [term, `${term}-related`];
+}
+
+function oxfordDictionaryUrl(term) {
+  return `https://www.oxfordlearnersdictionaries.com/search/english/?q=${encodeURIComponent(term)}`;
+}
+
+function explain(item, lang = "en") {
+  const oxfordLink = oxfordDictionaryUrl(item.text);
+  if (lang === "vi") {
+    return `Được chứ, mình giải thích gọn và dễ dùng nhé.
+
+${item.text} ${displayIpa(item)}
+Nghĩa tiếng Việt: ${displayMeaning(item)}
+Định nghĩa: ${item.definition}
+Ví dụ: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Ghi chú sử dụng: ${item.note}
+Link tham khảo khi có mạng: ${oxfordLink}
+
+Bước nhỏ để nhớ lâu hơn: lưu từ này vào Dashboard, rồi tự viết thêm 1 câu có collocation mạnh nhất.`;
+  }
+  if (["zh", "ja", "ko", "th", "hi", "ar"].includes(lang)) {
+    return `Here is a clean study explanation.
+
+${item.text} ${displayIpa(item)}
+Meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+Example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "zh") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "ja") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "ko") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "th") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "hi") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  if (lang === "ar") {
+    return `Sure - I will keep it clear and IELTS-focused.
+
+${item.text} ${displayIpa(item)}
+Vietnamese meaning: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}`;
+  }
+  return `Sure - here's a clear study-card style explanation.
+
+${item.text} ${displayIpa(item)}
+Nghĩa tiếng Việt: ${displayMeaning(item)}
+Definition: ${item.definition}
+IELTS example: ${item.example}
+Collocations: ${item.collocations.join(", ")}
+Word family: ${displayFamily(item).replace(/\s\/\s/g, ", ")}
+Usage note: ${item.note}
+Optional online reference: ${oxfordLink}
+
+Tiny study move: save it, then write one sentence using the strongest collocation above.`;
 }
 
 function detectReplyLanguage(text) {
@@ -2215,7 +3094,7 @@ function detectReplyLanguage(text) {
   if (commanded) return commanded;
   if (/\b(minh|ban|hay|giai thich|nghia|la gi|dich|tu nay|vi du|tieng viet|ke hoach|lap plan|ngay|tuan|thang|giup)\b/i.test(value)) return "vi";
   if (/\b(mình|bạn|hãy|giải thích|nghĩa|là gì|dịch|từ này|ví dụ|tiếng việt|kế hoạch|ngày|tuần|tháng|giúp)\b/i.test(value)) return "vi";
-  if (/[à-ỹđ]/i.test(text)) return "vi";
+  if (/[Ã -á»¹Ä‘]/i.test(text) || /\b(nghÄ©a|la gi|lÃ  gÃ¬|dá»‹ch|tá»« nÃ y|vÃ­ dá»¥|tiáº¿ng viá»‡t)\b/i.test(value)) return "vi";
   if (/[\u0E00-\u0E7F]/.test(text)) return "th";
   if (/[\u4E00-\u9FFF]/.test(text)) return "zh";
   if (/[\u3040-\u30FF]/.test(text)) return "ja";
@@ -2227,27 +3106,27 @@ function detectReplyLanguage(text) {
 
 function detectCommandedLanguage(value) {
   const commands = [
-    { lang: "vi", patterns: ["answer in vietnamese", "reply in vietnamese", "speak vietnamese", "tra loi bang tieng viet", "noi tieng viet", "bang tieng viet", "trả lời bằng tiếng việt", "nói tiếng việt", "bằng tiếng việt"] },
-    { lang: "zh", patterns: ["answer in chinese", "reply in chinese", "speak chinese", "中文", "汉语", "用中文"] },
-    { lang: "ja", patterns: ["answer in japanese", "reply in japanese", "speak japanese", "tiếng nhật", "日本語", "にほんご"] },
-    { lang: "ko", patterns: ["answer in korean", "reply in korean", "speak korean", "tiếng hàn", "한국어"] },
-    { lang: "th", patterns: ["answer in thai", "reply in thai", "speak thai", "tiếng thái", "ภาษาไทย"] },
-    { lang: "hi", patterns: ["answer in hindi", "reply in hindi", "speak hindi", "tiếng hindi", "हिंदी"] },
-    { lang: "ar", patterns: ["answer in arabic", "reply in arabic", "speak arabic", "tiếng ả rập", "العربية"] },
-    { lang: "en", patterns: ["answer in english", "reply in english", "speak english", "tra loi bang tieng anh", "noi tieng anh", "bang tieng anh", "tiếng anh", "tieng anh", "tiếng anh"] }
+    { lang: "vi", patterns: ["answer in vietnamese", "reply in vietnamese", "speak vietnamese", "tra loi bang tieng viet", "noi tieng viet", "bang tieng viet", "tráº£ lá»i báº±ng tiáº¿ng viá»‡t", "nÃ³i tiáº¿ng viá»‡t", "báº±ng tiáº¿ng viá»‡t"] },
+    { lang: "zh", patterns: ["answer in chinese", "reply in chinese", "speak chinese", "ä¸­æ–‡", "æ±‰è¯­", "ç”¨ä¸­æ–‡"] },
+    { lang: "ja", patterns: ["answer in japanese", "reply in japanese", "speak japanese", "tiáº¿ng nháº­t", "æ—¥æœ¬èªž", "ã«ã»ã‚“ã”"] },
+    { lang: "ko", patterns: ["answer in korean", "reply in korean", "speak korean", "tiáº¿ng hÃ n", "í•œêµ­ì–´"] },
+    { lang: "th", patterns: ["answer in thai", "reply in thai", "speak thai", "tiáº¿ng thÃ¡i", "à¸ à¸²à¸©à¸²à¹„à¸—à¸¢"] },
+    { lang: "hi", patterns: ["answer in hindi", "reply in hindi", "speak hindi", "tiáº¿ng hindi", "à¤¹à¤¿à¤‚à¤¦à¥€"] },
+    { lang: "ar", patterns: ["answer in arabic", "reply in arabic", "speak arabic", "tiáº¿ng áº£ ráº­p", "Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©"] },
+    { lang: "en", patterns: ["answer in english", "reply in english", "speak english", "tra loi bang tieng anh", "noi tieng anh", "bang tieng anh", "tiếng anh", "tieng anh", "tiáº¿ng anh"] }
   ];
   return commands.find((entry) => entry.patterns.some((pattern) => value.includes(pattern)))?.lang || null;
 }
 
 function missingWordReply(lang) {
   const replies = {
-    vi: "Mình chưa tìm thấy từ đó trong kho mẫu hiện tại. Bạn có thể thử: mitigate, sustainable, prevalent, equitable, ubiquitous hoặc ameliorate.",
-    zh: "我还没有在当前词库中找到这个词。你可以试试: mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate.",
-    ja: "現在の単語リストではその語を見つけられませんでした。mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate などを試してください。",
-    ko: "현재 단어 목록에서 그 단어를 찾지 못했어요. mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate 등을 시도해 보세요.",
-    th: "ฉันยังไม่พบคำนี้ในคลังคำศัพท์ปัจจุบัน ลองค้นหา mitigate, sustainable, prevalent, equitable, ubiquitous หรือ ameliorate.",
-    hi: "मुझे यह शब्द मौजूदा word bank में नहीं मिला। आप mitigate, sustainable, prevalent, equitable, ubiquitous या ameliorate आज़मा सकते हैं।",
-    ar: "لم أجد هذه الكلمة في قائمة المفردات الحالية. جرّبي كلمات مثل mitigate أو sustainable أو prevalent أو equitable أو ubiquitous أو ameliorate."
+    vi: "MÃ¬nh chÆ°a tÃ¬m tháº¥y tá»« Ä‘Ã³ trong kho máº«u hiá»‡n táº¡i. Báº¡n cÃ³ thá»ƒ thá»­: mitigate, sustainable, prevalent, equitable, ubiquitous hoáº·c ameliorate.",
+    zh: "æˆ‘è¿˜æ²¡æœ‰åœ¨å½“å‰è¯åº“ä¸­æ‰¾åˆ°è¿™ä¸ªè¯ã€‚ä½ å¯ä»¥è¯•è¯•: mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate.",
+    ja: "ç¾åœ¨ã®å˜èªžãƒªã‚¹ãƒˆã§ã¯ãã®èªžã‚’è¦‹ã¤ã‘ã‚‰ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate ãªã©ã‚’è©¦ã—ã¦ãã ã•ã„ã€‚",
+    ko: "í˜„ìž¬ ë‹¨ì–´ ëª©ë¡ì—ì„œ ê·¸ ë‹¨ì–´ë¥¼ ì°¾ì§€ ëª»í–ˆì–´ìš”. mitigate, sustainable, prevalent, equitable, ubiquitous, ameliorate ë“±ì„ ì‹œë„í•´ ë³´ì„¸ìš”.",
+    th: "à¸‰à¸±à¸™à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸žà¸šà¸„à¸³à¸™à¸µà¹‰à¹ƒà¸™à¸„à¸¥à¸±à¸‡à¸„à¸³à¸¨à¸±à¸žà¸—à¹Œà¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™ à¸¥à¸­à¸‡à¸„à¹‰à¸™à¸«à¸² mitigate, sustainable, prevalent, equitable, ubiquitous à¸«à¸£à¸·à¸­ ameliorate.",
+    hi: "à¤®à¥à¤à¥‡ à¤¯à¤¹ à¤¶à¤¬à¥à¤¦ à¤®à¥Œà¤œà¥‚à¤¦à¤¾ word bank à¤®à¥‡à¤‚ à¤¨à¤¹à¥€à¤‚ à¤®à¤¿à¤²à¤¾à¥¤ à¤†à¤ª mitigate, sustainable, prevalent, equitable, ubiquitous à¤¯à¤¾ ameliorate à¤†à¤œà¤¼à¤®à¤¾ à¤¸à¤•à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤",
+    ar: "Ù„Ù… Ø£Ø¬Ø¯ Ù‡Ø°Ù‡ Ø§Ù„ÙƒÙ„Ù…Ø© ÙÙŠ Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ù…ÙØ±Ø¯Ø§Øª Ø§Ù„Ø­Ø§Ù„ÙŠØ©. Ø¬Ø±Ù‘Ø¨ÙŠ ÙƒÙ„Ù…Ø§Øª Ù…Ø«Ù„ mitigate Ø£Ùˆ sustainable Ø£Ùˆ prevalent Ø£Ùˆ equitable Ø£Ùˆ ubiquitous Ø£Ùˆ ameliorate."
   };
   return replies[lang] || "I cannot find that word in the current sample bank yet. Try words such as mitigate, sustainable, prevalent, equitable, ubiquitous, or ameliorate.";
 }
