@@ -262,6 +262,13 @@ function hasOfficialStageUnits() {
   return Array.isArray(officialStageUnits[state.band]) && officialStageUnits[state.band].length > 0;
 }
 
+function legacyStageWords() {
+  const stageLabel = state.band.replace("-", " ");
+  return stageWords
+    .filter(([stage]) => stage === stageLabel)
+    .map(([stage, topic, text]) => curriculumWord("global-english", text, topic, currentLevel().title, topic, stage));
+}
+
 const stageWordDetails = {
   pencil: ["/Ëˆpen.sÉ™l/", "bÃºt chÃ¬: má»™t Ä‘á»“ váº­t dÃ¹ng Ä‘á»ƒ viáº¿t hoáº·c váº½, cÃ³ thá»ƒ táº©y vÃ  sá»­a dá»… dÃ ng", "A writing object with graphite inside, useful for writing, drawing, and correcting school work."],
   book: ["/bÊŠk/", "sÃ¡ch: váº­t cÃ³ nhiá»u trang Ä‘á»ƒ Ä‘á»c, há»c hoáº·c ghi thÃ´ng tin", "A set of pages with words or pictures, useful for reading, learning, and finding information."],
@@ -1373,7 +1380,11 @@ function render() {
 }
 
 function renderStageUnitPicker() {
-  if (state.studyMode !== "global-english") return;
+  if (state.studyMode !== "global-english" || !hasOfficialStageUnits()) {
+    els.unitPicker.hidden = true;
+    return;
+  }
+  els.unitPicker.hidden = false;
   const units = stageUnitsFor(state.band);
   els.unitSelect.innerHTML = units.map((unit) => `<option value="${unit.value}">${unit.title}</option>`).join("");
   if (!units.some((unit) => unit.value === state.stageUnit)) state.stageUnit = units[0]?.value || "";
@@ -1412,7 +1423,7 @@ function renderBands() {
 
 function activeWords() {
   if (state.studyMode === "ielts") return vocabulary.filter((item) => item.band === state.band);
-  if (state.studyMode === "global-english" && !hasOfficialStageUnits()) return [];
+  if (state.studyMode === "global-english" && !hasOfficialStageUnits()) return legacyStageWords();
   const stageUnit = currentStageUnit();
   const pools = {
     communication: communicationWords.map(([text, definition]) => curriculumWord("communication", text, definition, "Giao tiep", "conversation")),
@@ -1970,15 +1981,6 @@ function renderWords() {
 }
 
 function emptyLearnState() {
-  if (state.studyMode === "global-english" && !hasOfficialStageUnits()) {
-    return `<section class="dashboard-waiting topic-waiting">
-      <span class="waiting-icon" aria-hidden="true"><svg><use href="#icon-learn"></use></svg></span>
-      <div>
-        <strong>Official Cambridge unit data is needed for ${currentLevel().title}.</strong>
-        <p>I removed the guessed Unit words. Send the exact book edition, PDF pages, or photos of the unit vocabulary list, and this Stage will be filled accurately.</p>
-      </div>
-    </section>`;
-  }
   return `<p class="empty-state">No matching words.</p>`;
 }
 const topicVietnameseHints = {
