@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ink: #20242a;
   --muted: #6f7782;
   --line: #dfe4ea;
@@ -1330,6 +1330,71 @@ body.modal-open {
   line-height: 1.55;
 }
 
+.profile-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.profile-modal[hidden] {
+  display: none;
+}
+
+.profile-panel {
+  position: relative;
+  z-index: 2;
+  width: min(620px, 100%);
+  max-height: min(760px, 92vh);
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(16, 24, 40, 0.22);
+}
+
+.profile-form {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 12px 13px;
+  font: inherit;
+  font-weight: 750;
+}
+
+.profile-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.45;
+}
+
+.profile-form button[type="submit"] {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 950;
+}
 @media (max-width: 1120px) {
   body {
     overflow: auto;
@@ -1442,3 +1507,4 @@ body.modal-open {
     align-items: stretch;
   }
 }
+

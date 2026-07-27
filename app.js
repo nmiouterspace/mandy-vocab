@@ -1,4 +1,20 @@
 ﻿const STORAGE_KEY = "ielts-vocab-studio-pwa-v1";
+const USER_DATA_PREFIX = `${STORAGE_KEY}:profile-data:`;
+const personalDataFields = ["saved", "mastered", "notesByMode", "messagesByMode", "helperHistoryByMode", "practiceFeedback", "doneDays", "profile"];
+const profileNeedOptions = [
+  "IELTS Writing",
+  "IELTS Speaking",
+  "IELTS Reading",
+  "IELTS Listening",
+  "Daily communication",
+  "TOEIC practice",
+  "Cambridge Global English",
+  "School vocabulary",
+  "Pronunciation and IPA",
+  "Grammar accuracy",
+  "Business English",
+  "Other"
+];
 const bands = ["2.5", "3.0", "3.5", "4.0", "4.5", "5.0", "5.5", "6.0", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0"];
 const bandIcons = {
   "2.5": "B2.5",
@@ -124,122 +140,104 @@ const toeicWords = [
 ];
 
 const stageWords = [
-  ["stage 1", "classroom object", "pencil"],
-  ["stage 1", "classroom object", "book"],
-  ["stage 1", "classroom object", "desk"],
-  ["stage 1", "classroom person", "teacher"],
-  ["stage 1", "classroom person", "student"],
-  ["stage 1", "colour word", "yellow"],
-  ["stage 1", "number word", "ten"],
-  ["stage 1", "family word", "mother"],
-  ["stage 1", "animal word", "cat"],
-  ["stage 1", "action word", "listen"],
-  ["stage 1", "school instruction", "open"],
-  ["stage 1", "school instruction", "write"],
+  ["stage 1", "reading", "read well", "đọc kỹ và hiểu rõ", "To read slowly enough to understand the main meaning.", "Epic Reads_Deep reading"],
+  ["stage 1", "reading", "book", "sách", "A written text used for learning, stories, or information.", "Epic Reads_Deep reading"],
+  ["stage 1", "time", "morning", "buổi sáng", "The early part of the day, often used for study routines.", "Epic Reads_Deep reading"],
+  ["stage 1", "time", "evening", "buổi tối", "The later part of the day, often used for reading or review.", "Epic Reads_Deep reading"],
+  ["stage 1", "learning", "learn", "học", "To get new knowledge or skill through practice.", "Epic Reads_Deep reading"],
+  ["stage 1", "thinking", "think", "suy nghĩ", "To use your mind to understand or decide something.", "Epic Reads_Deep reading"],
+  ["stage 1", "space", "space", "không gian; vũ trụ", "The area beyond Earth, or an empty area around something.", "1_ATEAM_Space Junk"],
+  ["stage 1", "space", "Earth", "Trái Đất", "The planet where people, animals, and plants live.", "1_ATEAM_Space Junk"],
+  ["stage 1", "work", "job", "công việc", "Work that someone does to earn money or help a project.", "Epic Reads_Hiring"],
+  ["stage 1", "people", "candidate", "ứng viên", "A person who applies for a job or position.", "Epic Reads_Hiring"],
 
-  ["stage 2", "daily routine", "brush teeth"],
-  ["stage 2", "daily routine", "wake up"],
-  ["stage 2", "daily routine", "have breakfast"],
-  ["stage 2", "time word", "morning"],
-  ["stage 2", "time word", "evening"],
-  ["stage 2", "food word", "vegetables"],
-  ["stage 2", "food word", "sandwich"],
-  ["stage 2", "place word", "playground"],
-  ["stage 2", "weather word", "cloudy"],
-  ["stage 2", "feeling word", "happy"],
-  ["stage 2", "ability word", "can"],
-  ["stage 2", "question word", "where"],
+  ["stage 2", "reading", "focus", "tập trung", "To give attention to one thing instead of being distracted.", "Epic Reads_Deep reading"],
+  ["stage 2", "reading", "understand", "hiểu", "To know the meaning of information or an idea.", "Epic Reads_Deep reading"],
+  ["stage 2", "learning", "knowledge", "kiến thức", "Information and understanding gained through learning.", "Epic Reads_Deep reading"],
+  ["stage 2", "learning", "mistake", "lỗi sai", "Something incorrect that can help you learn when corrected.", "Epic Reads_Deep reading"],
+  ["stage 2", "space", "satellite", "vệ tinh", "An object sent into space to collect or send information.", "1_ATEAM_Space Junk"],
+  ["stage 2", "space", "orbit", "quỹ đạo", "The path followed by an object moving around a planet.", "1_ATEAM_Space Junk"],
+  ["stage 2", "technology", "screen", "màn hình; vòng phỏng vấn qua điện thoại", "A display surface, or an early check in hiring.", "Epic Reads_Hiring"],
+  ["stage 2", "work", "interview", "buổi phỏng vấn", "A meeting where someone answers questions for a job or role.", "Epic Reads_Hiring"],
+  ["stage 2", "work", "schedule", "lịch trình", "A plan that shows when activities will happen.", "Epic Reads_Hiring"],
+  ["stage 2", "people", "team", "đội nhóm", "A group of people working together.", "Epic Reads_Hiring"],
 
-  ["stage 3", "animal habitat", "forest"],
-  ["stage 3", "animal habitat", "river"],
-  ["stage 3", "animal word", "insect"],
-  ["stage 3", "nature word", "plant"],
-  ["stage 3", "body word", "wings"],
-  ["stage 3", "movement word", "climb"],
-  ["stage 3", "story word", "character"],
-  ["stage 3", "story word", "adventure"],
-  ["stage 3", "school subject", "music"],
-  ["stage 3", "maths word", "measure"],
-  ["stage 3", "grammar word", "because"],
-  ["stage 3", "comparison word", "different"],
+  ["stage 3", "reading", "deep reading", "đọc sâu", "Reading carefully to build strong understanding, not just speed.", "Epic Reads_Deep reading"],
+  ["stage 3", "reading", "surface knowledge", "kiến thức bề mặt", "Basic information without deep understanding.", "Epic Reads_Deep reading"],
+  ["stage 3", "learning", "comprehension", "sự hiểu bài", "The ability to understand what you read or hear.", "Epic Reads_Deep reading"],
+  ["stage 3", "learning", "retention", "khả năng ghi nhớ", "The ability to keep information in your memory.", "Epic Reads_Deep reading"],
+  ["stage 3", "space", "space junk", "rác thải không gian", "Old or broken human-made objects left in space.", "1_ATEAM_Space Junk"],
+  ["stage 3", "space", "debris", "mảnh vỡ", "Broken pieces left after something is damaged or destroyed.", "1_ATEAM_Space Junk"],
+  ["stage 3", "work", "presentation", "bài thuyết trình", "A talk that explains ideas to other people.", "Epic Reads_Hiring"],
+  ["stage 3", "work", "instruction", "chỉ dẫn", "Information that tells someone how to do something.", "Epic Reads_Hiring"],
+  ["stage 3", "thinking", "decision", "quyết định", "A choice made after thinking about options.", "Epic Reads_Deep reading"],
+  ["stage 3", "people", "applicant", "người nộp đơn", "A person who asks formally for a job, course, or opportunity.", "Epic Reads_Hiring"],
 
-  ["stage 4", "school subject", "science"],
-  ["stage 4", "school subject", "history"],
-  ["stage 4", "geography word", "continent"],
-  ["stage 4", "geography word", "map"],
-  ["stage 4", "weather word", "temperature"],
-  ["stage 4", "materials word", "metal"],
-  ["stage 4", "materials word", "plastic"],
-  ["stage 4", "process word", "experiment"],
-  ["stage 4", "thinking word", "predict"],
-  ["stage 4", "reading word", "paragraph"],
-  ["stage 4", "community word", "neighbourhood"],
-  ["stage 4", "environment word", "recycle"],
+  ["stage 4", "reading", "critical thinking", "tư duy phản biện", "Careful thinking that questions ideas and checks reasons.", "Epic Reads_Deep reading"],
+  ["stage 4", "reading", "connection", "sự liên hệ", "A link between ideas, texts, or experiences.", "Epic Reads_Deep reading"],
+  ["stage 4", "learning", "accuracy", "độ chính xác", "How correct information, answers, or measurements are.", "Epic Reads_Deep reading"],
+  ["stage 4", "learning", "system", "hệ thống", "An organized way of doing or managing something.", "Epic Reads_Deep reading"],
+  ["stage 4", "space", "collision", "vụ va chạm", "A crash between two moving objects.", "1_ATEAM_Space Junk"],
+  ["stage 4", "space", "constellation", "chòm vệ tinh; chòm sao", "A group of satellites working together, or a group of stars.", "1_ATEAM_Space Junk"],
+  ["stage 4", "technology", "equipment", "thiết bị", "Tools or machines needed for a task.", "Epic Reads_Hiring"],
+  ["stage 4", "work", "assumption", "giả định", "Something believed to be true without full proof.", "Epic Reads_Hiring"],
+  ["stage 4", "work", "strategy", "chiến lược", "A planned way to achieve a goal.", "Epic Reads_Hiring"],
+  ["stage 4", "thinking", "predictability", "tính có thể dự đoán", "The quality of being expected or easy to foresee.", "Epic Reads_Hiring"],
 
-  ["stage 5", "community place", "library"],
-  ["stage 5", "community place", "museum"],
-  ["stage 5", "community place", "market"],
-  ["stage 5", "technology word", "website"],
-  ["stage 5", "technology word", "password"],
-  ["stage 5", "health word", "nutrition"],
-  ["stage 5", "health word", "exercise"],
-  ["stage 5", "culture word", "tradition"],
-  ["stage 5", "culture word", "festival"],
-  ["stage 5", "writing word", "opinion"],
-  ["stage 5", "linking word", "however"],
-  ["stage 5", "responsibility word", "respect"],
+  ["stage 5", "reading", "mentally demanding", "đòi hỏi nhiều tư duy", "Needing serious attention and effort from the mind.", "Epic Reads_Deep reading"],
+  ["stage 5", "reading", "engage", "tham gia; tập trung vào", "To take part actively or give attention to something.", "Epic Reads_Deep reading"],
+  ["stage 5", "learning", "optimize", "tối ưu hóa", "To improve something so it works as well as possible.", "Epic Reads_Deep reading"],
+  ["stage 5", "learning", "devote", "dành thời gian hoặc công sức", "To give time, energy, or attention to something.", "Epic Reads_Deep reading"],
+  ["stage 5", "space", "deploy", "triển khai", "To put equipment or people into position for use.", "1_ATEAM_Space Junk"],
+  ["stage 5", "space", "monitor", "giám sát", "To watch and check something over time.", "1_ATEAM_Space Junk"],
+  ["stage 5", "technology", "algorithm", "thuật toán", "A set of steps used to solve a problem, often by computers.", "Epic Reads_Hiring"],
+  ["stage 5", "work", "circumstance", "hoàn cảnh", "A condition or fact that affects a situation.", "Epic Reads_Hiring"],
+  ["stage 5", "work", "consistency", "sự nhất quán", "The quality of staying the same in behavior or quality.", "Epic Reads_Hiring"],
+  ["stage 5", "people", "talent", "nhân tài; tài năng", "People with strong ability, or a natural skill.", "Epic Reads_Hiring"],
 
-  ["stage 6", "healthy habit", "balanced diet"],
-  ["stage 6", "healthy habit", "physical activity"],
-  ["stage 6", "science word", "energy"],
-  ["stage 6", "science word", "electricity"],
-  ["stage 6", "environment word", "pollution"],
-  ["stage 6", "environment word", "habitat"],
-  ["stage 6", "social word", "community"],
-  ["stage 6", "thinking word", "evidence"],
-  ["stage 6", "thinking word", "conclusion"],
-  ["stage 6", "media word", "advertisement"],
-  ["stage 6", "history word", "ancient"],
-  ["stage 6", "geography word", "climate"],
+  ["stage 6", "reading", "trade-off", "sự đánh đổi", "A balance where gaining one thing means losing another.", "Epic Reads_Deep reading"],
+  ["stage 6", "reading", "superficial", "hời hợt; nông", "Not deep or detailed; only on the surface.", "Epic Reads_Deep reading"],
+  ["stage 6", "learning", "overconfidence", "sự tự tin thái quá", "Too much confidence, especially without enough knowledge.", "Epic Reads_Deep reading"],
+  ["stage 6", "learning", "uninterrupted", "không bị gián đoạn", "Continuing without being stopped or disturbed.", "Epic Reads_Deep reading"],
+  ["stage 6", "space", "sustainability", "tính bền vững", "The ability to continue without causing long-term harm.", "1_ATEAM_Space Junk"],
+  ["stage 6", "space", "identification", "sự xác định danh tính", "The act of recognizing who or what something is.", "1_ATEAM_Space Junk"],
+  ["stage 6", "technology", "database", "cơ sở dữ liệu", "An organized collection of information stored for use.", "1_ATEAM_Space Junk"],
+  ["stage 6", "work", "indicator", "dấu hiệu; chỉ số", "A sign or measure that shows what something is like.", "Epic Reads_Hiring"],
+  ["stage 6", "work", "multi-task", "làm nhiều việc cùng lúc", "To deal with more than one task at the same time.", "Epic Reads_Hiring"],
+  ["stage 6", "thinking", "distraction", "sự xao nhãng", "Something that takes attention away from the main task.", "Epic Reads_Hiring"],
 
-  ["stage 7", "environment word", "recycling"],
-  ["stage 7", "environment word", "conservation"],
-  ["stage 7", "global topic", "migration"],
-  ["stage 7", "global topic", "urbanisation"],
-  ["stage 7", "science word", "ecosystem"],
-  ["stage 7", "technology word", "innovation"],
-  ["stage 7", "citizenship word", "rights"],
-  ["stage 7", "citizenship word", "responsibility"],
-  ["stage 7", "argument word", "advantage"],
-  ["stage 7", "argument word", "disadvantage"],
-  ["stage 7", "research word", "source"],
-  ["stage 7", "analysis word", "compare"],
+  ["stage 7", "reading", "immerse", "đắm mình vào", "To become deeply involved in an activity or experience.", "Epic Reads_Deep reading"],
+  ["stage 7", "reading", "bragging rights", "quyền khoe thành tích", "The satisfaction of being able to boast about an achievement.", "Epic Reads_Deep reading"],
+  ["stage 7", "learning", "re-hash", "xào lại ý cũ", "To repeat old ideas without adding much new value.", "Epic Reads_Deep reading"],
+  ["stage 7", "space", "taxonomy", "hệ thống phân loại", "A system for classifying things into groups.", "1_ATEAM_Space Junk"],
+  ["stage 7", "space", "cascade", "chuỗi phản ứng dây chuyền", "A series of events where one event causes the next.", "1_ATEAM_Space Junk"],
+  ["stage 7", "space", "disintegrate", "phân rã", "To break into small parts and be destroyed.", "1_ATEAM_Space Junk"],
+  ["stage 7", "work", "rudimentary", "cơ bản; sơ khai", "Basic and not very developed.", "Epic Reads_Hiring"],
+  ["stage 7", "work", "probing question", "câu hỏi đào sâu", "A question that tries to discover detailed information.", "Epic Reads_Hiring"],
+  ["stage 7", "work", "weed out", "loại bỏ", "To remove people or things that are not suitable.", "Epic Reads_Hiring"],
+  ["stage 7", "thinking", "assess", "đánh giá", "To judge the quality, value, or importance of something.", "1_ATEAM_Space Junk"],
 
-  ["stage 8", "global issue", "climate change"],
-  ["stage 8", "global issue", "food security"],
-  ["stage 8", "global issue", "inequality"],
-  ["stage 8", "science word", "biodiversity"],
-  ["stage 8", "technology word", "artificial intelligence"],
-  ["stage 8", "media word", "misinformation"],
-  ["stage 8", "economy word", "trade"],
-  ["stage 8", "society word", "identity"],
-  ["stage 8", "argument word", "perspective"],
-  ["stage 8", "argument word", "impact"],
-  ["stage 8", "academic word", "analyse"],
-  ["stage 8", "academic word", "evaluate"],
+  ["stage 8", "reading", "cull", "loại bỏ có chọn lọc", "To choose and remove weaker items from a group.", "Epic Reads_Deep reading"],
+  ["stage 8", "reading", "hone", "mài giũa; rèn luyện", "To improve a skill through practice.", "Epic Reads_Deep reading"],
+  ["stage 8", "learning", "comprehension and retention", "sự hiểu và ghi nhớ", "Understanding information and keeping it in memory.", "Epic Reads_Deep reading"],
+  ["stage 8", "space", "authoritative catalog", "danh mục đáng tin cậy", "A trusted list or database used as an official reference.", "1_ATEAM_Space Junk"],
+  ["stage 8", "space", "cross-correlate", "đối chiếu chéo", "To compare different sources to find a reliable match.", "1_ATEAM_Space Junk"],
+  ["stage 8", "space", "astrodynamics", "động lực học vũ trụ", "The study of how objects move in space.", "1_ATEAM_Space Junk"],
+  ["stage 8", "work", "less-than-ideal", "không lý tưởng", "Not as good or convenient as expected.", "Epic Reads_Hiring"],
+  ["stage 8", "work", "senior role", "vai trò cấp cao", "A job with higher responsibility and experience requirements.", "Epic Reads_Hiring"],
+  ["stage 8", "technology", "quantum physics", "vật lý lượng tử", "A branch of physics about very small particles and energy.", "Epic Reads_Hiring"],
+  ["stage 8", "thinking", "ruthless", "quyết đoán; không khoan nhượng", "Very firm when making difficult choices.", "Epic Reads_Deep reading"],
 
-  ["stage 9", "academic skill", "critical thinking"],
-  ["stage 9", "academic skill", "synthesis"],
-  ["stage 9", "academic skill", "interpretation"],
-  ["stage 9", "global issue", "sustainability"],
-  ["stage 9", "global issue", "human rights"],
-  ["stage 9", "science word", "genetic engineering"],
-  ["stage 9", "technology word", "digital ethics"],
-  ["stage 9", "society word", "social mobility"],
-  ["stage 9", "economy word", "globalisation"],
-  ["stage 9", "argument word", "counterargument"],
-  ["stage 9", "research word", "reliability"],
-  ["stage 9", "writing word", "thesis statement"]
+  ["stage 9", "reading", "Pierian spring", "nguồn tri thức sâu rộng", "A literary image for deep learning and knowledge.", "Epic Reads_Deep reading"],
+  ["stage 9", "reading", "sobers us", "làm ta tỉnh táo hơn", "Makes someone think more clearly and seriously.", "Epic Reads_Deep reading"],
+  ["stage 9", "learning", "devoting time", "dành thời gian có chủ đích", "Giving focused time to something important.", "Epic Reads_Deep reading"],
+  ["stage 9", "space", "point of no return", "điểm không thể quay đầu", "A stage after which a situation cannot return to how it was.", "1_ATEAM_Space Junk"],
+  ["stage 9", "space", "space traffic management", "quản lý giao thông không gian", "A system for controlling and coordinating objects moving in orbit.", "1_ATEAM_Space Junk"],
+  ["stage 9", "space", "intergovernmental", "liên chính phủ", "Involving two or more governments.", "1_ATEAM_Space Junk"],
+  ["stage 9", "work", "suss out", "tìm hiểu ra; dò ra", "To discover or understand something through observation.", "Epic Reads_Hiring"],
+  ["stage 9", "work", "crunch", "giai đoạn căng thẳng cao điểm", "A short period when a lot of work must be done quickly.", "Epic Reads_Hiring"],
+  ["stage 9", "thinking", "inevitably", "một cách tất yếu", "In a way that is certain to happen.", "Epic Reads_Hiring"],
+  ["stage 9", "thinking", "unparalleled", "không gì sánh bằng", "Better or greater than anything similar.", "Epic Reads_Bruce Lee"]
 ];
 
 const officialStageUnits = {
@@ -266,7 +264,21 @@ function legacyStageWords() {
   const stageLabel = state.band.replace("-", " ");
   return stageWords
     .filter(([stage]) => stage === stageLabel)
-    .map(([stage, topic, text]) => curriculumWord("global-english", text, topic, currentLevel().title, topic, stage));
+    .map(stageWordFromDrive);
+}
+
+function stageWordFromDrive(entry) {
+  const [stage, topic, text, vi, definition, source] = entry;
+  const item = curriculumWord("global-english", text, definition, currentLevel().title, topic, stage);
+  return {
+    ...item,
+    topic,
+    vi,
+    definition,
+    example: `In ${source}, "${text}" helps explain ${topic} ideas clearly.`,
+    usage: `Use "${text}" when discussing ${topic} in reading notes, speaking answers, or short paragraphs.`,
+    source: `Google Drive: ${source}`
+  };
 }
 
 const stageWordDetails = {
@@ -1021,6 +1033,18 @@ const els = {
   userChip: document.querySelector("#userChip"),
   userAvatar: document.querySelector("#userAvatar"),
   userName: document.querySelector("#userName"),
+  profileOpen: document.querySelector("#profileOpen"),
+  profileModal: document.querySelector("#profileModal"),
+  profileBackdrop: document.querySelector("#profileBackdrop"),
+  profileClose: document.querySelector("#profileClose"),
+  profileForm: document.querySelector("#profileForm"),
+  profileEmail: document.querySelector("#profileEmail"),
+  profileName: document.querySelector("#profileName"),
+  profileNeed: document.querySelector("#profileNeed"),
+  profileOtherWrap: document.querySelector("#profileOtherWrap"),
+  profileOther: document.querySelector("#profileOther"),
+  profileLevel: document.querySelector("#profileLevel"),
+  profileTarget: document.querySelector("#profileTarget"),
   levelKicker: document.querySelector("#levelKicker"),
   levelTitle: document.querySelector("#levelTitle"),
   bandList: document.querySelector("#bandList"),
@@ -1073,6 +1097,25 @@ document.querySelectorAll("[data-close-topic-modal]").forEach((button) => button
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeTopicModal();
   if (event.key === "Escape") closeNotebookHelper();
+  if (event.key === "Escape") closeProfileModal();
+});
+els.profileOpen?.addEventListener("click", openProfileModal);
+els.profileClose?.addEventListener("click", closeProfileModal);
+els.profileBackdrop?.addEventListener("click", closeProfileModal);
+els.profileNeed?.addEventListener("change", renderProfileOtherState);
+els.profileForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  state.profile = {
+    ...(state.profile || {}),
+    name: els.profileName.value.trim(),
+    need: els.profileNeed.value,
+    otherNeed: els.profileOther.value.trim(),
+    level: els.profileLevel.value.trim(),
+    target: els.profileTarget.value.trim(),
+    updatedAt: new Date().toISOString()
+  };
+  saveAndRender();
+  closeProfileModal();
 });
 els.studyMode.addEventListener("change", () => {
   const previousMode = state.studyMode;
@@ -1109,7 +1152,9 @@ els.gmailLogin.addEventListener("click", () => {
   saveAndRender();
 });
 els.gmailLogout.addEventListener("click", () => {
+  savePersonalData(state.user);
   state.user = null;
+  applyPersonalData(loadPersonalData(null));
   saveAndRender();
 });
 els.gameScope.addEventListener("change", () => {
@@ -1209,8 +1254,30 @@ els.helperForm.addEventListener("submit", (event) => {
 });
 els.exportData.addEventListener("click", exportData);
 
-function loadState() {
-  const fallback = {
+function defaultPersonalData(identity = null) {
+  return migrateModeStorage({
+    practiceFeedback: {},
+    saved: [],
+    mastered: [],
+    notes: [],
+    notesByMode: {},
+    doneDays: [],
+    messages: [{ role: "assistant", text: "Ask about a word such as mitigate, prevalent, or equitable. I can explain the meaning, IPA, Vietnamese translation, and IELTS collocations." }],
+    messagesByMode: {},
+    helperHistoryByMode: {},
+    profile: {
+      name: identity?.name || "",
+      need: "Cambridge Global English",
+      otherNeed: "",
+      level: "",
+      target: "",
+      updatedAt: ""
+    }
+  });
+}
+
+function appStateFallback() {
+  return {
     activeTab: "dashboard",
     band: "2.5",
     studyMode: "ielts",
@@ -1223,24 +1290,75 @@ function loadState() {
     stageUnit: "",
     editingNoteId: "",
     user: null,
-    practiceFeedback: {},
-    search: "",
-    saved: [],
-    mastered: [],
-    notes: [],
-    notesByMode: {},
-    doneDays: [],
-    messages: [{ role: "assistant", text: "Ask about a word such as mitigate, prevalent, or equitable. I can explain the meaning, IPA, Vietnamese translation, and IELTS collocations." }],
-    messagesByMode: {},
-    helperHistoryByMode: {}
+    search: ""
   };
+}
+
+function loadState() {
+  let appState = appStateFallback();
   try {
-    return migrateModeStorage({ ...fallback, ...JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") });
+    const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    appState = { ...appState, ...raw };
+    if (hasEmbeddedPersonalData(raw) && !localStorage.getItem(userStorageKey(raw.user))) {
+      localStorage.setItem(userStorageKey(raw.user), JSON.stringify(extractPersonalData(raw, raw.user)));
+    }
   } catch {
-    return migrateModeStorage(fallback);
+    appState = appStateFallback();
+  }
+  return { ...appState, ...loadPersonalData(appState.user) };
+}
+
+function userStorageKey(identity = state?.user || null) {
+  const email = String(identity?.email || "guest").trim().toLowerCase();
+  return `${USER_DATA_PREFIX}${encodeURIComponent(email || "guest")}`;
+}
+
+function hasEmbeddedPersonalData(value = {}) {
+  return personalDataFields.some((field) => Object.prototype.hasOwnProperty.call(value, field));
+}
+
+function extractPersonalData(value = state, identity = state?.user || null) {
+  const fallback = defaultPersonalData(identity);
+  return {
+    practiceFeedback: value.practiceFeedback || fallback.practiceFeedback,
+    saved: Array.isArray(value.saved) ? value.saved : [],
+    mastered: Array.isArray(value.mastered) ? value.mastered : [],
+    notes: [],
+    notesByMode: value.notesByMode || fallback.notesByMode,
+    doneDays: Array.isArray(value.doneDays) ? value.doneDays : [],
+    messages: [],
+    messagesByMode: value.messagesByMode || fallback.messagesByMode,
+    helperHistoryByMode: value.helperHistoryByMode || fallback.helperHistoryByMode,
+    profile: { ...fallback.profile, ...(value.profile || {}) }
+  };
+}
+
+function loadPersonalData(identity = state?.user || null) {
+  try {
+    const stored = JSON.parse(localStorage.getItem(userStorageKey(identity)) || "{}");
+    return migrateModeStorage({ ...defaultPersonalData(identity), ...stored });
+  } catch {
+    return defaultPersonalData(identity);
   }
 }
 
+function applyPersonalData(data) {
+  personalDataFields.forEach((field) => {
+    state[field] = data[field];
+  });
+}
+
+function savePersonalData(identity = state?.user || null) {
+  localStorage.setItem(userStorageKey(identity), JSON.stringify(extractPersonalData(state, identity)));
+}
+
+function stripPersonalState(value = state) {
+  const clean = { ...value };
+  personalDataFields.forEach((field) => delete clean[field]);
+  delete clean.notes;
+  delete clean.messages;
+  return clean;
+}
 function migrateModeStorage(nextState) {
   const modes = Object.keys(studyModes);
   nextState.notesByMode = nextState.notesByMode || {};
@@ -1307,13 +1425,18 @@ function decodeJwtPayload(token) {
 function handleGoogleCredential(response) {
   const profile = decodeJwtPayload(response?.credential || "");
   if (!profile?.email) return;
-  state.user = {
+  savePersonalData(state.user);
+  const nextUser = {
     name: profile.name || profile.email,
     email: profile.email,
     picture: profile.picture || "",
     signedInAt: new Date().toISOString()
   };
+  state.user = nextUser;
+  applyPersonalData(loadPersonalData(nextUser));
+  if (!state.profile?.name) state.profile.name = profile.name || "";
   saveAndRender();
+  if (!state.profile?.updatedAt) openProfileModal();
 }
 
 function initGoogleSignIn() {
@@ -1339,7 +1462,8 @@ function initGoogleSignIn() {
 }
 
 function save() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  savePersonalData(state.user);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(stripPersonalState(state)));
 }
 
 function saveAndRender() {
@@ -1365,6 +1489,7 @@ function render() {
   els.stageSelect.value = state.band.startsWith("stage-") ? state.band.replace("stage-", "") : "1";
   renderStageUnitPicker();
   renderAuth();
+  renderProfileForm();
   els.gameScope.innerHTML = config.gameScopes.map((scope) => `<option value="${scope.value}">${scope.label}</option>`).join("");
   els.gameScope.value = state.gameScope || "band";
   renderBands();
@@ -1391,6 +1516,35 @@ function renderStageUnitPicker() {
   els.unitSelect.value = state.stageUnit;
 }
 
+function renderProfileForm() {
+  if (!els.profileForm) return;
+  const profile = state.profile || {};
+  els.profileNeed.innerHTML = profileNeedOptions.map((need) => `<option value="${escapeHtml(need)}">${escapeHtml(need)}</option>`).join("");
+  els.profileEmail.textContent = state.user?.email ? `Signed in as ${state.user.email}` : "Guest profile";
+  els.profileName.value = profile.name || state.user?.name || "";
+  els.profileNeed.value = profileNeedOptions.includes(profile.need) ? profile.need : "Other";
+  els.profileOther.value = profile.otherNeed || "";
+  els.profileLevel.value = profile.level || "";
+  els.profileTarget.value = profile.target || "";
+  renderProfileOtherState();
+}
+
+function renderProfileOtherState() {
+  if (!els.profileOtherWrap) return;
+  els.profileOtherWrap.hidden = els.profileNeed.value !== "Other";
+}
+
+function openProfileModal() {
+  if (!els.profileModal) return;
+  renderProfileForm();
+  els.profileModal.hidden = false;
+  setTimeout(() => els.profileName?.focus(), 0);
+}
+
+function closeProfileModal() {
+  if (!els.profileModal || els.profileModal.hidden) return;
+  els.profileModal.hidden = true;
+}
 function renderAuth() {
   const signedIn = Boolean(state.user?.email);
   const googleReady = Boolean(els.googleButton?.dataset.ready === "true");
@@ -1398,7 +1552,7 @@ function renderAuth() {
   els.userChip.hidden = !signedIn;
   els.googleButton.hidden = signedIn || !googleReady;
   if (!signedIn) return;
-  els.userName.textContent = state.user.name || state.user.email;
+  els.userName.textContent = state.profile?.name || state.user.name || state.user.email;
   els.userAvatar.src = state.user.picture || "assets/icon-192.png";
 }
 
@@ -2427,8 +2581,8 @@ function gamePool() {
   if (state.gameScope === "toeic") return toeicWords;
   if (state.gameScope === "stages") return stageWords
     .filter(([stage]) => stage === state.band.replace("-", " "))
-    .map(([stage, meaning, word]) => {
-      const item = curriculumWord("global-english", word, meaning, currentLevel().title, "stage", stage);
+    .map((entry) => {
+      const item = stageWordFromDrive(entry);
       return [item.text, item.definition];
     });
   if (state.gameScope === "topics") {
@@ -3188,6 +3342,13 @@ function escapeHtml(value) {
 
 window.addEventListener("load", initGoogleSignIn);
 render();
+
+
+
+
+
+
+
 
 
 
