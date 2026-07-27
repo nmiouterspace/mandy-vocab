@@ -14,7 +14,7 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icon-192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=47" />
+    <link rel="stylesheet" href="styles.css?v=48" />
   </head>
   <body>
     <svg class="icon-sprite" aria-hidden="true">
@@ -192,6 +192,7 @@
           <div class="user-chip" id="userChip" hidden>
             <img id="userAvatar" alt="" />
             <span id="userName">Learner</span>
+            <button id="profileOpen" type="button">Profile</button>
             <button id="gmailLogout" type="button" aria-label="Sign out">Sign out</button>
           </div>
           <div id="googleButton" hidden></div>
@@ -218,7 +219,7 @@
           <div class="band-list" id="bandList"></div>
           <div class="source-note">
             <strong>Vocabulary source note</strong>
-            <p>This sample set is inspired by GSL, Oxford 3000, AWL, Cambridge young learner progression, and common IELTS topics. It is summarized and rewritten rather than copied from one source.</p>
+            <p>IELTS, TOEIC, and communication sets are summarized learning banks. Cambridge Global English Stage words are now rebuilt from Mandy's Google Drive reading folder and rewritten for study use, not guessed Units.</p>
           </div>
         </aside>
 
@@ -413,6 +414,43 @@
       </section>
     </div>
 
+
+    <div class="profile-modal" id="profileModal" hidden>
+      <button class="topic-modal-backdrop" type="button" id="profileBackdrop" aria-label="Close profile"></button>
+      <section class="profile-panel" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+        <div class="topic-modal-head">
+          <div>
+            <p class="section-kicker">Personal profile</p>
+            <h2 id="profileTitle">Your Mandy Vocab profile</h2>
+            <p id="profileEmail">Signed in learner</p>
+          </div>
+          <button class="topic-modal-close" id="profileClose" type="button" aria-label="Close profile">x</button>
+        </div>
+        <form class="profile-form" id="profileForm">
+          <label>
+            <span>Profile name</span>
+            <input id="profileName" type="text" placeholder="How should Mandy Vocab call you?" />
+          </label>
+          <label>
+            <span>Main need</span>
+            <select id="profileNeed"></select>
+          </label>
+          <label id="profileOtherWrap" hidden>
+            <span>Other need</span>
+            <input id="profileOther" type="text" placeholder="Write your own learning need" />
+          </label>
+          <label>
+            <span>Current level</span>
+            <input id="profileLevel" type="text" placeholder="Example: IELTS 5.5, Stage 7, TOEIC 650" />
+          </label>
+          <label>
+            <span>Learning goal</span>
+            <textarea id="profileTarget" rows="4" placeholder="Example: Speak more naturally, remember vocabulary, improve school writing..."></textarea>
+          </label>
+          <button type="submit"><span class="button-icon" aria-hidden="true"><svg><use href="#icon-check"></use></svg></span> Save profile</button>
+        </form>
+      </section>
+    </div>
     <div class="helper-window" id="helperWindow" hidden>
       <section class="helper-panel" role="dialog" aria-modal="true" aria-labelledby="helperTitle">
         <div class="helper-head">
@@ -440,7 +478,7 @@
     </div>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="app.js?v=47"></script>
+    <script src="app.js?v=48"></script>
     <script>
       if ("serviceWorker" in navigator && ["http:", "https:"].includes(location.protocol)) {
         window.addEventListener("load", () => {
@@ -450,6 +488,9 @@
     </script>
   </body>
 </html>
+
+
+
 
 
 
