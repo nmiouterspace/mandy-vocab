@@ -1,9 +1,9 @@
-﻿const CACHE_NAME = "ielts-vocab-studio-v48";
+const CACHE_NAME = "ielts-vocab-studio-v49";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=48",
-  "./app.js?v=48",
+  "./styles.css?v=49",
+  "./app.js?v=49",
   "./manifest.json",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
@@ -37,4 +37,3 @@ self.addEventListener("fetch", (event) => {
       }).catch(() => caches.match(event.request).then((cached) => cached || caches.match("./index.html")))
   );
 });
-
